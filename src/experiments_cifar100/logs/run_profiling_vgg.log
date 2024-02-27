@@ -1,0 +1,436 @@
+[0m################ Profiling started at 20240210-165907 ################.[0m
+[0mProvided parameters: profile(function=Conv2dRFFTFunction timestamp=20240210-165907 batch_size=4 profile_name=VGG16_CIFAR100_Conv2dRFFTFunction num_classes=100 skip_first=0 wait=4 warmup=4 active=4 repeat=1)[0m
+[0mOriginal model architecture is VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace=True)
+    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace=True)
+    (27): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace=True)
+    (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace=True)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace=True)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)[0m
+[0mAdopted model architecture is VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace=True)
+    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace=True)
+    (27): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace=True)
+    (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace=True)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace=True)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=100, bias=True)
+  )
+)[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0mProfiling Model VGG16_CIFAR100_Conv2dRFFTFunction.[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=0/12 (0.00%)[0m
+[0m################################################################################[0m
+[W kineto_shim.cpp:337] Profiler is not initialized: skipping step() invocation
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=1/12 (8.33%)[0m
+[0m################################################################################[0m
+[W kineto_shim.cpp:337] Profiler is not initialized: skipping step() invocation
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=2/12 (16.67%)[0m
+[0m################################################################################[0m
+[W kineto_shim.cpp:337] Profiler is not initialized: skipping step() invocation
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=3/12 (25.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=4/12 (33.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=5/12 (41.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=6/12 (50.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=7/12 (58.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=8/12 (66.67%)[0m
+[0m################################################################################[0m
+[W CPUAllocator.cpp:219] Memory block of unknown size was allocated before the profiling started, profiler results will not include the deallocation event
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=9/12 (75.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=10/12 (83.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTFunction step=11/12 (91.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mProfile trace saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments_cifar100/.profiles/VGG16_CIFAR100_Conv2dRFFTFunction_date-20240210-165907.json.[0m
+[0mProfile saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments_cifar100/.profiles/VGG16_CIFAR100_Conv2dRFFTFunction_date-20240210-165907.pt.[0m
+[0mProvided parameters: profile(function=Conv2dRFFTPhasorFunction timestamp=20240210-165907 batch_size=4 profile_name=VGG16_CIFAR100_Conv2dRFFTPhasorFunction num_classes=100 skip_first=0 wait=4 warmup=4 active=4 repeat=1)[0m
+[0mOriginal model architecture is VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace=True)
+    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace=True)
+    (27): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace=True)
+    (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace=True)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace=True)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)[0m
+[0mAdopted model architecture is VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace=True)
+    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace=True)
+    (27): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace=True)
+    (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace=True)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace=True)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=100, bias=True)
+  )
+)[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0mProfiling Model VGG16_CIFAR100_Conv2dRFFTPhasorFunction.[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=0/12 (0.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=1/12 (8.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=2/12 (16.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=3/12 (25.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=4/12 (33.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=5/12 (41.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=6/12 (50.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=7/12 (58.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=8/12 (66.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=9/12 (75.00%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=10/12 (83.33%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mRunning Conv2dRFFTPhasorFunction step=11/12 (91.67%)[0m
+[0m################################################################################[0m
+[0m################################################################################[0m
+[0mProfile trace saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments_cifar100/.profiles/VGG16_CIFAR100_Conv2dRFFTPhasorFunction_date-20240210-165907.json.[0m
+[0mProfile saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments_cifar100/.profiles/VGG16_CIFAR100_Conv2dRFFTPhasorFunction_date-20240210-165907.pt.[0m
+[0m################ Profiling ended at 20240210-170200 ################.[0m

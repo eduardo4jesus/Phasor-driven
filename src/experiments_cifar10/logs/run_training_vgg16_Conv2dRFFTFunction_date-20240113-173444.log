@@ -1,0 +1,110 @@
+Provided parameters: main(total_num_epochs=1,freeze_features_epochs=0, batch_size=4)
+Model orginal architecture is VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+    (6): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (7): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (9): ReLU(inplace=True)
+    (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (12): ReLU(inplace=True)
+    (13): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (14): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (16): ReLU(inplace=True)
+    (17): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (19): ReLU(inplace=True)
+    (20): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (21): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (26): ReLU(inplace=True)
+    (27): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (28): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (29): ReLU(inplace=True)
+    (30): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (31): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (32): ReLU(inplace=True)
+    (33): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (34): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (35): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (36): ReLU(inplace=True)
+    (37): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (38): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (39): ReLU(inplace=True)
+    (40): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (41): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (42): ReLU(inplace=True)
+    (43): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(7, 7))
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=4096, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=4096, out_features=4096, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)
+Model modified architecture is Sequential(
+  (0): Linear(in_features=25088, out_features=4096, bias=True)
+  (1): ReLU(inplace=True)
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=4096, out_features=4096, bias=True)
+  (4): ReLU(inplace=True)
+  (5): Dropout(p=0.5, inplace=False)
+  (6): Linear(in_features=4096, out_features=10, bias=True)
+)
+Features not frozen on epoch 0
+Training: epoch=0 step=312/12500 loss=0.20828 accuracy=93.37061 runtime_forward_ms=2568.07997 runtime_backward_ms=4377.59537.
+Training: epoch=0 step=625/12500 loss=0.14509 accuracy=94.96805 runtime_forward_ms=2563.70137 runtime_backward_ms=4377.60568.
+Training: epoch=0 step=938/12500 loss=0.11160 accuracy=96.24600 runtime_forward_ms=2563.71589 runtime_backward_ms=4377.64421.
+Training: epoch=0 step=1251/12500 loss=0.13808 accuracy=94.88818 runtime_forward_ms=2563.69688 runtime_backward_ms=4377.67226.
+Training: epoch=0 step=1564/12500 loss=0.12331 accuracy=95.76677 runtime_forward_ms=2563.66727 runtime_backward_ms=4377.55035.
+Training: epoch=0 step=1877/12500 loss=0.11591 accuracy=96.56549 runtime_forward_ms=2563.67332 runtime_backward_ms=4377.58019.
+Training: epoch=0 step=2190/12500 loss=0.10747 accuracy=96.48562 runtime_forward_ms=2563.66521 runtime_backward_ms=4377.54503.
+Training: epoch=0 step=2503/12500 loss=0.09688 accuracy=96.48562 runtime_forward_ms=2563.70203 runtime_backward_ms=4377.55777.
+Training: epoch=0 step=2816/12500 loss=0.11081 accuracy=96.56549 runtime_forward_ms=2563.67104 runtime_backward_ms=4377.55030.
+Training: epoch=0 step=3129/12500 loss=0.12017 accuracy=96.00639 runtime_forward_ms=2563.32416 runtime_backward_ms=4376.79868.
+Training: epoch=0 step=3442/12500 loss=0.12165 accuracy=96.24600 runtime_forward_ms=2563.72789 runtime_backward_ms=4377.59957.
+Training: epoch=0 step=3755/12500 loss=0.12288 accuracy=96.24600 runtime_forward_ms=2563.93927 runtime_backward_ms=4378.11729.
+Training: epoch=0 step=4068/12500 loss=0.08905 accuracy=97.28434 runtime_forward_ms=2563.69265 runtime_backward_ms=4377.40498.
+Training: epoch=0 step=4381/12500 loss=0.09379 accuracy=96.64536 runtime_forward_ms=2563.66531 runtime_backward_ms=4377.38595.
+Training: epoch=0 step=4694/12500 loss=0.08294 accuracy=96.80511 runtime_forward_ms=2563.69101 runtime_backward_ms=4377.60398.
+Training: epoch=0 step=5007/12500 loss=0.09896 accuracy=96.48562 runtime_forward_ms=2563.67661 runtime_backward_ms=4377.57367.
+Training: epoch=0 step=5320/12500 loss=0.09553 accuracy=96.64536 runtime_forward_ms=2563.70074 runtime_backward_ms=4377.52561.
+Training: epoch=0 step=5633/12500 loss=0.09429 accuracy=96.48562 runtime_forward_ms=2563.69285 runtime_backward_ms=4377.62058.
+Training: epoch=0 step=5946/12500 loss=0.08023 accuracy=97.52396 runtime_forward_ms=2563.67392 runtime_backward_ms=4377.58757.
+Training: epoch=0 step=6259/12500 loss=0.08829 accuracy=97.12460 runtime_forward_ms=2563.70675 runtime_backward_ms=4377.58750.
+Training: epoch=0 step=6572/12500 loss=0.11305 accuracy=95.76677 runtime_forward_ms=2563.70537 runtime_backward_ms=4377.60464.
+Training: epoch=0 step=6885/12500 loss=0.06759 accuracy=97.84345 runtime_forward_ms=2563.68299 runtime_backward_ms=4377.62946.
+Training: epoch=0 step=7198/12500 loss=0.09849 accuracy=96.48562 runtime_forward_ms=2563.67123 runtime_backward_ms=4377.56285.
+Training: epoch=0 step=7511/12500 loss=0.07670 accuracy=97.12460 runtime_forward_ms=2563.65936 runtime_backward_ms=4377.52583.
+Training: epoch=0 step=7824/12500 loss=0.07490 accuracy=97.60383 runtime_forward_ms=2563.65883 runtime_backward_ms=4377.51685.
+Training: epoch=0 step=8137/12500 loss=0.08613 accuracy=97.28434 runtime_forward_ms=2563.67026 runtime_backward_ms=4377.53943.
+Training: epoch=0 step=8450/12500 loss=0.09837 accuracy=96.40575 runtime_forward_ms=2563.70314 runtime_backward_ms=4377.62167.
+Training: epoch=0 step=8763/12500 loss=0.09565 accuracy=97.04472 runtime_forward_ms=2563.69042 runtime_backward_ms=4377.43669.
+Training: epoch=0 step=9076/12500 loss=0.06686 accuracy=97.68370 runtime_forward_ms=2563.66086 runtime_backward_ms=4377.37805.
+Training: epoch=0 step=9389/12500 loss=0.07682 accuracy=97.20447 runtime_forward_ms=2563.69062 runtime_backward_ms=4377.52774.
+Training: epoch=0 step=9702/12500 loss=0.07382 accuracy=97.12460 runtime_forward_ms=2563.67538 runtime_backward_ms=4377.43024.
+Training: epoch=0 step=10015/12500 loss=0.07104 accuracy=97.36421 runtime_forward_ms=2563.66844 runtime_backward_ms=4377.38282.
+Training: epoch=0 step=10328/12500 loss=0.09015 accuracy=96.96485 runtime_forward_ms=2563.66200 runtime_backward_ms=4377.36584.
+Training: epoch=0 step=10641/12500 loss=0.05590 accuracy=98.40256 runtime_forward_ms=2563.66319 runtime_backward_ms=4377.36673.
+Training: epoch=0 step=10954/12500 loss=0.06894 accuracy=97.36421 runtime_forward_ms=2563.66631 runtime_backward_ms=4377.37471.
+Training: epoch=0 step=11267/12500 loss=0.08030 accuracy=97.36421 runtime_forward_ms=2563.66746 runtime_backward_ms=4377.45649.
+Training: epoch=0 step=11580/12500 loss=0.09321 accuracy=97.36421 runtime_forward_ms=2563.66335 runtime_backward_ms=4377.35627.
+Training: epoch=0 step=11893/12500 loss=0.07046 accuracy=98.16294 runtime_forward_ms=2563.70642 runtime_backward_ms=4377.53994.
+Training: epoch=0 step=12206/12500 loss=0.07705 accuracy=97.12460 runtime_forward_ms=2563.70672 runtime_backward_ms=4377.60775.
+Validation: epoch=0 training_step=12499 loss=0.23592 accuracy=93.36000 runtime_forward_ms=2562.93847.
+--- End of Epoch: epoch=0 duration_training=87370.90022378042 duration_validation=6408.933346342295 training_step=12499 training_loss=0.07705 training_accuracy=97.12460 validation_loss=0.23592 validation_accuracy=93.36000.

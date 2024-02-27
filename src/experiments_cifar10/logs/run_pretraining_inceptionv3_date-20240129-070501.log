@@ -1,0 +1,711 @@
+[0mProvided parameters: main(total_num_epochs=4,freeze_features_epochs=2, batch_size=64)[0m
+[0mModel orginal architecture is Inception3(
+  (Conv2d_1a_3x3): BasicConv2d(
+    (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), bias=False)
+    (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (Conv2d_2a_3x3): BasicConv2d(
+    (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1), bias=False)
+    (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (Conv2d_2b_3x3): BasicConv2d(
+    (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (maxpool1): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (Conv2d_3b_1x1): BasicConv2d(
+    (conv): Conv2d(64, 80, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (bn): BatchNorm2d(80, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (Conv2d_4a_3x3): BasicConv2d(
+    (conv): Conv2d(80, 192, kernel_size=(3, 3), stride=(1, 1), bias=False)
+    (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (maxpool2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (Mixed_5b): InceptionA(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_1): BasicConv2d(
+      (conv): Conv2d(192, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(48, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_2): BasicConv2d(
+      (conv): Conv2d(48, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3): BasicConv2d(
+      (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(32, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_5c): InceptionA(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_1): BasicConv2d(
+      (conv): Conv2d(256, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(48, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_2): BasicConv2d(
+      (conv): Conv2d(48, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3): BasicConv2d(
+      (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_5d): InceptionA(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(288, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_1): BasicConv2d(
+      (conv): Conv2d(288, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(48, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch5x5_2): BasicConv2d(
+      (conv): Conv2d(48, 64, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(288, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3): BasicConv2d(
+      (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(288, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_6a): InceptionB(
+    (branch3x3): BasicConv2d(
+      (conv): Conv2d(288, 384, kernel_size=(3, 3), stride=(2, 2), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(288, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(64, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(64, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3): BasicConv2d(
+      (conv): Conv2d(96, 96, kernel_size=(3, 3), stride=(2, 2), bias=False)
+      (bn): BatchNorm2d(96, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_6b): InceptionC(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_1): BasicConv2d(
+      (conv): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_2): BasicConv2d(
+      (conv): Conv2d(128, 128, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_3): BasicConv2d(
+      (conv): Conv2d(128, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_1): BasicConv2d(
+      (conv): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_2): BasicConv2d(
+      (conv): Conv2d(128, 128, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_3): BasicConv2d(
+      (conv): Conv2d(128, 128, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_4): BasicConv2d(
+      (conv): Conv2d(128, 128, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_5): BasicConv2d(
+      (conv): Conv2d(128, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_6c): InceptionC(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_1): BasicConv2d(
+      (conv): Conv2d(768, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_2): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_3): BasicConv2d(
+      (conv): Conv2d(160, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_1): BasicConv2d(
+      (conv): Conv2d(768, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_2): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_3): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_4): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_5): BasicConv2d(
+      (conv): Conv2d(160, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_6d): InceptionC(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_1): BasicConv2d(
+      (conv): Conv2d(768, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_2): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_3): BasicConv2d(
+      (conv): Conv2d(160, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_1): BasicConv2d(
+      (conv): Conv2d(768, 160, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_2): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_3): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_4): BasicConv2d(
+      (conv): Conv2d(160, 160, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(160, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_5): BasicConv2d(
+      (conv): Conv2d(160, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_6e): InceptionC(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_2): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7_3): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_2): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_3): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_4): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7dbl_5): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (AuxLogits): InceptionAux(
+    (conv0): BasicConv2d(
+      (conv): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(128, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (conv1): BasicConv2d(
+      (conv): Conv2d(128, 768, kernel_size=(5, 5), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(768, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (fc): Linear(in_features=768, out_features=1000, bias=True)
+  )
+  (Mixed_7a): InceptionD(
+    (branch3x3_1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_2): BasicConv2d(
+      (conv): Conv2d(192, 320, kernel_size=(3, 3), stride=(2, 2), bias=False)
+      (bn): BatchNorm2d(320, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7x3_1): BasicConv2d(
+      (conv): Conv2d(768, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7x3_2): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(1, 7), stride=(1, 1), padding=(0, 3), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7x3_3): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(7, 1), stride=(1, 1), padding=(3, 0), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch7x7x3_4): BasicConv2d(
+      (conv): Conv2d(192, 192, kernel_size=(3, 3), stride=(2, 2), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_7b): InceptionE(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(1280, 320, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(320, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_1): BasicConv2d(
+      (conv): Conv2d(1280, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_2a): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_2b): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(1280, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(448, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(448, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3a): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3b): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(1280, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (Mixed_7c): InceptionE(
+    (branch1x1): BasicConv2d(
+      (conv): Conv2d(2048, 320, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(320, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_1): BasicConv2d(
+      (conv): Conv2d(2048, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_2a): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3_2b): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_1): BasicConv2d(
+      (conv): Conv2d(2048, 448, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(448, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_2): BasicConv2d(
+      (conv): Conv2d(448, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3a): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(1, 3), stride=(1, 1), padding=(0, 1), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch3x3dbl_3b): BasicConv2d(
+      (conv): Conv2d(384, 384, kernel_size=(3, 1), stride=(1, 1), padding=(1, 0), bias=False)
+      (bn): BatchNorm2d(384, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (branch_pool): BasicConv2d(
+      (conv): Conv2d(2048, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn): BatchNorm2d(192, eps=0.001, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (dropout): Dropout(p=0.5, inplace=False)
+  (fc): Linear(in_features=2048, out_features=1000, bias=True)
+)[0m
+[0mModel classifier architecture is Linear(in_features=2048, out_features=10, bias=True)[0m
+[0mFeatures frozen on epoch 0[0m
+[0m(0) parameter.requires_grad = False[0m
+[0m(1) parameter.requires_grad = False[0m
+[0m(2) parameter.requires_grad = False[0m
+[0m(3) parameter.requires_grad = False[0m
+[0m(4) parameter.requires_grad = False[0m
+[0m(5) parameter.requires_grad = False[0m
+[0m(6) parameter.requires_grad = False[0m
+[0m(7) parameter.requires_grad = False[0m
+[0m(8) parameter.requires_grad = False[0m
+[0m(9) parameter.requires_grad = False[0m
+[0m(10) parameter.requires_grad = False[0m
+[0m(11) parameter.requires_grad = False[0m
+[0m(12) parameter.requires_grad = False[0m
+[0m(13) parameter.requires_grad = False[0m
+[0m(14) parameter.requires_grad = False[0m
+[0m(15) parameter.requires_grad = False[0m
+[0m(16) parameter.requires_grad = False[0m
+[0m(17) parameter.requires_grad = False[0m
+[0m(18) parameter.requires_grad = False[0m
+[0m(19) parameter.requires_grad = False[0m
+[0m(20) parameter.requires_grad = False[0m
+[0m(21) parameter.requires_grad = False[0m
+[0m(22) parameter.requires_grad = False[0m
+[0m(23) parameter.requires_grad = False[0m
+[0m(24) parameter.requires_grad = False[0m
+[0m(25) parameter.requires_grad = False[0m
+[0m(26) parameter.requires_grad = False[0m
+[0m(27) parameter.requires_grad = False[0m
+[0m(28) parameter.requires_grad = False[0m
+[0m(29) parameter.requires_grad = False[0m
+[0m(30) parameter.requires_grad = False[0m
+[0m(31) parameter.requires_grad = False[0m
+[0m(32) parameter.requires_grad = False[0m
+[0m(33) parameter.requires_grad = False[0m
+[0m(34) parameter.requires_grad = False[0m
+[0m(35) parameter.requires_grad = False[0m
+[0m(36) parameter.requires_grad = False[0m
+[0m(37) parameter.requires_grad = False[0m
+[0m(38) parameter.requires_grad = False[0m
+[0m(39) parameter.requires_grad = False[0m
+[0m(40) parameter.requires_grad = False[0m
+[0m(41) parameter.requires_grad = False[0m
+[0m(42) parameter.requires_grad = False[0m
+[0m(43) parameter.requires_grad = False[0m
+[0m(44) parameter.requires_grad = False[0m
+[0m(45) parameter.requires_grad = False[0m
+[0m(46) parameter.requires_grad = False[0m
+[0m(47) parameter.requires_grad = False[0m
+[0m(48) parameter.requires_grad = False[0m
+[0m(49) parameter.requires_grad = False[0m
+[0m(50) parameter.requires_grad = False[0m
+[0m(51) parameter.requires_grad = False[0m
+[0m(52) parameter.requires_grad = False[0m
+[0m(53) parameter.requires_grad = False[0m
+[0m(54) parameter.requires_grad = False[0m
+[0m(55) parameter.requires_grad = False[0m
+[0m(56) parameter.requires_grad = False[0m
+[0m(57) parameter.requires_grad = False[0m
+[0m(58) parameter.requires_grad = False[0m
+[0m(59) parameter.requires_grad = False[0m
+[0m(60) parameter.requires_grad = False[0m
+[0m(61) parameter.requires_grad = False[0m
+[0m(62) parameter.requires_grad = False[0m
+[0m(63) parameter.requires_grad = False[0m
+[0m(64) parameter.requires_grad = False[0m
+[0m(65) parameter.requires_grad = False[0m
+[0m(66) parameter.requires_grad = False[0m
+[0m(67) parameter.requires_grad = False[0m
+[0m(68) parameter.requires_grad = False[0m
+[0m(69) parameter.requires_grad = False[0m
+[0m(70) parameter.requires_grad = False[0m
+[0m(71) parameter.requires_grad = False[0m
+[0m(72) parameter.requires_grad = False[0m
+[0m(73) parameter.requires_grad = False[0m
+[0m(74) parameter.requires_grad = False[0m
+[0m(75) parameter.requires_grad = False[0m
+[0m(76) parameter.requires_grad = False[0m
+[0m(77) parameter.requires_grad = False[0m
+[0m(78) parameter.requires_grad = False[0m
+[0m(79) parameter.requires_grad = False[0m
+[0m(80) parameter.requires_grad = False[0m
+[0m(81) parameter.requires_grad = False[0m
+[0m(82) parameter.requires_grad = False[0m
+[0m(83) parameter.requires_grad = False[0m
+[0m(84) parameter.requires_grad = False[0m
+[0m(85) parameter.requires_grad = False[0m
+[0m(86) parameter.requires_grad = False[0m
+[0m(87) parameter.requires_grad = False[0m
+[0m(88) parameter.requires_grad = False[0m
+[0m(89) parameter.requires_grad = False[0m
+[0m(90) parameter.requires_grad = False[0m
+[0m(91) parameter.requires_grad = False[0m
+[0m(92) parameter.requires_grad = False[0m
+[0m(93) parameter.requires_grad = False[0m
+[0m(94) parameter.requires_grad = False[0m
+[0m(95) parameter.requires_grad = False[0m
+[0m(96) parameter.requires_grad = False[0m
+[0m(97) parameter.requires_grad = False[0m
+[0m(98) parameter.requires_grad = False[0m
+[0m(99) parameter.requires_grad = False[0m
+[0m(100) parameter.requires_grad = False[0m
+[0m(101) parameter.requires_grad = False[0m
+[0m(102) parameter.requires_grad = False[0m
+[0m(103) parameter.requires_grad = False[0m
+[0m(104) parameter.requires_grad = False[0m
+[0m(105) parameter.requires_grad = False[0m
+[0m(106) parameter.requires_grad = False[0m
+[0m(107) parameter.requires_grad = False[0m
+[0m(108) parameter.requires_grad = False[0m
+[0m(109) parameter.requires_grad = False[0m
+[0m(110) parameter.requires_grad = False[0m
+[0m(111) parameter.requires_grad = False[0m
+[0m(112) parameter.requires_grad = False[0m
+[0m(113) parameter.requires_grad = False[0m
+[0m(114) parameter.requires_grad = False[0m
+[0m(115) parameter.requires_grad = False[0m
+[0m(116) parameter.requires_grad = False[0m
+[0m(117) parameter.requires_grad = False[0m
+[0m(118) parameter.requires_grad = False[0m
+[0m(119) parameter.requires_grad = False[0m
+[0m(120) parameter.requires_grad = False[0m
+[0m(121) parameter.requires_grad = False[0m
+[0m(122) parameter.requires_grad = False[0m
+[0m(123) parameter.requires_grad = False[0m
+[0m(124) parameter.requires_grad = False[0m
+[0m(125) parameter.requires_grad = False[0m
+[0m(126) parameter.requires_grad = False[0m
+[0m(127) parameter.requires_grad = False[0m
+[0m(128) parameter.requires_grad = False[0m
+[0m(129) parameter.requires_grad = False[0m
+[0m(130) parameter.requires_grad = False[0m
+[0m(131) parameter.requires_grad = False[0m
+[0m(132) parameter.requires_grad = False[0m
+[0m(133) parameter.requires_grad = False[0m
+[0m(134) parameter.requires_grad = False[0m
+[0m(135) parameter.requires_grad = False[0m
+[0m(136) parameter.requires_grad = False[0m
+[0m(137) parameter.requires_grad = False[0m
+[0m(138) parameter.requires_grad = False[0m
+[0m(139) parameter.requires_grad = False[0m
+[0m(140) parameter.requires_grad = False[0m
+[0m(141) parameter.requires_grad = False[0m
+[0m(142) parameter.requires_grad = False[0m
+[0m(143) parameter.requires_grad = False[0m
+[0m(144) parameter.requires_grad = False[0m
+[0m(145) parameter.requires_grad = False[0m
+[0m(146) parameter.requires_grad = False[0m
+[0m(147) parameter.requires_grad = False[0m
+[0m(148) parameter.requires_grad = False[0m
+[0m(149) parameter.requires_grad = False[0m
+[0m(150) parameter.requires_grad = False[0m
+[0m(151) parameter.requires_grad = False[0m
+[0m(152) parameter.requires_grad = False[0m
+[0m(153) parameter.requires_grad = False[0m
+[0m(154) parameter.requires_grad = False[0m
+[0m(155) parameter.requires_grad = False[0m
+[0m(156) parameter.requires_grad = False[0m
+[0m(157) parameter.requires_grad = False[0m
+[0m(158) parameter.requires_grad = False[0m
+[0m(159) parameter.requires_grad = False[0m
+[0m(160) parameter.requires_grad = False[0m
+[0m(161) parameter.requires_grad = False[0m
+[0m(162) parameter.requires_grad = False[0m
+[0m(163) parameter.requires_grad = False[0m
+[0m(164) parameter.requires_grad = False[0m
+[0m(165) parameter.requires_grad = False[0m
+[0m(166) parameter.requires_grad = False[0m
+[0m(167) parameter.requires_grad = False[0m
+[0m(168) parameter.requires_grad = False[0m
+[0m(169) parameter.requires_grad = False[0m
+[0m(170) parameter.requires_grad = False[0m
+[0m(171) parameter.requires_grad = False[0m
+[0m(172) parameter.requires_grad = False[0m
+[0m(173) parameter.requires_grad = False[0m
+[0m(174) parameter.requires_grad = False[0m
+[0m(175) parameter.requires_grad = False[0m
+[0m(176) parameter.requires_grad = False[0m
+[0m(177) parameter.requires_grad = False[0m
+[0m(178) parameter.requires_grad = False[0m
+[0m(179) parameter.requires_grad = False[0m
+[0m(180) parameter.requires_grad = False[0m
+[0m(181) parameter.requires_grad = False[0m
+[0m(182) parameter.requires_grad = False[0m
+[0m(183) parameter.requires_grad = False[0m
+[0m(184) parameter.requires_grad = False[0m
+[0m(185) parameter.requires_grad = False[0m
+[0m(186) parameter.requires_grad = False[0m
+[0m(187) parameter.requires_grad = False[0m
+[0m(188) parameter.requires_grad = False[0m
+[0m(189) parameter.requires_grad = False[0m
+[0m(190) parameter.requires_grad = False[0m
+[0m(191) parameter.requires_grad = False[0m
+[0m(192) parameter.requires_grad = False[0m
+[0m(193) parameter.requires_grad = False[0m
+[0m(194) parameter.requires_grad = False[0m
+[0m(195) parameter.requires_grad = False[0m
+[0m(196) parameter.requires_grad = False[0m
+[0m(197) parameter.requires_grad = False[0m
+[0m(198) parameter.requires_grad = False[0m
+[0m(199) parameter.requires_grad = False[0m
+[0m(200) parameter.requires_grad = False[0m
+[0m(201) parameter.requires_grad = False[0m
+[0m(202) parameter.requires_grad = False[0m
+[0m(203) parameter.requires_grad = False[0m
+[0m(204) parameter.requires_grad = False[0m
+[0m(205) parameter.requires_grad = False[0m
+[0m(206) parameter.requires_grad = False[0m
+[0m(207) parameter.requires_grad = False[0m
+[0m(208) parameter.requires_grad = False[0m
+[0m(209) parameter.requires_grad = False[0m
+[0m(210) parameter.requires_grad = False[0m
+[0m(211) parameter.requires_grad = False[0m
+[0m(212) parameter.requires_grad = False[0m
+[0m(213) parameter.requires_grad = False[0m
+[0m(214) parameter.requires_grad = False[0m
+[0m(215) parameter.requires_grad = False[0m
+[0m(216) parameter.requires_grad = False[0m
+[0m(217) parameter.requires_grad = False[0m
+[0m(218) parameter.requires_grad = False[0m
+[0m(219) parameter.requires_grad = False[0m
+[0m(220) parameter.requires_grad = False[0m
+[0m(221) parameter.requires_grad = False[0m
+[0m(222) parameter.requires_grad = False[0m
+[0m(223) parameter.requires_grad = False[0m
+[0m(224) parameter.requires_grad = False[0m
+[0m(225) parameter.requires_grad = False[0m
+[0m(226) parameter.requires_grad = False[0m
+[0m(227) parameter.requires_grad = False[0m
+[0m(228) parameter.requires_grad = False[0m
+[0m(229) parameter.requires_grad = False[0m
+[0m(230) parameter.requires_grad = False[0m
+[0m(231) parameter.requires_grad = False[0m
+[0m(232) parameter.requires_grad = False[0m
+[0m(233) parameter.requires_grad = False[0m
+[0m(234) parameter.requires_grad = False[0m
+[0m(235) parameter.requires_grad = False[0m
+[0m(236) parameter.requires_grad = False[0m
+[0m(237) parameter.requires_grad = False[0m
+[0m(238) parameter.requires_grad = False[0m
+[0m(239) parameter.requires_grad = False[0m
+[0m(240) parameter.requires_grad = False[0m
+[0m(241) parameter.requires_grad = False[0m
+[0m(242) parameter.requires_grad = False[0m
+[0m(243) parameter.requires_grad = False[0m
+[0m(244) parameter.requires_grad = False[0m
+[0m(245) parameter.requires_grad = False[0m
+[0m(246) parameter.requires_grad = False[0m
+[0m(247) parameter.requires_grad = False[0m
+[0m(248) parameter.requires_grad = False[0m
+[0m(249) parameter.requires_grad = False[0m
+[0m(250) parameter.requires_grad = False[0m
+[0m(251) parameter.requires_grad = False[0m
+[0m(252) parameter.requires_grad = False[0m
+[0m(253) parameter.requires_grad = False[0m
+[0m(254) parameter.requires_grad = False[0m
+[0m(255) parameter.requires_grad = False[0m
+[0m(256) parameter.requires_grad = False[0m
+[0m(257) parameter.requires_grad = False[0m
+[0m(258) parameter.requires_grad = False[0m
+[0m(259) parameter.requires_grad = False[0m
+[0m(260) parameter.requires_grad = False[0m
+[0m(261) parameter.requires_grad = False[0m
+[0m(262) parameter.requires_grad = False[0m
+[0m(263) parameter.requires_grad = False[0m
+[0m(264) parameter.requires_grad = False[0m
+[0m(265) parameter.requires_grad = False[0m
+[0m(266) parameter.requires_grad = False[0m
+[0m(267) parameter.requires_grad = False[0m
+[0m(268) parameter.requires_grad = False[0m
+[0m(269) parameter.requires_grad = False[0m
+[0m(270) parameter.requires_grad = False[0m
+[0m(271) parameter.requires_grad = False[0m
+[0m(272) parameter.requires_grad = False[0m
+[0m(273) parameter.requires_grad = False[0m
+[0m(274) parameter.requires_grad = False[0m
+[0m(275) parameter.requires_grad = False[0m
+[0m(276) parameter.requires_grad = False[0m
+[0m(277) parameter.requires_grad = False[0m
+[0m(278) parameter.requires_grad = False[0m
+[0m(279) parameter.requires_grad = False[0m
+[0m(280) parameter.requires_grad = False[0m
+[0m(281) parameter.requires_grad = False[0m
+[0m(282) parameter.requires_grad = False[0m
+[0m(283) parameter.requires_grad = False[0m
+[0m(284) parameter.requires_grad = False[0m
+[0m(285) parameter.requires_grad = False[0m
+[0m(286) parameter.requires_grad = False[0m
+[0m(287) parameter.requires_grad = False[0m
+[0m(288) parameter.requires_grad = False[0m
+[0m(289) parameter.requires_grad = False[0m
+[0m(290) parameter.requires_grad = True[0m
+[0m(291) parameter.requires_grad = True[0m

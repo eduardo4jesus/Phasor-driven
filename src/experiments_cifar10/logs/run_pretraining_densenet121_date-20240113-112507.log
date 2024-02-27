@@ -1,0 +1,2126 @@
+Provided parameters: main(total_num_epochs=4,freeze_features_epochs=2, batch_size=32)
+Original model architecture is DenseNet(
+  (features): Sequential(
+    (conv0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (norm0): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu0): ReLU(inplace=True)
+    (pool0): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (denseblock1): _DenseBlock(
+      (denselayer1): _DenseLayer(
+        (norm1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer2): _DenseLayer(
+        (norm1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(96, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer3): _DenseLayer(
+        (norm1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer4): _DenseLayer(
+        (norm1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer5): _DenseLayer(
+        (norm1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer6): _DenseLayer(
+        (norm1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(224, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+    (transition1): _Transition(
+      (norm): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    )
+    (denseblock2): _DenseBlock(
+      (denselayer1): _DenseLayer(
+        (norm1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(128, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer2): _DenseLayer(
+        (norm1): BatchNorm2d(160, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(160, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer3): _DenseLayer(
+        (norm1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer4): _DenseLayer(
+        (norm1): BatchNorm2d(224, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(224, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer5): _DenseLayer(
+        (norm1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer6): _DenseLayer(
+        (norm1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(288, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer7): _DenseLayer(
+        (norm1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer8): _DenseLayer(
+        (norm1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(352, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer9): _DenseLayer(
+        (norm1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer10): _DenseLayer(
+        (norm1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(416, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer11): _DenseLayer(
+        (norm1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(448, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer12): _DenseLayer(
+        (norm1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(480, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+    (transition2): _Transition(
+      (norm): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    )
+    (denseblock3): _DenseBlock(
+      (denselayer1): _DenseLayer(
+        (norm1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer2): _DenseLayer(
+        (norm1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(288, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer3): _DenseLayer(
+        (norm1): BatchNorm2d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(320, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer4): _DenseLayer(
+        (norm1): BatchNorm2d(352, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(352, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer5): _DenseLayer(
+        (norm1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer6): _DenseLayer(
+        (norm1): BatchNorm2d(416, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(416, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer7): _DenseLayer(
+        (norm1): BatchNorm2d(448, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(448, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer8): _DenseLayer(
+        (norm1): BatchNorm2d(480, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(480, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer9): _DenseLayer(
+        (norm1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer10): _DenseLayer(
+        (norm1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(544, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer11): _DenseLayer(
+        (norm1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer12): _DenseLayer(
+        (norm1): BatchNorm2d(608, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(608, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer13): _DenseLayer(
+        (norm1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer14): _DenseLayer(
+        (norm1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(672, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer15): _DenseLayer(
+        (norm1): BatchNorm2d(704, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(704, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer16): _DenseLayer(
+        (norm1): BatchNorm2d(736, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(736, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer17): _DenseLayer(
+        (norm1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer18): _DenseLayer(
+        (norm1): BatchNorm2d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(800, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer19): _DenseLayer(
+        (norm1): BatchNorm2d(832, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(832, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer20): _DenseLayer(
+        (norm1): BatchNorm2d(864, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(864, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer21): _DenseLayer(
+        (norm1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(896, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer22): _DenseLayer(
+        (norm1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(928, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer23): _DenseLayer(
+        (norm1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(960, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer24): _DenseLayer(
+        (norm1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(992, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+    (transition3): _Transition(
+      (norm): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (pool): AvgPool2d(kernel_size=2, stride=2, padding=0)
+    )
+    (denseblock4): _DenseBlock(
+      (denselayer1): _DenseLayer(
+        (norm1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer2): _DenseLayer(
+        (norm1): BatchNorm2d(544, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(544, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer3): _DenseLayer(
+        (norm1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(576, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer4): _DenseLayer(
+        (norm1): BatchNorm2d(608, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(608, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer5): _DenseLayer(
+        (norm1): BatchNorm2d(640, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(640, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer6): _DenseLayer(
+        (norm1): BatchNorm2d(672, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(672, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer7): _DenseLayer(
+        (norm1): BatchNorm2d(704, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(704, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer8): _DenseLayer(
+        (norm1): BatchNorm2d(736, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(736, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer9): _DenseLayer(
+        (norm1): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(768, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer10): _DenseLayer(
+        (norm1): BatchNorm2d(800, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(800, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer11): _DenseLayer(
+        (norm1): BatchNorm2d(832, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(832, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer12): _DenseLayer(
+        (norm1): BatchNorm2d(864, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(864, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer13): _DenseLayer(
+        (norm1): BatchNorm2d(896, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(896, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer14): _DenseLayer(
+        (norm1): BatchNorm2d(928, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(928, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer15): _DenseLayer(
+        (norm1): BatchNorm2d(960, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(960, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+      (denselayer16): _DenseLayer(
+        (norm1): BatchNorm2d(992, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu1): ReLU(inplace=True)
+        (conv1): Conv2d(992, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (norm2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu2): ReLU(inplace=True)
+        (conv2): Conv2d(128, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      )
+    )
+    (norm5): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (classifier): Linear(in_features=1024, out_features=1000, bias=True)
+)
+Model classifier architecture is Linear(in_features=1024, out_features=10, bias=True)
+Features frozen on epoch 0
+(0) parameter.requires_grad = False
+(1) parameter.requires_grad = False
+(2) parameter.requires_grad = False
+(3) parameter.requires_grad = False
+(4) parameter.requires_grad = False
+(5) parameter.requires_grad = False
+(6) parameter.requires_grad = False
+(7) parameter.requires_grad = False
+(8) parameter.requires_grad = False
+(9) parameter.requires_grad = False
+(10) parameter.requires_grad = False
+(11) parameter.requires_grad = False
+(12) parameter.requires_grad = False
+(13) parameter.requires_grad = False
+(14) parameter.requires_grad = False
+(15) parameter.requires_grad = False
+(16) parameter.requires_grad = False
+(17) parameter.requires_grad = False
+(18) parameter.requires_grad = False
+(19) parameter.requires_grad = False
+(20) parameter.requires_grad = False
+(21) parameter.requires_grad = False
+(22) parameter.requires_grad = False
+(23) parameter.requires_grad = False
+(24) parameter.requires_grad = False
+(25) parameter.requires_grad = False
+(26) parameter.requires_grad = False
+(27) parameter.requires_grad = False
+(28) parameter.requires_grad = False
+(29) parameter.requires_grad = False
+(30) parameter.requires_grad = False
+(31) parameter.requires_grad = False
+(32) parameter.requires_grad = False
+(33) parameter.requires_grad = False
+(34) parameter.requires_grad = False
+(35) parameter.requires_grad = False
+(36) parameter.requires_grad = False
+(37) parameter.requires_grad = False
+(38) parameter.requires_grad = False
+(39) parameter.requires_grad = False
+(40) parameter.requires_grad = False
+(41) parameter.requires_grad = False
+(42) parameter.requires_grad = False
+(43) parameter.requires_grad = False
+(44) parameter.requires_grad = False
+(45) parameter.requires_grad = False
+(46) parameter.requires_grad = False
+(47) parameter.requires_grad = False
+(48) parameter.requires_grad = False
+(49) parameter.requires_grad = False
+(50) parameter.requires_grad = False
+(51) parameter.requires_grad = False
+(52) parameter.requires_grad = False
+(53) parameter.requires_grad = False
+(54) parameter.requires_grad = False
+(55) parameter.requires_grad = False
+(56) parameter.requires_grad = False
+(57) parameter.requires_grad = False
+(58) parameter.requires_grad = False
+(59) parameter.requires_grad = False
+(60) parameter.requires_grad = False
+(61) parameter.requires_grad = False
+(62) parameter.requires_grad = False
+(63) parameter.requires_grad = False
+(64) parameter.requires_grad = False
+(65) parameter.requires_grad = False
+(66) parameter.requires_grad = False
+(67) parameter.requires_grad = False
+(68) parameter.requires_grad = False
+(69) parameter.requires_grad = False
+(70) parameter.requires_grad = False
+(71) parameter.requires_grad = False
+(72) parameter.requires_grad = False
+(73) parameter.requires_grad = False
+(74) parameter.requires_grad = False
+(75) parameter.requires_grad = False
+(76) parameter.requires_grad = False
+(77) parameter.requires_grad = False
+(78) parameter.requires_grad = False
+(79) parameter.requires_grad = False
+(80) parameter.requires_grad = False
+(81) parameter.requires_grad = False
+(82) parameter.requires_grad = False
+(83) parameter.requires_grad = False
+(84) parameter.requires_grad = False
+(85) parameter.requires_grad = False
+(86) parameter.requires_grad = False
+(87) parameter.requires_grad = False
+(88) parameter.requires_grad = False
+(89) parameter.requires_grad = False
+(90) parameter.requires_grad = False
+(91) parameter.requires_grad = False
+(92) parameter.requires_grad = False
+(93) parameter.requires_grad = False
+(94) parameter.requires_grad = False
+(95) parameter.requires_grad = False
+(96) parameter.requires_grad = False
+(97) parameter.requires_grad = False
+(98) parameter.requires_grad = False
+(99) parameter.requires_grad = False
+(100) parameter.requires_grad = False
+(101) parameter.requires_grad = False
+(102) parameter.requires_grad = False
+(103) parameter.requires_grad = False
+(104) parameter.requires_grad = False
+(105) parameter.requires_grad = False
+(106) parameter.requires_grad = False
+(107) parameter.requires_grad = False
+(108) parameter.requires_grad = False
+(109) parameter.requires_grad = False
+(110) parameter.requires_grad = False
+(111) parameter.requires_grad = False
+(112) parameter.requires_grad = False
+(113) parameter.requires_grad = False
+(114) parameter.requires_grad = False
+(115) parameter.requires_grad = False
+(116) parameter.requires_grad = False
+(117) parameter.requires_grad = False
+(118) parameter.requires_grad = False
+(119) parameter.requires_grad = False
+(120) parameter.requires_grad = False
+(121) parameter.requires_grad = False
+(122) parameter.requires_grad = False
+(123) parameter.requires_grad = False
+(124) parameter.requires_grad = False
+(125) parameter.requires_grad = False
+(126) parameter.requires_grad = False
+(127) parameter.requires_grad = False
+(128) parameter.requires_grad = False
+(129) parameter.requires_grad = False
+(130) parameter.requires_grad = False
+(131) parameter.requires_grad = False
+(132) parameter.requires_grad = False
+(133) parameter.requires_grad = False
+(134) parameter.requires_grad = False
+(135) parameter.requires_grad = False
+(136) parameter.requires_grad = False
+(137) parameter.requires_grad = False
+(138) parameter.requires_grad = False
+(139) parameter.requires_grad = False
+(140) parameter.requires_grad = False
+(141) parameter.requires_grad = False
+(142) parameter.requires_grad = False
+(143) parameter.requires_grad = False
+(144) parameter.requires_grad = False
+(145) parameter.requires_grad = False
+(146) parameter.requires_grad = False
+(147) parameter.requires_grad = False
+(148) parameter.requires_grad = False
+(149) parameter.requires_grad = False
+(150) parameter.requires_grad = False
+(151) parameter.requires_grad = False
+(152) parameter.requires_grad = False
+(153) parameter.requires_grad = False
+(154) parameter.requires_grad = False
+(155) parameter.requires_grad = False
+(156) parameter.requires_grad = False
+(157) parameter.requires_grad = False
+(158) parameter.requires_grad = False
+(159) parameter.requires_grad = False
+(160) parameter.requires_grad = False
+(161) parameter.requires_grad = False
+(162) parameter.requires_grad = False
+(163) parameter.requires_grad = False
+(164) parameter.requires_grad = False
+(165) parameter.requires_grad = False
+(166) parameter.requires_grad = False
+(167) parameter.requires_grad = False
+(168) parameter.requires_grad = False
+(169) parameter.requires_grad = False
+(170) parameter.requires_grad = False
+(171) parameter.requires_grad = False
+(172) parameter.requires_grad = False
+(173) parameter.requires_grad = False
+(174) parameter.requires_grad = False
+(175) parameter.requires_grad = False
+(176) parameter.requires_grad = False
+(177) parameter.requires_grad = False
+(178) parameter.requires_grad = False
+(179) parameter.requires_grad = False
+(180) parameter.requires_grad = False
+(181) parameter.requires_grad = False
+(182) parameter.requires_grad = False
+(183) parameter.requires_grad = False
+(184) parameter.requires_grad = False
+(185) parameter.requires_grad = False
+(186) parameter.requires_grad = False
+(187) parameter.requires_grad = False
+(188) parameter.requires_grad = False
+(189) parameter.requires_grad = False
+(190) parameter.requires_grad = False
+(191) parameter.requires_grad = False
+(192) parameter.requires_grad = False
+(193) parameter.requires_grad = False
+(194) parameter.requires_grad = False
+(195) parameter.requires_grad = False
+(196) parameter.requires_grad = False
+(197) parameter.requires_grad = False
+(198) parameter.requires_grad = False
+(199) parameter.requires_grad = False
+(200) parameter.requires_grad = False
+(201) parameter.requires_grad = False
+(202) parameter.requires_grad = False
+(203) parameter.requires_grad = False
+(204) parameter.requires_grad = False
+(205) parameter.requires_grad = False
+(206) parameter.requires_grad = False
+(207) parameter.requires_grad = False
+(208) parameter.requires_grad = False
+(209) parameter.requires_grad = False
+(210) parameter.requires_grad = False
+(211) parameter.requires_grad = False
+(212) parameter.requires_grad = False
+(213) parameter.requires_grad = False
+(214) parameter.requires_grad = False
+(215) parameter.requires_grad = False
+(216) parameter.requires_grad = False
+(217) parameter.requires_grad = False
+(218) parameter.requires_grad = False
+(219) parameter.requires_grad = False
+(220) parameter.requires_grad = False
+(221) parameter.requires_grad = False
+(222) parameter.requires_grad = False
+(223) parameter.requires_grad = False
+(224) parameter.requires_grad = False
+(225) parameter.requires_grad = False
+(226) parameter.requires_grad = False
+(227) parameter.requires_grad = False
+(228) parameter.requires_grad = False
+(229) parameter.requires_grad = False
+(230) parameter.requires_grad = False
+(231) parameter.requires_grad = False
+(232) parameter.requires_grad = False
+(233) parameter.requires_grad = False
+(234) parameter.requires_grad = False
+(235) parameter.requires_grad = False
+(236) parameter.requires_grad = False
+(237) parameter.requires_grad = False
+(238) parameter.requires_grad = False
+(239) parameter.requires_grad = False
+(240) parameter.requires_grad = False
+(241) parameter.requires_grad = False
+(242) parameter.requires_grad = False
+(243) parameter.requires_grad = False
+(244) parameter.requires_grad = False
+(245) parameter.requires_grad = False
+(246) parameter.requires_grad = False
+(247) parameter.requires_grad = False
+(248) parameter.requires_grad = False
+(249) parameter.requires_grad = False
+(250) parameter.requires_grad = False
+(251) parameter.requires_grad = False
+(252) parameter.requires_grad = False
+(253) parameter.requires_grad = False
+(254) parameter.requires_grad = False
+(255) parameter.requires_grad = False
+(256) parameter.requires_grad = False
+(257) parameter.requires_grad = False
+(258) parameter.requires_grad = False
+(259) parameter.requires_grad = False
+(260) parameter.requires_grad = False
+(261) parameter.requires_grad = False
+(262) parameter.requires_grad = False
+(263) parameter.requires_grad = False
+(264) parameter.requires_grad = False
+(265) parameter.requires_grad = False
+(266) parameter.requires_grad = False
+(267) parameter.requires_grad = False
+(268) parameter.requires_grad = False
+(269) parameter.requires_grad = False
+(270) parameter.requires_grad = False
+(271) parameter.requires_grad = False
+(272) parameter.requires_grad = False
+(273) parameter.requires_grad = False
+(274) parameter.requires_grad = False
+(275) parameter.requires_grad = False
+(276) parameter.requires_grad = False
+(277) parameter.requires_grad = False
+(278) parameter.requires_grad = False
+(279) parameter.requires_grad = False
+(280) parameter.requires_grad = False
+(281) parameter.requires_grad = False
+(282) parameter.requires_grad = False
+(283) parameter.requires_grad = False
+(284) parameter.requires_grad = False
+(285) parameter.requires_grad = False
+(286) parameter.requires_grad = False
+(287) parameter.requires_grad = False
+(288) parameter.requires_grad = False
+(289) parameter.requires_grad = False
+(290) parameter.requires_grad = False
+(291) parameter.requires_grad = False
+(292) parameter.requires_grad = False
+(293) parameter.requires_grad = False
+(294) parameter.requires_grad = False
+(295) parameter.requires_grad = False
+(296) parameter.requires_grad = False
+(297) parameter.requires_grad = False
+(298) parameter.requires_grad = False
+(299) parameter.requires_grad = False
+(300) parameter.requires_grad = False
+(301) parameter.requires_grad = False
+(302) parameter.requires_grad = False
+(303) parameter.requires_grad = False
+(304) parameter.requires_grad = False
+(305) parameter.requires_grad = False
+(306) parameter.requires_grad = False
+(307) parameter.requires_grad = False
+(308) parameter.requires_grad = False
+(309) parameter.requires_grad = False
+(310) parameter.requires_grad = False
+(311) parameter.requires_grad = False
+(312) parameter.requires_grad = False
+(313) parameter.requires_grad = False
+(314) parameter.requires_grad = False
+(315) parameter.requires_grad = False
+(316) parameter.requires_grad = False
+(317) parameter.requires_grad = False
+(318) parameter.requires_grad = False
+(319) parameter.requires_grad = False
+(320) parameter.requires_grad = False
+(321) parameter.requires_grad = False
+(322) parameter.requires_grad = False
+(323) parameter.requires_grad = False
+(324) parameter.requires_grad = False
+(325) parameter.requires_grad = False
+(326) parameter.requires_grad = False
+(327) parameter.requires_grad = False
+(328) parameter.requires_grad = False
+(329) parameter.requires_grad = False
+(330) parameter.requires_grad = False
+(331) parameter.requires_grad = False
+(332) parameter.requires_grad = False
+(333) parameter.requires_grad = False
+(334) parameter.requires_grad = False
+(335) parameter.requires_grad = False
+(336) parameter.requires_grad = False
+(337) parameter.requires_grad = False
+(338) parameter.requires_grad = False
+(339) parameter.requires_grad = False
+(340) parameter.requires_grad = False
+(341) parameter.requires_grad = False
+(342) parameter.requires_grad = False
+(343) parameter.requires_grad = False
+(344) parameter.requires_grad = False
+(345) parameter.requires_grad = False
+(346) parameter.requires_grad = False
+(347) parameter.requires_grad = False
+(348) parameter.requires_grad = False
+(349) parameter.requires_grad = False
+(350) parameter.requires_grad = False
+(351) parameter.requires_grad = False
+(352) parameter.requires_grad = False
+(353) parameter.requires_grad = False
+(354) parameter.requires_grad = False
+(355) parameter.requires_grad = False
+(356) parameter.requires_grad = False
+(357) parameter.requires_grad = False
+(358) parameter.requires_grad = False
+(359) parameter.requires_grad = False
+(360) parameter.requires_grad = False
+(361) parameter.requires_grad = False
+(362) parameter.requires_grad = True
+(363) parameter.requires_grad = True
+Training: epoch=0 step=39/1563 loss=2.31672 accuracy=11.95312 runtime_forward_ms=108.62580 runtime_backward_ms=0.95702.
+Training: epoch=0 step=79/1563 loss=2.21411 accuracy=20.54688 runtime_forward_ms=82.78281 runtime_backward_ms=1.14207.
+Training: epoch=0 step=119/1563 loss=2.11899 accuracy=26.56250 runtime_forward_ms=82.67494 runtime_backward_ms=0.86718.
+Training: epoch=0 step=159/1563 loss=2.03483 accuracy=34.06250 runtime_forward_ms=82.71581 runtime_backward_ms=0.83617.
+Training: epoch=0 step=199/1563 loss=1.94716 accuracy=40.46875 runtime_forward_ms=82.64977 runtime_backward_ms=0.83103.
+Training: epoch=0 step=239/1563 loss=1.87373 accuracy=44.53125 runtime_forward_ms=82.69878 runtime_backward_ms=0.86144.
+Training: epoch=0 step=279/1563 loss=1.80014 accuracy=48.90625 runtime_forward_ms=82.69219 runtime_backward_ms=0.86144.
+Training: epoch=0 step=319/1563 loss=1.73807 accuracy=55.70312 runtime_forward_ms=82.66550 runtime_backward_ms=0.86252.
+Training: epoch=0 step=359/1563 loss=1.68212 accuracy=55.00000 runtime_forward_ms=82.70338 runtime_backward_ms=0.83886.
+Training: epoch=0 step=399/1563 loss=1.62714 accuracy=58.28125 runtime_forward_ms=82.69303 runtime_backward_ms=0.88635.
+Training: epoch=0 step=439/1563 loss=1.60435 accuracy=58.20312 runtime_forward_ms=82.71544 runtime_backward_ms=0.81827.
+Training: epoch=0 step=479/1563 loss=1.54270 accuracy=57.50000 runtime_forward_ms=82.68676 runtime_backward_ms=0.84996.
+Training: epoch=0 step=519/1563 loss=1.49578 accuracy=61.01562 runtime_forward_ms=82.69852 runtime_backward_ms=0.82555.
+Training: epoch=0 step=559/1563 loss=1.48519 accuracy=61.79688 runtime_forward_ms=82.68774 runtime_backward_ms=0.85847.
+Training: epoch=0 step=599/1563 loss=1.42151 accuracy=62.57812 runtime_forward_ms=82.69748 runtime_backward_ms=0.82237.
+Training: epoch=0 step=639/1563 loss=1.41065 accuracy=62.81250 runtime_forward_ms=82.70436 runtime_backward_ms=0.83342.
+Training: epoch=0 step=679/1563 loss=1.36808 accuracy=62.81250 runtime_forward_ms=82.71168 runtime_backward_ms=0.80764.
+Training: epoch=0 step=719/1563 loss=1.33331 accuracy=66.32812 runtime_forward_ms=82.68762 runtime_backward_ms=0.80326.
+Training: epoch=0 step=759/1563 loss=1.30966 accuracy=66.01562 runtime_forward_ms=82.71227 runtime_backward_ms=0.82194.
+Training: epoch=0 step=799/1563 loss=1.32439 accuracy=63.28125 runtime_forward_ms=82.70965 runtime_backward_ms=0.81345.
+Training: epoch=0 step=839/1563 loss=1.29525 accuracy=65.78125 runtime_forward_ms=82.71589 runtime_backward_ms=0.81615.
+Training: epoch=0 step=879/1563 loss=1.26616 accuracy=68.12500 runtime_forward_ms=82.65834 runtime_backward_ms=0.67900.
+Training: epoch=0 step=919/1563 loss=1.19724 accuracy=70.39062 runtime_forward_ms=82.64599 runtime_backward_ms=0.64620.
+Training: epoch=0 step=959/1563 loss=1.22438 accuracy=67.73438 runtime_forward_ms=82.65749 runtime_backward_ms=0.62740.
+Training: epoch=0 step=999/1563 loss=1.19050 accuracy=69.21875 runtime_forward_ms=82.63719 runtime_backward_ms=0.63969.
+Training: epoch=0 step=1039/1563 loss=1.20875 accuracy=66.48438 runtime_forward_ms=82.64891 runtime_backward_ms=0.63784.
+Training: epoch=0 step=1079/1563 loss=1.17364 accuracy=67.65625 runtime_forward_ms=82.63687 runtime_backward_ms=0.64996.
+Training: epoch=0 step=1119/1563 loss=1.18195 accuracy=66.17188 runtime_forward_ms=82.62945 runtime_backward_ms=0.67277.
+Training: epoch=0 step=1159/1563 loss=1.15083 accuracy=69.14062 runtime_forward_ms=82.63325 runtime_backward_ms=0.65910.
+Training: epoch=0 step=1199/1563 loss=1.11289 accuracy=68.43750 runtime_forward_ms=82.68446 runtime_backward_ms=0.77213.
+Training: epoch=0 step=1239/1563 loss=1.13096 accuracy=68.67188 runtime_forward_ms=82.69851 runtime_backward_ms=0.80976.
+Training: epoch=0 step=1279/1563 loss=1.09153 accuracy=70.07812 runtime_forward_ms=82.67809 runtime_backward_ms=0.78636.
+Training: epoch=0 step=1319/1563 loss=1.08636 accuracy=70.23438 runtime_forward_ms=82.68962 runtime_backward_ms=0.85950.
+Training: epoch=0 step=1359/1563 loss=1.10387 accuracy=69.37500 runtime_forward_ms=82.69373 runtime_backward_ms=0.75911.
+Training: epoch=0 step=1399/1563 loss=1.06131 accuracy=68.04688 runtime_forward_ms=82.63685 runtime_backward_ms=0.64865.
+Training: epoch=0 step=1439/1563 loss=1.05619 accuracy=69.29688 runtime_forward_ms=82.64775 runtime_backward_ms=0.68970.
+Training: epoch=0 step=1479/1563 loss=1.05415 accuracy=71.09375 runtime_forward_ms=82.68906 runtime_backward_ms=0.74757.
+Training: epoch=0 step=1519/1563 loss=1.05724 accuracy=70.93750 runtime_forward_ms=82.69637 runtime_backward_ms=0.81786.
+Training: epoch=0 step=1559/1563 loss=1.05972 accuracy=69.60938 runtime_forward_ms=82.72075 runtime_backward_ms=0.78889.
+Validation: epoch=0 training_step=1562 loss=0.98235 accuracy=72.18000 runtime_forward_ms=74.50919.
+--- End of Epoch: epoch=0 training_step=1562 training_loss=1.05972 training_accuracy=69.60938 validation_loss=0.98235 validation_accuracy=72.18000.
+Features frozen on epoch 1
+(0) parameter.requires_grad = False
+(1) parameter.requires_grad = False
+(2) parameter.requires_grad = False
+(3) parameter.requires_grad = False
+(4) parameter.requires_grad = False
+(5) parameter.requires_grad = False
+(6) parameter.requires_grad = False
+(7) parameter.requires_grad = False
+(8) parameter.requires_grad = False
+(9) parameter.requires_grad = False
+(10) parameter.requires_grad = False
+(11) parameter.requires_grad = False
+(12) parameter.requires_grad = False
+(13) parameter.requires_grad = False
+(14) parameter.requires_grad = False
+(15) parameter.requires_grad = False
+(16) parameter.requires_grad = False
+(17) parameter.requires_grad = False
+(18) parameter.requires_grad = False
+(19) parameter.requires_grad = False
+(20) parameter.requires_grad = False
+(21) parameter.requires_grad = False
+(22) parameter.requires_grad = False
+(23) parameter.requires_grad = False
+(24) parameter.requires_grad = False
+(25) parameter.requires_grad = False
+(26) parameter.requires_grad = False
+(27) parameter.requires_grad = False
+(28) parameter.requires_grad = False
+(29) parameter.requires_grad = False
+(30) parameter.requires_grad = False
+(31) parameter.requires_grad = False
+(32) parameter.requires_grad = False
+(33) parameter.requires_grad = False
+(34) parameter.requires_grad = False
+(35) parameter.requires_grad = False
+(36) parameter.requires_grad = False
+(37) parameter.requires_grad = False
+(38) parameter.requires_grad = False
+(39) parameter.requires_grad = False
+(40) parameter.requires_grad = False
+(41) parameter.requires_grad = False
+(42) parameter.requires_grad = False
+(43) parameter.requires_grad = False
+(44) parameter.requires_grad = False
+(45) parameter.requires_grad = False
+(46) parameter.requires_grad = False
+(47) parameter.requires_grad = False
+(48) parameter.requires_grad = False
+(49) parameter.requires_grad = False
+(50) parameter.requires_grad = False
+(51) parameter.requires_grad = False
+(52) parameter.requires_grad = False
+(53) parameter.requires_grad = False
+(54) parameter.requires_grad = False
+(55) parameter.requires_grad = False
+(56) parameter.requires_grad = False
+(57) parameter.requires_grad = False
+(58) parameter.requires_grad = False
+(59) parameter.requires_grad = False
+(60) parameter.requires_grad = False
+(61) parameter.requires_grad = False
+(62) parameter.requires_grad = False
+(63) parameter.requires_grad = False
+(64) parameter.requires_grad = False
+(65) parameter.requires_grad = False
+(66) parameter.requires_grad = False
+(67) parameter.requires_grad = False
+(68) parameter.requires_grad = False
+(69) parameter.requires_grad = False
+(70) parameter.requires_grad = False
+(71) parameter.requires_grad = False
+(72) parameter.requires_grad = False
+(73) parameter.requires_grad = False
+(74) parameter.requires_grad = False
+(75) parameter.requires_grad = False
+(76) parameter.requires_grad = False
+(77) parameter.requires_grad = False
+(78) parameter.requires_grad = False
+(79) parameter.requires_grad = False
+(80) parameter.requires_grad = False
+(81) parameter.requires_grad = False
+(82) parameter.requires_grad = False
+(83) parameter.requires_grad = False
+(84) parameter.requires_grad = False
+(85) parameter.requires_grad = False
+(86) parameter.requires_grad = False
+(87) parameter.requires_grad = False
+(88) parameter.requires_grad = False
+(89) parameter.requires_grad = False
+(90) parameter.requires_grad = False
+(91) parameter.requires_grad = False
+(92) parameter.requires_grad = False
+(93) parameter.requires_grad = False
+(94) parameter.requires_grad = False
+(95) parameter.requires_grad = False
+(96) parameter.requires_grad = False
+(97) parameter.requires_grad = False
+(98) parameter.requires_grad = False
+(99) parameter.requires_grad = False
+(100) parameter.requires_grad = False
+(101) parameter.requires_grad = False
+(102) parameter.requires_grad = False
+(103) parameter.requires_grad = False
+(104) parameter.requires_grad = False
+(105) parameter.requires_grad = False
+(106) parameter.requires_grad = False
+(107) parameter.requires_grad = False
+(108) parameter.requires_grad = False
+(109) parameter.requires_grad = False
+(110) parameter.requires_grad = False
+(111) parameter.requires_grad = False
+(112) parameter.requires_grad = False
+(113) parameter.requires_grad = False
+(114) parameter.requires_grad = False
+(115) parameter.requires_grad = False
+(116) parameter.requires_grad = False
+(117) parameter.requires_grad = False
+(118) parameter.requires_grad = False
+(119) parameter.requires_grad = False
+(120) parameter.requires_grad = False
+(121) parameter.requires_grad = False
+(122) parameter.requires_grad = False
+(123) parameter.requires_grad = False
+(124) parameter.requires_grad = False
+(125) parameter.requires_grad = False
+(126) parameter.requires_grad = False
+(127) parameter.requires_grad = False
+(128) parameter.requires_grad = False
+(129) parameter.requires_grad = False
+(130) parameter.requires_grad = False
+(131) parameter.requires_grad = False
+(132) parameter.requires_grad = False
+(133) parameter.requires_grad = False
+(134) parameter.requires_grad = False
+(135) parameter.requires_grad = False
+(136) parameter.requires_grad = False
+(137) parameter.requires_grad = False
+(138) parameter.requires_grad = False
+(139) parameter.requires_grad = False
+(140) parameter.requires_grad = False
+(141) parameter.requires_grad = False
+(142) parameter.requires_grad = False
+(143) parameter.requires_grad = False
+(144) parameter.requires_grad = False
+(145) parameter.requires_grad = False
+(146) parameter.requires_grad = False
+(147) parameter.requires_grad = False
+(148) parameter.requires_grad = False
+(149) parameter.requires_grad = False
+(150) parameter.requires_grad = False
+(151) parameter.requires_grad = False
+(152) parameter.requires_grad = False
+(153) parameter.requires_grad = False
+(154) parameter.requires_grad = False
+(155) parameter.requires_grad = False
+(156) parameter.requires_grad = False
+(157) parameter.requires_grad = False
+(158) parameter.requires_grad = False
+(159) parameter.requires_grad = False
+(160) parameter.requires_grad = False
+(161) parameter.requires_grad = False
+(162) parameter.requires_grad = False
+(163) parameter.requires_grad = False
+(164) parameter.requires_grad = False
+(165) parameter.requires_grad = False
+(166) parameter.requires_grad = False
+(167) parameter.requires_grad = False
+(168) parameter.requires_grad = False
+(169) parameter.requires_grad = False
+(170) parameter.requires_grad = False
+(171) parameter.requires_grad = False
+(172) parameter.requires_grad = False
+(173) parameter.requires_grad = False
+(174) parameter.requires_grad = False
+(175) parameter.requires_grad = False
+(176) parameter.requires_grad = False
+(177) parameter.requires_grad = False
+(178) parameter.requires_grad = False
+(179) parameter.requires_grad = False
+(180) parameter.requires_grad = False
+(181) parameter.requires_grad = False
+(182) parameter.requires_grad = False
+(183) parameter.requires_grad = False
+(184) parameter.requires_grad = False
+(185) parameter.requires_grad = False
+(186) parameter.requires_grad = False
+(187) parameter.requires_grad = False
+(188) parameter.requires_grad = False
+(189) parameter.requires_grad = False
+(190) parameter.requires_grad = False
+(191) parameter.requires_grad = False
+(192) parameter.requires_grad = False
+(193) parameter.requires_grad = False
+(194) parameter.requires_grad = False
+(195) parameter.requires_grad = False
+(196) parameter.requires_grad = False
+(197) parameter.requires_grad = False
+(198) parameter.requires_grad = False
+(199) parameter.requires_grad = False
+(200) parameter.requires_grad = False
+(201) parameter.requires_grad = False
+(202) parameter.requires_grad = False
+(203) parameter.requires_grad = False
+(204) parameter.requires_grad = False
+(205) parameter.requires_grad = False
+(206) parameter.requires_grad = False
+(207) parameter.requires_grad = False
+(208) parameter.requires_grad = False
+(209) parameter.requires_grad = False
+(210) parameter.requires_grad = False
+(211) parameter.requires_grad = False
+(212) parameter.requires_grad = False
+(213) parameter.requires_grad = False
+(214) parameter.requires_grad = False
+(215) parameter.requires_grad = False
+(216) parameter.requires_grad = False
+(217) parameter.requires_grad = False
+(218) parameter.requires_grad = False
+(219) parameter.requires_grad = False
+(220) parameter.requires_grad = False
+(221) parameter.requires_grad = False
+(222) parameter.requires_grad = False
+(223) parameter.requires_grad = False
+(224) parameter.requires_grad = False
+(225) parameter.requires_grad = False
+(226) parameter.requires_grad = False
+(227) parameter.requires_grad = False
+(228) parameter.requires_grad = False
+(229) parameter.requires_grad = False
+(230) parameter.requires_grad = False
+(231) parameter.requires_grad = False
+(232) parameter.requires_grad = False
+(233) parameter.requires_grad = False
+(234) parameter.requires_grad = False
+(235) parameter.requires_grad = False
+(236) parameter.requires_grad = False
+(237) parameter.requires_grad = False
+(238) parameter.requires_grad = False
+(239) parameter.requires_grad = False
+(240) parameter.requires_grad = False
+(241) parameter.requires_grad = False
+(242) parameter.requires_grad = False
+(243) parameter.requires_grad = False
+(244) parameter.requires_grad = False
+(245) parameter.requires_grad = False
+(246) parameter.requires_grad = False
+(247) parameter.requires_grad = False
+(248) parameter.requires_grad = False
+(249) parameter.requires_grad = False
+(250) parameter.requires_grad = False
+(251) parameter.requires_grad = False
+(252) parameter.requires_grad = False
+(253) parameter.requires_grad = False
+(254) parameter.requires_grad = False
+(255) parameter.requires_grad = False
+(256) parameter.requires_grad = False
+(257) parameter.requires_grad = False
+(258) parameter.requires_grad = False
+(259) parameter.requires_grad = False
+(260) parameter.requires_grad = False
+(261) parameter.requires_grad = False
+(262) parameter.requires_grad = False
+(263) parameter.requires_grad = False
+(264) parameter.requires_grad = False
+(265) parameter.requires_grad = False
+(266) parameter.requires_grad = False
+(267) parameter.requires_grad = False
+(268) parameter.requires_grad = False
+(269) parameter.requires_grad = False
+(270) parameter.requires_grad = False
+(271) parameter.requires_grad = False
+(272) parameter.requires_grad = False
+(273) parameter.requires_grad = False
+(274) parameter.requires_grad = False
+(275) parameter.requires_grad = False
+(276) parameter.requires_grad = False
+(277) parameter.requires_grad = False
+(278) parameter.requires_grad = False
+(279) parameter.requires_grad = False
+(280) parameter.requires_grad = False
+(281) parameter.requires_grad = False
+(282) parameter.requires_grad = False
+(283) parameter.requires_grad = False
+(284) parameter.requires_grad = False
+(285) parameter.requires_grad = False
+(286) parameter.requires_grad = False
+(287) parameter.requires_grad = False
+(288) parameter.requires_grad = False
+(289) parameter.requires_grad = False
+(290) parameter.requires_grad = False
+(291) parameter.requires_grad = False
+(292) parameter.requires_grad = False
+(293) parameter.requires_grad = False
+(294) parameter.requires_grad = False
+(295) parameter.requires_grad = False
+(296) parameter.requires_grad = False
+(297) parameter.requires_grad = False
+(298) parameter.requires_grad = False
+(299) parameter.requires_grad = False
+(300) parameter.requires_grad = False
+(301) parameter.requires_grad = False
+(302) parameter.requires_grad = False
+(303) parameter.requires_grad = False
+(304) parameter.requires_grad = False
+(305) parameter.requires_grad = False
+(306) parameter.requires_grad = False
+(307) parameter.requires_grad = False
+(308) parameter.requires_grad = False
+(309) parameter.requires_grad = False
+(310) parameter.requires_grad = False
+(311) parameter.requires_grad = False
+(312) parameter.requires_grad = False
+(313) parameter.requires_grad = False
+(314) parameter.requires_grad = False
+(315) parameter.requires_grad = False
+(316) parameter.requires_grad = False
+(317) parameter.requires_grad = False
+(318) parameter.requires_grad = False
+(319) parameter.requires_grad = False
+(320) parameter.requires_grad = False
+(321) parameter.requires_grad = False
+(322) parameter.requires_grad = False
+(323) parameter.requires_grad = False
+(324) parameter.requires_grad = False
+(325) parameter.requires_grad = False
+(326) parameter.requires_grad = False
+(327) parameter.requires_grad = False
+(328) parameter.requires_grad = False
+(329) parameter.requires_grad = False
+(330) parameter.requires_grad = False
+(331) parameter.requires_grad = False
+(332) parameter.requires_grad = False
+(333) parameter.requires_grad = False
+(334) parameter.requires_grad = False
+(335) parameter.requires_grad = False
+(336) parameter.requires_grad = False
+(337) parameter.requires_grad = False
+(338) parameter.requires_grad = False
+(339) parameter.requires_grad = False
+(340) parameter.requires_grad = False
+(341) parameter.requires_grad = False
+(342) parameter.requires_grad = False
+(343) parameter.requires_grad = False
+(344) parameter.requires_grad = False
+(345) parameter.requires_grad = False
+(346) parameter.requires_grad = False
+(347) parameter.requires_grad = False
+(348) parameter.requires_grad = False
+(349) parameter.requires_grad = False
+(350) parameter.requires_grad = False
+(351) parameter.requires_grad = False
+(352) parameter.requires_grad = False
+(353) parameter.requires_grad = False
+(354) parameter.requires_grad = False
+(355) parameter.requires_grad = False
+(356) parameter.requires_grad = False
+(357) parameter.requires_grad = False
+(358) parameter.requires_grad = False
+(359) parameter.requires_grad = False
+(360) parameter.requires_grad = False
+(361) parameter.requires_grad = False
+(362) parameter.requires_grad = True
+(363) parameter.requires_grad = True
+Training: epoch=1 step=39/1563 loss=1.00365 accuracy=71.64062 runtime_forward_ms=82.74183 runtime_backward_ms=0.95838.
+Training: epoch=1 step=79/1563 loss=0.98348 accuracy=71.71875 runtime_forward_ms=82.72008 runtime_backward_ms=0.90761.
+Training: epoch=1 step=119/1563 loss=1.01703 accuracy=71.71875 runtime_forward_ms=82.78140 runtime_backward_ms=0.97965.
+Training: epoch=1 step=159/1563 loss=0.96440 accuracy=73.43750 runtime_forward_ms=82.75225 runtime_backward_ms=0.87123.
+Training: epoch=1 step=199/1563 loss=0.96129 accuracy=73.51562 runtime_forward_ms=82.74635 runtime_backward_ms=0.87938.
+Training: epoch=1 step=239/1563 loss=0.95505 accuracy=71.40625 runtime_forward_ms=82.75693 runtime_backward_ms=0.92376.
+Training: epoch=1 step=279/1563 loss=0.97604 accuracy=71.09375 runtime_forward_ms=82.66642 runtime_backward_ms=0.53132.
+Training: epoch=1 step=319/1563 loss=1.00591 accuracy=69.06250 runtime_forward_ms=82.69788 runtime_backward_ms=0.68361.
+Training: epoch=1 step=359/1563 loss=0.95553 accuracy=72.34375 runtime_forward_ms=82.70573 runtime_backward_ms=0.83340.
+Training: epoch=1 step=399/1563 loss=0.93390 accuracy=74.14062 runtime_forward_ms=82.70942 runtime_backward_ms=0.74138.
+Training: epoch=1 step=439/1563 loss=0.97640 accuracy=70.15625 runtime_forward_ms=82.72751 runtime_backward_ms=0.83879.
+Training: epoch=1 step=479/1563 loss=0.98478 accuracy=70.93750 runtime_forward_ms=82.73770 runtime_backward_ms=0.83600.
+Training: epoch=1 step=519/1563 loss=0.93519 accuracy=71.17188 runtime_forward_ms=82.73803 runtime_backward_ms=0.81892.
+Training: epoch=1 step=559/1563 loss=0.97665 accuracy=70.54688 runtime_forward_ms=82.72935 runtime_backward_ms=0.83605.
+Training: epoch=1 step=599/1563 loss=0.93160 accuracy=72.50000 runtime_forward_ms=82.73509 runtime_backward_ms=0.86379.
+Training: epoch=1 step=639/1563 loss=0.91942 accuracy=71.95312 runtime_forward_ms=82.74390 runtime_backward_ms=0.83424.
+Training: epoch=1 step=679/1563 loss=0.91789 accuracy=73.35938 runtime_forward_ms=82.74476 runtime_backward_ms=0.86355.
+Training: epoch=1 step=719/1563 loss=0.89568 accuracy=73.75000 runtime_forward_ms=82.70658 runtime_backward_ms=0.90451.
+Training: epoch=1 step=759/1563 loss=0.90173 accuracy=73.20312 runtime_forward_ms=82.73792 runtime_backward_ms=0.85776.
+Training: epoch=1 step=799/1563 loss=0.93272 accuracy=72.89062 runtime_forward_ms=82.72993 runtime_backward_ms=0.84075.
+Training: epoch=1 step=839/1563 loss=0.91858 accuracy=71.40625 runtime_forward_ms=82.70955 runtime_backward_ms=0.66024.
+Training: epoch=1 step=879/1563 loss=0.91461 accuracy=72.26562 runtime_forward_ms=82.67890 runtime_backward_ms=0.48798.
+Training: epoch=1 step=919/1563 loss=0.90978 accuracy=73.51562 runtime_forward_ms=82.67045 runtime_backward_ms=0.47817.
+Training: epoch=1 step=959/1563 loss=0.89723 accuracy=73.75000 runtime_forward_ms=82.67008 runtime_backward_ms=0.48190.
+Training: epoch=1 step=999/1563 loss=0.89572 accuracy=72.18750 runtime_forward_ms=82.66910 runtime_backward_ms=0.51160.
+Training: epoch=1 step=1039/1563 loss=0.90074 accuracy=73.59375 runtime_forward_ms=82.72215 runtime_backward_ms=0.78232.
+Training: epoch=1 step=1079/1563 loss=0.85672 accuracy=74.37500 runtime_forward_ms=82.69560 runtime_backward_ms=0.66423.
+Training: epoch=1 step=1119/1563 loss=0.86288 accuracy=73.35938 runtime_forward_ms=82.73782 runtime_backward_ms=0.86516.
+Training: epoch=1 step=1159/1563 loss=0.91439 accuracy=71.71875 runtime_forward_ms=82.73612 runtime_backward_ms=0.83797.
+Training: epoch=1 step=1199/1563 loss=0.90659 accuracy=72.73438 runtime_forward_ms=82.71081 runtime_backward_ms=0.72868.
+Training: epoch=1 step=1239/1563 loss=0.87575 accuracy=73.75000 runtime_forward_ms=82.73032 runtime_backward_ms=0.82724.
+Training: epoch=1 step=1279/1563 loss=0.85630 accuracy=74.37500 runtime_forward_ms=82.72460 runtime_backward_ms=0.78601.
+Training: epoch=1 step=1319/1563 loss=0.85301 accuracy=73.90625 runtime_forward_ms=82.68003 runtime_backward_ms=0.48529.
+Training: epoch=1 step=1359/1563 loss=0.89265 accuracy=71.64062 runtime_forward_ms=82.68210 runtime_backward_ms=0.50846.
+Training: epoch=1 step=1399/1563 loss=0.90070 accuracy=71.40625 runtime_forward_ms=82.66831 runtime_backward_ms=0.51672.
+Training: epoch=1 step=1439/1563 loss=0.81721 accuracy=75.62500 runtime_forward_ms=82.73771 runtime_backward_ms=0.74413.
+Training: epoch=1 step=1479/1563 loss=0.87068 accuracy=72.50000 runtime_forward_ms=82.73216 runtime_backward_ms=0.83805.
+Training: epoch=1 step=1519/1563 loss=0.86151 accuracy=73.35938 runtime_forward_ms=82.74680 runtime_backward_ms=0.85990.
+Training: epoch=1 step=1559/1563 loss=0.88948 accuracy=72.03125 runtime_forward_ms=82.75291 runtime_backward_ms=0.81585.
+Validation: epoch=1 training_step=3124 loss=0.79791 accuracy=75.49000 runtime_forward_ms=74.57221.
+--- End of Epoch: epoch=1 training_step=3124 training_loss=0.88948 training_accuracy=72.03125 validation_loss=0.79791 validation_accuracy=75.49000.
+Features frozen not on epoch 2
+(0) parameter.requires_grad = True
+(1) parameter.requires_grad = True
+(2) parameter.requires_grad = True
+(3) parameter.requires_grad = True
+(4) parameter.requires_grad = True
+(5) parameter.requires_grad = True
+(6) parameter.requires_grad = True
+(7) parameter.requires_grad = True
+(8) parameter.requires_grad = True
+(9) parameter.requires_grad = True
+(10) parameter.requires_grad = True
+(11) parameter.requires_grad = True
+(12) parameter.requires_grad = True
+(13) parameter.requires_grad = True
+(14) parameter.requires_grad = True
+(15) parameter.requires_grad = True
+(16) parameter.requires_grad = True
+(17) parameter.requires_grad = True
+(18) parameter.requires_grad = True
+(19) parameter.requires_grad = True
+(20) parameter.requires_grad = True
+(21) parameter.requires_grad = True
+(22) parameter.requires_grad = True
+(23) parameter.requires_grad = True
+(24) parameter.requires_grad = True
+(25) parameter.requires_grad = True
+(26) parameter.requires_grad = True
+(27) parameter.requires_grad = True
+(28) parameter.requires_grad = True
+(29) parameter.requires_grad = True
+(30) parameter.requires_grad = True
+(31) parameter.requires_grad = True
+(32) parameter.requires_grad = True
+(33) parameter.requires_grad = True
+(34) parameter.requires_grad = True
+(35) parameter.requires_grad = True
+(36) parameter.requires_grad = True
+(37) parameter.requires_grad = True
+(38) parameter.requires_grad = True
+(39) parameter.requires_grad = True
+(40) parameter.requires_grad = True
+(41) parameter.requires_grad = True
+(42) parameter.requires_grad = True
+(43) parameter.requires_grad = True
+(44) parameter.requires_grad = True
+(45) parameter.requires_grad = True
+(46) parameter.requires_grad = True
+(47) parameter.requires_grad = True
+(48) parameter.requires_grad = True
+(49) parameter.requires_grad = True
+(50) parameter.requires_grad = True
+(51) parameter.requires_grad = True
+(52) parameter.requires_grad = True
+(53) parameter.requires_grad = True
+(54) parameter.requires_grad = True
+(55) parameter.requires_grad = True
+(56) parameter.requires_grad = True
+(57) parameter.requires_grad = True
+(58) parameter.requires_grad = True
+(59) parameter.requires_grad = True
+(60) parameter.requires_grad = True
+(61) parameter.requires_grad = True
+(62) parameter.requires_grad = True
+(63) parameter.requires_grad = True
+(64) parameter.requires_grad = True
+(65) parameter.requires_grad = True
+(66) parameter.requires_grad = True
+(67) parameter.requires_grad = True
+(68) parameter.requires_grad = True
+(69) parameter.requires_grad = True
+(70) parameter.requires_grad = True
+(71) parameter.requires_grad = True
+(72) parameter.requires_grad = True
+(73) parameter.requires_grad = True
+(74) parameter.requires_grad = True
+(75) parameter.requires_grad = True
+(76) parameter.requires_grad = True
+(77) parameter.requires_grad = True
+(78) parameter.requires_grad = True
+(79) parameter.requires_grad = True
+(80) parameter.requires_grad = True
+(81) parameter.requires_grad = True
+(82) parameter.requires_grad = True
+(83) parameter.requires_grad = True
+(84) parameter.requires_grad = True
+(85) parameter.requires_grad = True
+(86) parameter.requires_grad = True
+(87) parameter.requires_grad = True
+(88) parameter.requires_grad = True
+(89) parameter.requires_grad = True
+(90) parameter.requires_grad = True
+(91) parameter.requires_grad = True
+(92) parameter.requires_grad = True
+(93) parameter.requires_grad = True
+(94) parameter.requires_grad = True
+(95) parameter.requires_grad = True
+(96) parameter.requires_grad = True
+(97) parameter.requires_grad = True
+(98) parameter.requires_grad = True
+(99) parameter.requires_grad = True
+(100) parameter.requires_grad = True
+(101) parameter.requires_grad = True
+(102) parameter.requires_grad = True
+(103) parameter.requires_grad = True
+(104) parameter.requires_grad = True
+(105) parameter.requires_grad = True
+(106) parameter.requires_grad = True
+(107) parameter.requires_grad = True
+(108) parameter.requires_grad = True
+(109) parameter.requires_grad = True
+(110) parameter.requires_grad = True
+(111) parameter.requires_grad = True
+(112) parameter.requires_grad = True
+(113) parameter.requires_grad = True
+(114) parameter.requires_grad = True
+(115) parameter.requires_grad = True
+(116) parameter.requires_grad = True
+(117) parameter.requires_grad = True
+(118) parameter.requires_grad = True
+(119) parameter.requires_grad = True
+(120) parameter.requires_grad = True
+(121) parameter.requires_grad = True
+(122) parameter.requires_grad = True
+(123) parameter.requires_grad = True
+(124) parameter.requires_grad = True
+(125) parameter.requires_grad = True
+(126) parameter.requires_grad = True
+(127) parameter.requires_grad = True
+(128) parameter.requires_grad = True
+(129) parameter.requires_grad = True
+(130) parameter.requires_grad = True
+(131) parameter.requires_grad = True
+(132) parameter.requires_grad = True
+(133) parameter.requires_grad = True
+(134) parameter.requires_grad = True
+(135) parameter.requires_grad = True
+(136) parameter.requires_grad = True
+(137) parameter.requires_grad = True
+(138) parameter.requires_grad = True
+(139) parameter.requires_grad = True
+(140) parameter.requires_grad = True
+(141) parameter.requires_grad = True
+(142) parameter.requires_grad = True
+(143) parameter.requires_grad = True
+(144) parameter.requires_grad = True
+(145) parameter.requires_grad = True
+(146) parameter.requires_grad = True
+(147) parameter.requires_grad = True
+(148) parameter.requires_grad = True
+(149) parameter.requires_grad = True
+(150) parameter.requires_grad = True
+(151) parameter.requires_grad = True
+(152) parameter.requires_grad = True
+(153) parameter.requires_grad = True
+(154) parameter.requires_grad = True
+(155) parameter.requires_grad = True
+(156) parameter.requires_grad = True
+(157) parameter.requires_grad = True
+(158) parameter.requires_grad = True
+(159) parameter.requires_grad = True
+(160) parameter.requires_grad = True
+(161) parameter.requires_grad = True
+(162) parameter.requires_grad = True
+(163) parameter.requires_grad = True
+(164) parameter.requires_grad = True
+(165) parameter.requires_grad = True
+(166) parameter.requires_grad = True
+(167) parameter.requires_grad = True
+(168) parameter.requires_grad = True
+(169) parameter.requires_grad = True
+(170) parameter.requires_grad = True
+(171) parameter.requires_grad = True
+(172) parameter.requires_grad = True
+(173) parameter.requires_grad = True
+(174) parameter.requires_grad = True
+(175) parameter.requires_grad = True
+(176) parameter.requires_grad = True
+(177) parameter.requires_grad = True
+(178) parameter.requires_grad = True
+(179) parameter.requires_grad = True
+(180) parameter.requires_grad = True
+(181) parameter.requires_grad = True
+(182) parameter.requires_grad = True
+(183) parameter.requires_grad = True
+(184) parameter.requires_grad = True
+(185) parameter.requires_grad = True
+(186) parameter.requires_grad = True
+(187) parameter.requires_grad = True
+(188) parameter.requires_grad = True
+(189) parameter.requires_grad = True
+(190) parameter.requires_grad = True
+(191) parameter.requires_grad = True
+(192) parameter.requires_grad = True
+(193) parameter.requires_grad = True
+(194) parameter.requires_grad = True
+(195) parameter.requires_grad = True
+(196) parameter.requires_grad = True
+(197) parameter.requires_grad = True
+(198) parameter.requires_grad = True
+(199) parameter.requires_grad = True
+(200) parameter.requires_grad = True
+(201) parameter.requires_grad = True
+(202) parameter.requires_grad = True
+(203) parameter.requires_grad = True
+(204) parameter.requires_grad = True
+(205) parameter.requires_grad = True
+(206) parameter.requires_grad = True
+(207) parameter.requires_grad = True
+(208) parameter.requires_grad = True
+(209) parameter.requires_grad = True
+(210) parameter.requires_grad = True
+(211) parameter.requires_grad = True
+(212) parameter.requires_grad = True
+(213) parameter.requires_grad = True
+(214) parameter.requires_grad = True
+(215) parameter.requires_grad = True
+(216) parameter.requires_grad = True
+(217) parameter.requires_grad = True
+(218) parameter.requires_grad = True
+(219) parameter.requires_grad = True
+(220) parameter.requires_grad = True
+(221) parameter.requires_grad = True
+(222) parameter.requires_grad = True
+(223) parameter.requires_grad = True
+(224) parameter.requires_grad = True
+(225) parameter.requires_grad = True
+(226) parameter.requires_grad = True
+(227) parameter.requires_grad = True
+(228) parameter.requires_grad = True
+(229) parameter.requires_grad = True
+(230) parameter.requires_grad = True
+(231) parameter.requires_grad = True
+(232) parameter.requires_grad = True
+(233) parameter.requires_grad = True
+(234) parameter.requires_grad = True
+(235) parameter.requires_grad = True
+(236) parameter.requires_grad = True
+(237) parameter.requires_grad = True
+(238) parameter.requires_grad = True
+(239) parameter.requires_grad = True
+(240) parameter.requires_grad = True
+(241) parameter.requires_grad = True
+(242) parameter.requires_grad = True
+(243) parameter.requires_grad = True
+(244) parameter.requires_grad = True
+(245) parameter.requires_grad = True
+(246) parameter.requires_grad = True
+(247) parameter.requires_grad = True
+(248) parameter.requires_grad = True
+(249) parameter.requires_grad = True
+(250) parameter.requires_grad = True
+(251) parameter.requires_grad = True
+(252) parameter.requires_grad = True
+(253) parameter.requires_grad = True
+(254) parameter.requires_grad = True
+(255) parameter.requires_grad = True
+(256) parameter.requires_grad = True
+(257) parameter.requires_grad = True
+(258) parameter.requires_grad = True
+(259) parameter.requires_grad = True
+(260) parameter.requires_grad = True
+(261) parameter.requires_grad = True
+(262) parameter.requires_grad = True
+(263) parameter.requires_grad = True
+(264) parameter.requires_grad = True
+(265) parameter.requires_grad = True
+(266) parameter.requires_grad = True
+(267) parameter.requires_grad = True
+(268) parameter.requires_grad = True
+(269) parameter.requires_grad = True
+(270) parameter.requires_grad = True
+(271) parameter.requires_grad = True
+(272) parameter.requires_grad = True
+(273) parameter.requires_grad = True
+(274) parameter.requires_grad = True
+(275) parameter.requires_grad = True
+(276) parameter.requires_grad = True
+(277) parameter.requires_grad = True
+(278) parameter.requires_grad = True
+(279) parameter.requires_grad = True
+(280) parameter.requires_grad = True
+(281) parameter.requires_grad = True
+(282) parameter.requires_grad = True
+(283) parameter.requires_grad = True
+(284) parameter.requires_grad = True
+(285) parameter.requires_grad = True
+(286) parameter.requires_grad = True
+(287) parameter.requires_grad = True
+(288) parameter.requires_grad = True
+(289) parameter.requires_grad = True
+(290) parameter.requires_grad = True
+(291) parameter.requires_grad = True
+(292) parameter.requires_grad = True
+(293) parameter.requires_grad = True
+(294) parameter.requires_grad = True
+(295) parameter.requires_grad = True
+(296) parameter.requires_grad = True
+(297) parameter.requires_grad = True
+(298) parameter.requires_grad = True
+(299) parameter.requires_grad = True
+(300) parameter.requires_grad = True
+(301) parameter.requires_grad = True
+(302) parameter.requires_grad = True
+(303) parameter.requires_grad = True
+(304) parameter.requires_grad = True
+(305) parameter.requires_grad = True
+(306) parameter.requires_grad = True
+(307) parameter.requires_grad = True
+(308) parameter.requires_grad = True
+(309) parameter.requires_grad = True
+(310) parameter.requires_grad = True
+(311) parameter.requires_grad = True
+(312) parameter.requires_grad = True
+(313) parameter.requires_grad = True
+(314) parameter.requires_grad = True
+(315) parameter.requires_grad = True
+(316) parameter.requires_grad = True
+(317) parameter.requires_grad = True
+(318) parameter.requires_grad = True
+(319) parameter.requires_grad = True
+(320) parameter.requires_grad = True
+(321) parameter.requires_grad = True
+(322) parameter.requires_grad = True
+(323) parameter.requires_grad = True
+(324) parameter.requires_grad = True
+(325) parameter.requires_grad = True
+(326) parameter.requires_grad = True
+(327) parameter.requires_grad = True
+(328) parameter.requires_grad = True
+(329) parameter.requires_grad = True
+(330) parameter.requires_grad = True
+(331) parameter.requires_grad = True
+(332) parameter.requires_grad = True
+(333) parameter.requires_grad = True
+(334) parameter.requires_grad = True
+(335) parameter.requires_grad = True
+(336) parameter.requires_grad = True
+(337) parameter.requires_grad = True
+(338) parameter.requires_grad = True
+(339) parameter.requires_grad = True
+(340) parameter.requires_grad = True
+(341) parameter.requires_grad = True
+(342) parameter.requires_grad = True
+(343) parameter.requires_grad = True
+(344) parameter.requires_grad = True
+(345) parameter.requires_grad = True
+(346) parameter.requires_grad = True
+(347) parameter.requires_grad = True
+(348) parameter.requires_grad = True
+(349) parameter.requires_grad = True
+(350) parameter.requires_grad = True
+(351) parameter.requires_grad = True
+(352) parameter.requires_grad = True
+(353) parameter.requires_grad = True
+(354) parameter.requires_grad = True
+(355) parameter.requires_grad = True
+(356) parameter.requires_grad = True
+(357) parameter.requires_grad = True
+(358) parameter.requires_grad = True
+(359) parameter.requires_grad = True
+(360) parameter.requires_grad = True
+(361) parameter.requires_grad = True
+(362) parameter.requires_grad = True
+(363) parameter.requires_grad = True
+Training: epoch=2 step=39/1563 loss=0.64230 accuracy=78.98438 runtime_forward_ms=82.71158 runtime_backward_ms=204.08785.
+Training: epoch=2 step=79/1563 loss=0.48373 accuracy=84.45312 runtime_forward_ms=82.67837 runtime_backward_ms=179.90625.
+Training: epoch=2 step=119/1563 loss=0.43187 accuracy=85.93750 runtime_forward_ms=82.77268 runtime_backward_ms=179.61751.
+Training: epoch=2 step=159/1563 loss=0.32961 accuracy=89.53125 runtime_forward_ms=82.75431 runtime_backward_ms=180.13059.
+Training: epoch=2 step=199/1563 loss=0.34907 accuracy=88.67188 runtime_forward_ms=82.96588 runtime_backward_ms=180.24199.
+Training: epoch=2 step=239/1563 loss=0.31695 accuracy=89.60938 runtime_forward_ms=82.96572 runtime_backward_ms=180.81207.
+Training: epoch=2 step=279/1563 loss=0.34233 accuracy=88.90625 runtime_forward_ms=83.01008 runtime_backward_ms=180.31110.
+Training: epoch=2 step=319/1563 loss=0.33024 accuracy=88.59375 runtime_forward_ms=83.02616 runtime_backward_ms=178.54063.
+Training: epoch=2 step=359/1563 loss=0.31674 accuracy=89.06250 runtime_forward_ms=83.02437 runtime_backward_ms=178.44449.
+Training: epoch=2 step=399/1563 loss=0.33190 accuracy=88.98438 runtime_forward_ms=83.04061 runtime_backward_ms=183.07819.
+Training: epoch=2 step=439/1563 loss=0.28516 accuracy=90.78125 runtime_forward_ms=83.07229 runtime_backward_ms=183.26377.
+Training: epoch=2 step=479/1563 loss=0.29443 accuracy=90.31250 runtime_forward_ms=83.10568 runtime_backward_ms=183.42611.
+Training: epoch=2 step=519/1563 loss=0.25498 accuracy=91.40625 runtime_forward_ms=83.11985 runtime_backward_ms=183.51255.
+Training: epoch=2 step=559/1563 loss=0.24224 accuracy=92.18750 runtime_forward_ms=83.10741 runtime_backward_ms=183.49355.
+Training: epoch=2 step=599/1563 loss=0.30066 accuracy=89.84375 runtime_forward_ms=83.11635 runtime_backward_ms=178.43826.
+Training: epoch=2 step=639/1563 loss=0.24651 accuracy=91.71875 runtime_forward_ms=83.10817 runtime_backward_ms=174.16490.
+Training: epoch=2 step=679/1563 loss=0.23793 accuracy=92.10938 runtime_forward_ms=83.16651 runtime_backward_ms=177.26027.
+Training: epoch=2 step=719/1563 loss=0.26017 accuracy=90.85938 runtime_forward_ms=83.15506 runtime_backward_ms=180.96739.
+Training: epoch=2 step=759/1563 loss=0.25415 accuracy=91.64062 runtime_forward_ms=83.07162 runtime_backward_ms=180.75878.
+Training: epoch=2 step=799/1563 loss=0.24241 accuracy=92.50000 runtime_forward_ms=83.04471 runtime_backward_ms=180.83425.
+Training: epoch=2 step=839/1563 loss=0.21296 accuracy=92.57812 runtime_forward_ms=83.03432 runtime_backward_ms=179.88265.
+Training: epoch=2 step=879/1563 loss=0.22575 accuracy=92.81250 runtime_forward_ms=83.03845 runtime_backward_ms=180.46206.
+Training: epoch=2 step=919/1563 loss=0.21988 accuracy=93.04688 runtime_forward_ms=83.03327 runtime_backward_ms=180.34526.
+Training: epoch=2 step=959/1563 loss=0.19844 accuracy=94.21875 runtime_forward_ms=83.03739 runtime_backward_ms=180.64015.
+Training: epoch=2 step=999/1563 loss=0.22142 accuracy=92.34375 runtime_forward_ms=83.06070 runtime_backward_ms=180.28352.
+Training: epoch=2 step=1039/1563 loss=0.22859 accuracy=91.71875 runtime_forward_ms=83.01088 runtime_backward_ms=180.77913.
+Training: epoch=2 step=1079/1563 loss=0.21879 accuracy=91.79688 runtime_forward_ms=83.03581 runtime_backward_ms=179.75229.
+Training: epoch=2 step=1119/1563 loss=0.20670 accuracy=92.81250 runtime_forward_ms=83.02154 runtime_backward_ms=179.27577.
+Training: epoch=2 step=1159/1563 loss=0.21459 accuracy=92.73438 runtime_forward_ms=82.96642 runtime_backward_ms=179.29845.
+Training: epoch=2 step=1199/1563 loss=0.17299 accuracy=93.67188 runtime_forward_ms=82.90324 runtime_backward_ms=179.00394.
+Training: epoch=2 step=1239/1563 loss=0.19174 accuracy=93.98438 runtime_forward_ms=83.02240 runtime_backward_ms=178.62739.
+Training: epoch=2 step=1279/1563 loss=0.22364 accuracy=92.89062 runtime_forward_ms=82.98800 runtime_backward_ms=179.19347.
+Training: epoch=2 step=1319/1563 loss=0.20881 accuracy=93.04688 runtime_forward_ms=83.04436 runtime_backward_ms=178.23983.
+Training: epoch=2 step=1359/1563 loss=0.20439 accuracy=93.04688 runtime_forward_ms=83.05031 runtime_backward_ms=178.73207.
+Training: epoch=2 step=1399/1563 loss=0.20015 accuracy=93.59375 runtime_forward_ms=83.03420 runtime_backward_ms=179.24752.
+Training: epoch=2 step=1439/1563 loss=0.19175 accuracy=93.75000 runtime_forward_ms=83.02068 runtime_backward_ms=178.99434.
+Training: epoch=2 step=1479/1563 loss=0.20257 accuracy=93.20312 runtime_forward_ms=83.01440 runtime_backward_ms=179.07017.
+Training: epoch=2 step=1519/1563 loss=0.21471 accuracy=91.95312 runtime_forward_ms=83.03824 runtime_backward_ms=179.23302.
+Training: epoch=2 step=1559/1563 loss=0.19713 accuracy=93.35938 runtime_forward_ms=83.03495 runtime_backward_ms=178.59440.
+Validation: epoch=2 training_step=4686 loss=0.15649 accuracy=94.71000 runtime_forward_ms=74.65271.
+--- End of Epoch: epoch=2 training_step=4686 training_loss=0.19713 training_accuracy=93.35938 validation_loss=0.15649 validation_accuracy=94.71000.
+Features frozen not on epoch 3
+(0) parameter.requires_grad = True
+(1) parameter.requires_grad = True
+(2) parameter.requires_grad = True
+(3) parameter.requires_grad = True
+(4) parameter.requires_grad = True
+(5) parameter.requires_grad = True
+(6) parameter.requires_grad = True
+(7) parameter.requires_grad = True
+(8) parameter.requires_grad = True
+(9) parameter.requires_grad = True
+(10) parameter.requires_grad = True
+(11) parameter.requires_grad = True
+(12) parameter.requires_grad = True
+(13) parameter.requires_grad = True
+(14) parameter.requires_grad = True
+(15) parameter.requires_grad = True
+(16) parameter.requires_grad = True
+(17) parameter.requires_grad = True
+(18) parameter.requires_grad = True
+(19) parameter.requires_grad = True
+(20) parameter.requires_grad = True
+(21) parameter.requires_grad = True
+(22) parameter.requires_grad = True
+(23) parameter.requires_grad = True
+(24) parameter.requires_grad = True
+(25) parameter.requires_grad = True
+(26) parameter.requires_grad = True
+(27) parameter.requires_grad = True
+(28) parameter.requires_grad = True
+(29) parameter.requires_grad = True
+(30) parameter.requires_grad = True
+(31) parameter.requires_grad = True
+(32) parameter.requires_grad = True
+(33) parameter.requires_grad = True
+(34) parameter.requires_grad = True
+(35) parameter.requires_grad = True
+(36) parameter.requires_grad = True
+(37) parameter.requires_grad = True
+(38) parameter.requires_grad = True
+(39) parameter.requires_grad = True
+(40) parameter.requires_grad = True
+(41) parameter.requires_grad = True
+(42) parameter.requires_grad = True
+(43) parameter.requires_grad = True
+(44) parameter.requires_grad = True
+(45) parameter.requires_grad = True
+(46) parameter.requires_grad = True
+(47) parameter.requires_grad = True
+(48) parameter.requires_grad = True
+(49) parameter.requires_grad = True
+(50) parameter.requires_grad = True
+(51) parameter.requires_grad = True
+(52) parameter.requires_grad = True
+(53) parameter.requires_grad = True
+(54) parameter.requires_grad = True
+(55) parameter.requires_grad = True
+(56) parameter.requires_grad = True
+(57) parameter.requires_grad = True
+(58) parameter.requires_grad = True
+(59) parameter.requires_grad = True
+(60) parameter.requires_grad = True
+(61) parameter.requires_grad = True
+(62) parameter.requires_grad = True
+(63) parameter.requires_grad = True
+(64) parameter.requires_grad = True
+(65) parameter.requires_grad = True
+(66) parameter.requires_grad = True
+(67) parameter.requires_grad = True
+(68) parameter.requires_grad = True
+(69) parameter.requires_grad = True
+(70) parameter.requires_grad = True
+(71) parameter.requires_grad = True
+(72) parameter.requires_grad = True
+(73) parameter.requires_grad = True
+(74) parameter.requires_grad = True
+(75) parameter.requires_grad = True
+(76) parameter.requires_grad = True
+(77) parameter.requires_grad = True
+(78) parameter.requires_grad = True
+(79) parameter.requires_grad = True
+(80) parameter.requires_grad = True
+(81) parameter.requires_grad = True
+(82) parameter.requires_grad = True
+(83) parameter.requires_grad = True
+(84) parameter.requires_grad = True
+(85) parameter.requires_grad = True
+(86) parameter.requires_grad = True
+(87) parameter.requires_grad = True
+(88) parameter.requires_grad = True
+(89) parameter.requires_grad = True
+(90) parameter.requires_grad = True
+(91) parameter.requires_grad = True
+(92) parameter.requires_grad = True
+(93) parameter.requires_grad = True
+(94) parameter.requires_grad = True
+(95) parameter.requires_grad = True
+(96) parameter.requires_grad = True
+(97) parameter.requires_grad = True
+(98) parameter.requires_grad = True
+(99) parameter.requires_grad = True
+(100) parameter.requires_grad = True
+(101) parameter.requires_grad = True
+(102) parameter.requires_grad = True
+(103) parameter.requires_grad = True
+(104) parameter.requires_grad = True
+(105) parameter.requires_grad = True
+(106) parameter.requires_grad = True
+(107) parameter.requires_grad = True
+(108) parameter.requires_grad = True
+(109) parameter.requires_grad = True
+(110) parameter.requires_grad = True
+(111) parameter.requires_grad = True
+(112) parameter.requires_grad = True
+(113) parameter.requires_grad = True
+(114) parameter.requires_grad = True
+(115) parameter.requires_grad = True
+(116) parameter.requires_grad = True
+(117) parameter.requires_grad = True
+(118) parameter.requires_grad = True
+(119) parameter.requires_grad = True
+(120) parameter.requires_grad = True
+(121) parameter.requires_grad = True
+(122) parameter.requires_grad = True
+(123) parameter.requires_grad = True
+(124) parameter.requires_grad = True
+(125) parameter.requires_grad = True
+(126) parameter.requires_grad = True
+(127) parameter.requires_grad = True
+(128) parameter.requires_grad = True
+(129) parameter.requires_grad = True
+(130) parameter.requires_grad = True
+(131) parameter.requires_grad = True
+(132) parameter.requires_grad = True
+(133) parameter.requires_grad = True
+(134) parameter.requires_grad = True
+(135) parameter.requires_grad = True
+(136) parameter.requires_grad = True
+(137) parameter.requires_grad = True
+(138) parameter.requires_grad = True
+(139) parameter.requires_grad = True
+(140) parameter.requires_grad = True
+(141) parameter.requires_grad = True
+(142) parameter.requires_grad = True
+(143) parameter.requires_grad = True
+(144) parameter.requires_grad = True
+(145) parameter.requires_grad = True
+(146) parameter.requires_grad = True
+(147) parameter.requires_grad = True
+(148) parameter.requires_grad = True
+(149) parameter.requires_grad = True
+(150) parameter.requires_grad = True
+(151) parameter.requires_grad = True
+(152) parameter.requires_grad = True
+(153) parameter.requires_grad = True
+(154) parameter.requires_grad = True
+(155) parameter.requires_grad = True
+(156) parameter.requires_grad = True
+(157) parameter.requires_grad = True
+(158) parameter.requires_grad = True
+(159) parameter.requires_grad = True
+(160) parameter.requires_grad = True
+(161) parameter.requires_grad = True
+(162) parameter.requires_grad = True
+(163) parameter.requires_grad = True
+(164) parameter.requires_grad = True
+(165) parameter.requires_grad = True
+(166) parameter.requires_grad = True
+(167) parameter.requires_grad = True
+(168) parameter.requires_grad = True
+(169) parameter.requires_grad = True
+(170) parameter.requires_grad = True
+(171) parameter.requires_grad = True
+(172) parameter.requires_grad = True
+(173) parameter.requires_grad = True
+(174) parameter.requires_grad = True
+(175) parameter.requires_grad = True
+(176) parameter.requires_grad = True
+(177) parameter.requires_grad = True
+(178) parameter.requires_grad = True
+(179) parameter.requires_grad = True
+(180) parameter.requires_grad = True
+(181) parameter.requires_grad = True
+(182) parameter.requires_grad = True
+(183) parameter.requires_grad = True
+(184) parameter.requires_grad = True
+(185) parameter.requires_grad = True
+(186) parameter.requires_grad = True
+(187) parameter.requires_grad = True
+(188) parameter.requires_grad = True
+(189) parameter.requires_grad = True
+(190) parameter.requires_grad = True
+(191) parameter.requires_grad = True
+(192) parameter.requires_grad = True
+(193) parameter.requires_grad = True
+(194) parameter.requires_grad = True
+(195) parameter.requires_grad = True
+(196) parameter.requires_grad = True
+(197) parameter.requires_grad = True
+(198) parameter.requires_grad = True
+(199) parameter.requires_grad = True
+(200) parameter.requires_grad = True
+(201) parameter.requires_grad = True
+(202) parameter.requires_grad = True
+(203) parameter.requires_grad = True
+(204) parameter.requires_grad = True
+(205) parameter.requires_grad = True
+(206) parameter.requires_grad = True
+(207) parameter.requires_grad = True
+(208) parameter.requires_grad = True
+(209) parameter.requires_grad = True
+(210) parameter.requires_grad = True
+(211) parameter.requires_grad = True
+(212) parameter.requires_grad = True
+(213) parameter.requires_grad = True
+(214) parameter.requires_grad = True
+(215) parameter.requires_grad = True
+(216) parameter.requires_grad = True
+(217) parameter.requires_grad = True
+(218) parameter.requires_grad = True
+(219) parameter.requires_grad = True
+(220) parameter.requires_grad = True
+(221) parameter.requires_grad = True
+(222) parameter.requires_grad = True
+(223) parameter.requires_grad = True
+(224) parameter.requires_grad = True
+(225) parameter.requires_grad = True
+(226) parameter.requires_grad = True
+(227) parameter.requires_grad = True
+(228) parameter.requires_grad = True
+(229) parameter.requires_grad = True
+(230) parameter.requires_grad = True
+(231) parameter.requires_grad = True
+(232) parameter.requires_grad = True
+(233) parameter.requires_grad = True
+(234) parameter.requires_grad = True
+(235) parameter.requires_grad = True
+(236) parameter.requires_grad = True
+(237) parameter.requires_grad = True
+(238) parameter.requires_grad = True
+(239) parameter.requires_grad = True
+(240) parameter.requires_grad = True
+(241) parameter.requires_grad = True
+(242) parameter.requires_grad = True
+(243) parameter.requires_grad = True
+(244) parameter.requires_grad = True
+(245) parameter.requires_grad = True
+(246) parameter.requires_grad = True
+(247) parameter.requires_grad = True
+(248) parameter.requires_grad = True
+(249) parameter.requires_grad = True
+(250) parameter.requires_grad = True
+(251) parameter.requires_grad = True
+(252) parameter.requires_grad = True
+(253) parameter.requires_grad = True
+(254) parameter.requires_grad = True
+(255) parameter.requires_grad = True
+(256) parameter.requires_grad = True
+(257) parameter.requires_grad = True
+(258) parameter.requires_grad = True
+(259) parameter.requires_grad = True
+(260) parameter.requires_grad = True
+(261) parameter.requires_grad = True
+(262) parameter.requires_grad = True
+(263) parameter.requires_grad = True
+(264) parameter.requires_grad = True
+(265) parameter.requires_grad = True
+(266) parameter.requires_grad = True
+(267) parameter.requires_grad = True
+(268) parameter.requires_grad = True
+(269) parameter.requires_grad = True
+(270) parameter.requires_grad = True
+(271) parameter.requires_grad = True
+(272) parameter.requires_grad = True
+(273) parameter.requires_grad = True
+(274) parameter.requires_grad = True
+(275) parameter.requires_grad = True
+(276) parameter.requires_grad = True
+(277) parameter.requires_grad = True
+(278) parameter.requires_grad = True
+(279) parameter.requires_grad = True
+(280) parameter.requires_grad = True
+(281) parameter.requires_grad = True
+(282) parameter.requires_grad = True
+(283) parameter.requires_grad = True
+(284) parameter.requires_grad = True
+(285) parameter.requires_grad = True
+(286) parameter.requires_grad = True
+(287) parameter.requires_grad = True
+(288) parameter.requires_grad = True
+(289) parameter.requires_grad = True
+(290) parameter.requires_grad = True
+(291) parameter.requires_grad = True
+(292) parameter.requires_grad = True
+(293) parameter.requires_grad = True
+(294) parameter.requires_grad = True
+(295) parameter.requires_grad = True
+(296) parameter.requires_grad = True
+(297) parameter.requires_grad = True
+(298) parameter.requires_grad = True
+(299) parameter.requires_grad = True
+(300) parameter.requires_grad = True
+(301) parameter.requires_grad = True
+(302) parameter.requires_grad = True
+(303) parameter.requires_grad = True
+(304) parameter.requires_grad = True
+(305) parameter.requires_grad = True
+(306) parameter.requires_grad = True
+(307) parameter.requires_grad = True
+(308) parameter.requires_grad = True
+(309) parameter.requires_grad = True
+(310) parameter.requires_grad = True
+(311) parameter.requires_grad = True
+(312) parameter.requires_grad = True
+(313) parameter.requires_grad = True
+(314) parameter.requires_grad = True
+(315) parameter.requires_grad = True
+(316) parameter.requires_grad = True
+(317) parameter.requires_grad = True
+(318) parameter.requires_grad = True
+(319) parameter.requires_grad = True
+(320) parameter.requires_grad = True
+(321) parameter.requires_grad = True
+(322) parameter.requires_grad = True
+(323) parameter.requires_grad = True
+(324) parameter.requires_grad = True
+(325) parameter.requires_grad = True
+(326) parameter.requires_grad = True
+(327) parameter.requires_grad = True
+(328) parameter.requires_grad = True
+(329) parameter.requires_grad = True
+(330) parameter.requires_grad = True
+(331) parameter.requires_grad = True
+(332) parameter.requires_grad = True
+(333) parameter.requires_grad = True
+(334) parameter.requires_grad = True
+(335) parameter.requires_grad = True
+(336) parameter.requires_grad = True
+(337) parameter.requires_grad = True
+(338) parameter.requires_grad = True
+(339) parameter.requires_grad = True
+(340) parameter.requires_grad = True
+(341) parameter.requires_grad = True
+(342) parameter.requires_grad = True
+(343) parameter.requires_grad = True
+(344) parameter.requires_grad = True
+(345) parameter.requires_grad = True
+(346) parameter.requires_grad = True
+(347) parameter.requires_grad = True
+(348) parameter.requires_grad = True
+(349) parameter.requires_grad = True
+(350) parameter.requires_grad = True
+(351) parameter.requires_grad = True
+(352) parameter.requires_grad = True
+(353) parameter.requires_grad = True
+(354) parameter.requires_grad = True
+(355) parameter.requires_grad = True
+(356) parameter.requires_grad = True
+(357) parameter.requires_grad = True
+(358) parameter.requires_grad = True
+(359) parameter.requires_grad = True
+(360) parameter.requires_grad = True
+(361) parameter.requires_grad = True
+(362) parameter.requires_grad = True
+(363) parameter.requires_grad = True
+Training: epoch=3 step=39/1563 loss=0.13060 accuracy=95.85938 runtime_forward_ms=82.94104 runtime_backward_ms=174.24669.
+Training: epoch=3 step=79/1563 loss=0.10681 accuracy=96.40625 runtime_forward_ms=82.75997 runtime_backward_ms=175.59441.
+Training: epoch=3 step=119/1563 loss=0.12931 accuracy=96.01562 runtime_forward_ms=82.90696 runtime_backward_ms=173.31151.
+Training: epoch=3 step=159/1563 loss=0.09155 accuracy=97.50000 runtime_forward_ms=82.74198 runtime_backward_ms=172.81901.
+Training: epoch=3 step=199/1563 loss=0.08976 accuracy=96.87500 runtime_forward_ms=82.88634 runtime_backward_ms=172.88952.
+Training: epoch=3 step=239/1563 loss=0.10508 accuracy=96.95312 runtime_forward_ms=82.96041 runtime_backward_ms=173.44921.
+Training: epoch=3 step=279/1563 loss=0.09387 accuracy=96.64062 runtime_forward_ms=82.93320 runtime_backward_ms=178.21535.
+Training: epoch=3 step=319/1563 loss=0.12225 accuracy=95.62500 runtime_forward_ms=82.96352 runtime_backward_ms=173.62472.
+Training: epoch=3 step=359/1563 loss=0.11357 accuracy=96.32812 runtime_forward_ms=82.92746 runtime_backward_ms=173.30052.
+Training: epoch=3 step=399/1563 loss=0.13878 accuracy=95.07812 runtime_forward_ms=82.99043 runtime_backward_ms=173.06181.
+Training: epoch=3 step=439/1563 loss=0.13430 accuracy=95.78125 runtime_forward_ms=82.94295 runtime_backward_ms=173.44651.
+Training: epoch=3 step=479/1563 loss=0.12946 accuracy=95.39062 runtime_forward_ms=83.00153 runtime_backward_ms=176.08070.
+Training: epoch=3 step=519/1563 loss=0.12877 accuracy=95.31250 runtime_forward_ms=82.93355 runtime_backward_ms=174.96013.
+Training: epoch=3 step=559/1563 loss=0.12133 accuracy=96.17188 runtime_forward_ms=83.00251 runtime_backward_ms=173.23981.
+Training: epoch=3 step=599/1563 loss=0.12016 accuracy=95.78125 runtime_forward_ms=82.96481 runtime_backward_ms=174.10893.
+Training: epoch=3 step=639/1563 loss=0.11927 accuracy=96.32812 runtime_forward_ms=83.00279 runtime_backward_ms=173.14343.
+Training: epoch=3 step=679/1563 loss=0.11917 accuracy=96.32812 runtime_forward_ms=82.94631 runtime_backward_ms=173.75164.
+Training: epoch=3 step=719/1563 loss=0.14379 accuracy=94.92188 runtime_forward_ms=83.00626 runtime_backward_ms=177.39332.
+Training: epoch=3 step=759/1563 loss=0.13377 accuracy=95.78125 runtime_forward_ms=83.06703 runtime_backward_ms=173.40559.
+Training: epoch=3 step=799/1563 loss=0.13895 accuracy=94.68750 runtime_forward_ms=82.91213 runtime_backward_ms=173.71242.
+Training: epoch=3 step=839/1563 loss=0.12981 accuracy=95.54688 runtime_forward_ms=82.94600 runtime_backward_ms=173.12929.
+Training: epoch=3 step=879/1563 loss=0.10580 accuracy=96.32812 runtime_forward_ms=83.02037 runtime_backward_ms=173.69868.
+Training: epoch=3 step=919/1563 loss=0.14519 accuracy=95.39062 runtime_forward_ms=82.92814 runtime_backward_ms=177.16319.
+Training: epoch=3 step=959/1563 loss=0.11752 accuracy=96.09375 runtime_forward_ms=83.02726 runtime_backward_ms=173.08538.
+Training: epoch=3 step=999/1563 loss=0.12257 accuracy=95.54688 runtime_forward_ms=82.93939 runtime_backward_ms=173.63327.
+Training: epoch=3 step=1039/1563 loss=0.13525 accuracy=95.23438 runtime_forward_ms=83.04314 runtime_backward_ms=174.56352.
+Training: epoch=3 step=1079/1563 loss=0.13407 accuracy=95.07812 runtime_forward_ms=82.96019 runtime_backward_ms=174.87955.
+Training: epoch=3 step=1119/1563 loss=0.13306 accuracy=95.46875 runtime_forward_ms=83.03361 runtime_backward_ms=174.71271.
+Training: epoch=3 step=1159/1563 loss=0.11258 accuracy=95.62500 runtime_forward_ms=82.94959 runtime_backward_ms=174.54894.
+Training: epoch=3 step=1199/1563 loss=0.12958 accuracy=96.25000 runtime_forward_ms=83.04138 runtime_backward_ms=174.16024.
+Training: epoch=3 step=1239/1563 loss=0.11848 accuracy=95.78125 runtime_forward_ms=82.94680 runtime_backward_ms=174.60872.
+Training: epoch=3 step=1279/1563 loss=0.13970 accuracy=95.31250 runtime_forward_ms=83.03878 runtime_backward_ms=174.08855.
+Training: epoch=3 step=1319/1563 loss=0.12400 accuracy=95.85938 runtime_forward_ms=82.95366 runtime_backward_ms=173.66306.
+Training: epoch=3 step=1359/1563 loss=0.15424 accuracy=94.92188 runtime_forward_ms=83.01569 runtime_backward_ms=177.98905.
+Training: epoch=3 step=1399/1563 loss=0.12159 accuracy=95.62500 runtime_forward_ms=82.96194 runtime_backward_ms=173.64682.
+Training: epoch=3 step=1439/1563 loss=0.12853 accuracy=95.54688 runtime_forward_ms=83.02955 runtime_backward_ms=173.21888.
+Training: epoch=3 step=1479/1563 loss=0.12040 accuracy=95.15625 runtime_forward_ms=82.94218 runtime_backward_ms=173.48933.
+Training: epoch=3 step=1519/1563 loss=0.09964 accuracy=96.71875 runtime_forward_ms=83.06303 runtime_backward_ms=173.21421.
+Training: epoch=3 step=1559/1563 loss=0.12892 accuracy=95.70312 runtime_forward_ms=82.93666 runtime_backward_ms=176.68300.
+Validation: epoch=3 training_step=6248 loss=0.15089 accuracy=95.04000 runtime_forward_ms=74.66650.
+--- End of Epoch: epoch=3 training_step=6248 training_loss=0.12892 training_accuracy=95.70312 validation_loss=0.15089 validation_accuracy=95.04000.

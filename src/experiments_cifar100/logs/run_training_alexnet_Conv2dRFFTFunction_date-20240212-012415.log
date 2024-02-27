@@ -1,0 +1,274 @@
+[0mProvided parameters: main(function_name=Conv2dRFFTFunction, total_num_epochs=1,freeze_features_epochs=0, batch_size=64)[0m
+[0mModel orginal architecture is AlexNet(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(11, 11), stride=(4, 4), padding=(2, 2))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(64, 192, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (4): ReLU(inplace=True)
+    (5): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU(inplace=True)
+    (8): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (9): ReLU(inplace=True)
+    (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(6, 6))
+  (classifier): Sequential(
+    (0): Dropout(p=0.5, inplace=False)
+    (1): Linear(in_features=9216, out_features=4096, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.5, inplace=False)
+    (4): Linear(in_features=4096, out_features=4096, bias=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)[0m
+[0mModel modified architecture is Sequential(
+  (0): Dropout(p=0.5, inplace=False)
+  (1): Linear(in_features=9216, out_features=4096, bias=True)
+  (2): ReLU(inplace=True)
+  (3): Dropout(p=0.5, inplace=False)
+  (4): Linear(in_features=4096, out_features=4096, bias=True)
+  (5): ReLU(inplace=True)
+  (6): Linear(in_features=4096, out_features=100, bias=True)
+)[0m
+[0mFeatures not frozen on epoch 0[0m
+[0mTraining: epoch=0 step=7/782 loss=0.35603 accuracy=90.42969 runtime_forward_ms=1268.42018 runtime_backward_ms=1958.53351.[0m
+[0mTraining: epoch=0 step=15/782 loss=0.35446 accuracy=90.62500 runtime_forward_ms=981.33065 runtime_backward_ms=1887.65927.[0m
+[0mTraining: epoch=0 step=23/782 loss=0.36159 accuracy=90.42969 runtime_forward_ms=980.96334 runtime_backward_ms=1887.01307.[0m
+[0mTraining: epoch=0 step=31/782 loss=0.31992 accuracy=90.42969 runtime_forward_ms=982.74213 runtime_backward_ms=1891.07313.[0m
+[0mTraining: epoch=0 step=39/782 loss=0.25739 accuracy=93.94531 runtime_forward_ms=982.04149 runtime_backward_ms=1896.00569.[0m
+[0mTraining: epoch=0 step=47/782 loss=0.25742 accuracy=91.99219 runtime_forward_ms=981.87263 runtime_backward_ms=1892.34648.[0m
+[0mTraining: epoch=0 step=55/782 loss=0.26124 accuracy=92.57812 runtime_forward_ms=982.47081 runtime_backward_ms=1890.08924.[0m
+[0mTraining: epoch=0 step=63/782 loss=0.22912 accuracy=92.38281 runtime_forward_ms=980.87791 runtime_backward_ms=1886.96544.[0m
+[0mTraining: epoch=0 step=71/782 loss=0.22212 accuracy=94.53125 runtime_forward_ms=981.11524 runtime_backward_ms=1887.28389.[0m
+[0mTraining: epoch=0 step=79/782 loss=0.20075 accuracy=95.31250 runtime_forward_ms=981.10144 runtime_backward_ms=1886.69846.[0m
+[0mTraining: epoch=0 step=87/782 loss=0.19505 accuracy=93.75000 runtime_forward_ms=980.84344 runtime_backward_ms=1886.67246.[0m
+[0mTraining: epoch=0 step=95/782 loss=0.16896 accuracy=95.11719 runtime_forward_ms=980.93054 runtime_backward_ms=1886.88860.[0m
+[0mTraining: epoch=0 step=103/782 loss=0.20480 accuracy=92.96875 runtime_forward_ms=981.26437 runtime_backward_ms=1886.72299.[0m
+[0mTraining: epoch=0 step=111/782 loss=0.19738 accuracy=94.33594 runtime_forward_ms=980.87204 runtime_backward_ms=1886.64516.[0m
+[0mTraining: epoch=0 step=119/782 loss=0.20458 accuracy=94.33594 runtime_forward_ms=980.96634 runtime_backward_ms=1886.76175.[0m
+[0mTraining: epoch=0 step=127/782 loss=0.18466 accuracy=93.35938 runtime_forward_ms=982.68074 runtime_backward_ms=1886.66196.[0m
+[0mTraining: epoch=0 step=135/782 loss=0.17259 accuracy=95.11719 runtime_forward_ms=980.95798 runtime_backward_ms=1887.33522.[0m
+[0mTraining: epoch=0 step=143/782 loss=0.18077 accuracy=94.92188 runtime_forward_ms=980.86687 runtime_backward_ms=1886.91051.[0m
+[0mTraining: epoch=0 step=151/782 loss=0.18852 accuracy=94.53125 runtime_forward_ms=981.28191 runtime_backward_ms=1886.71695.[0m
+[0mTraining: epoch=0 step=159/782 loss=0.17892 accuracy=94.33594 runtime_forward_ms=981.52196 runtime_backward_ms=1887.75546.[0m
+[0mTraining: epoch=0 step=167/782 loss=0.17837 accuracy=93.94531 runtime_forward_ms=983.60993 runtime_backward_ms=1886.95935.[0m
+[0mTraining: epoch=0 step=175/782 loss=0.15934 accuracy=94.72656 runtime_forward_ms=980.91550 runtime_backward_ms=1887.46851.[0m
+[0mTraining: epoch=0 step=183/782 loss=0.16749 accuracy=95.11719 runtime_forward_ms=981.33332 runtime_backward_ms=1889.38361.[0m
+[0mTraining: epoch=0 step=191/782 loss=0.13895 accuracy=95.50781 runtime_forward_ms=981.83447 runtime_backward_ms=1889.00455.[0m
+[0mTraining: epoch=0 step=199/782 loss=0.15198 accuracy=95.31250 runtime_forward_ms=982.22797 runtime_backward_ms=1897.37577.[0m
+[0mTraining: epoch=0 step=207/782 loss=0.15169 accuracy=95.11719 runtime_forward_ms=983.22596 runtime_backward_ms=1891.94593.[0m
+[0mTraining: epoch=0 step=215/782 loss=0.15991 accuracy=94.53125 runtime_forward_ms=982.05137 runtime_backward_ms=1896.91208.[0m
+[0mTraining: epoch=0 step=223/782 loss=0.17960 accuracy=94.14062 runtime_forward_ms=982.07365 runtime_backward_ms=1892.28055.[0m
+[0mTraining: epoch=0 step=231/782 loss=0.12990 accuracy=96.09375 runtime_forward_ms=981.99011 runtime_backward_ms=1896.03057.[0m
+[0mTraining: epoch=0 step=239/782 loss=0.14954 accuracy=95.11719 runtime_forward_ms=982.37317 runtime_backward_ms=1898.70924.[0m
+[0mTraining: epoch=0 step=247/782 loss=0.16686 accuracy=95.50781 runtime_forward_ms=981.74450 runtime_backward_ms=1897.78499.[0m
+[0mTraining: epoch=0 step=255/782 loss=0.12966 accuracy=97.26562 runtime_forward_ms=982.75791 runtime_backward_ms=1897.42948.[0m
+[0mTraining: epoch=0 step=263/782 loss=0.15219 accuracy=95.31250 runtime_forward_ms=981.81298 runtime_backward_ms=1894.18520.[0m
+[0mTraining: epoch=0 step=271/782 loss=0.15049 accuracy=95.11719 runtime_forward_ms=981.99270 runtime_backward_ms=1897.89148.[0m
+[0mTraining: epoch=0 step=279/782 loss=0.14870 accuracy=96.28906 runtime_forward_ms=981.74628 runtime_backward_ms=1890.78690.[0m
+[0mTraining: epoch=0 step=287/782 loss=0.16269 accuracy=94.72656 runtime_forward_ms=982.28853 runtime_backward_ms=1894.38402.[0m
+[0mTraining: epoch=0 step=295/782 loss=0.13236 accuracy=96.09375 runtime_forward_ms=981.84522 runtime_backward_ms=1894.81241.[0m
+[0mTraining: epoch=0 step=303/782 loss=0.16288 accuracy=95.50781 runtime_forward_ms=982.16900 runtime_backward_ms=1895.80941.[0m
+[0mTraining: epoch=0 step=311/782 loss=0.12549 accuracy=96.09375 runtime_forward_ms=981.72173 runtime_backward_ms=1894.97585.[0m
+[0mTraining: epoch=0 step=319/782 loss=0.11778 accuracy=96.87500 runtime_forward_ms=983.22259 runtime_backward_ms=1891.56380.[0m
+[0mTraining: epoch=0 step=327/782 loss=0.13293 accuracy=95.89844 runtime_forward_ms=981.93987 runtime_backward_ms=1897.69684.[0m
+[0mTraining: epoch=0 step=335/782 loss=0.16608 accuracy=94.33594 runtime_forward_ms=981.20365 runtime_backward_ms=1887.97986.[0m
+[0mTraining: epoch=0 step=343/782 loss=0.12728 accuracy=97.46094 runtime_forward_ms=980.92170 runtime_backward_ms=1887.29890.[0m
+[0mTraining: epoch=0 step=351/782 loss=0.10933 accuracy=96.87500 runtime_forward_ms=981.10463 runtime_backward_ms=1890.17873.[0m
+[0mTraining: epoch=0 step=359/782 loss=0.11616 accuracy=96.48438 runtime_forward_ms=981.01324 runtime_backward_ms=1887.26872.[0m
+[0mTraining: epoch=0 step=367/782 loss=0.13581 accuracy=95.70312 runtime_forward_ms=981.12477 runtime_backward_ms=1886.73561.[0m
+[0mTraining: epoch=0 step=375/782 loss=0.12383 accuracy=95.70312 runtime_forward_ms=982.82377 runtime_backward_ms=1886.83238.[0m
+[0mTraining: epoch=0 step=383/782 loss=0.14449 accuracy=96.48438 runtime_forward_ms=980.99281 runtime_backward_ms=1886.72454.[0m
+[0mTraining: epoch=0 step=391/782 loss=0.18364 accuracy=94.14062 runtime_forward_ms=980.91216 runtime_backward_ms=1886.59864.[0m
+[0mTraining: epoch=0 step=399/782 loss=0.13616 accuracy=95.70312 runtime_forward_ms=980.94327 runtime_backward_ms=1886.95033.[0m
+[0mTraining: epoch=0 step=407/782 loss=0.14143 accuracy=96.09375 runtime_forward_ms=980.99588 runtime_backward_ms=1886.45485.[0m
+[0mTraining: epoch=0 step=415/782 loss=0.12091 accuracy=96.09375 runtime_forward_ms=980.96990 runtime_backward_ms=1886.59491.[0m
+[0mTraining: epoch=0 step=423/782 loss=0.14623 accuracy=95.89844 runtime_forward_ms=981.10353 runtime_backward_ms=1886.43544.[0m
+[0mTraining: epoch=0 step=431/782 loss=0.12578 accuracy=96.09375 runtime_forward_ms=980.95019 runtime_backward_ms=1887.34662.[0m
+[0mTraining: epoch=0 step=439/782 loss=0.12467 accuracy=96.48438 runtime_forward_ms=980.97326 runtime_backward_ms=1887.21594.[0m
+[0mTraining: epoch=0 step=447/782 loss=0.10905 accuracy=97.26562 runtime_forward_ms=980.91132 runtime_backward_ms=1886.49241.[0m
+[0mTraining: epoch=0 step=455/782 loss=0.09415 accuracy=96.87500 runtime_forward_ms=980.85858 runtime_backward_ms=1886.50317.[0m
+[0mTraining: epoch=0 step=463/782 loss=0.10310 accuracy=97.07031 runtime_forward_ms=981.13176 runtime_backward_ms=1887.20454.[0m
+[0mTraining: epoch=0 step=471/782 loss=0.13170 accuracy=96.28906 runtime_forward_ms=981.15527 runtime_backward_ms=1887.08840.[0m
+[0mTraining: epoch=0 step=479/782 loss=0.10974 accuracy=96.67969 runtime_forward_ms=980.95334 runtime_backward_ms=1887.21397.[0m
+[0mTraining: epoch=0 step=487/782 loss=0.10531 accuracy=96.87500 runtime_forward_ms=980.88733 runtime_backward_ms=1886.81864.[0m
+[0mTraining: epoch=0 step=495/782 loss=0.08885 accuracy=98.04688 runtime_forward_ms=980.98770 runtime_backward_ms=1886.77326.[0m
+[0mTraining: epoch=0 step=503/782 loss=0.09075 accuracy=98.24219 runtime_forward_ms=981.17841 runtime_backward_ms=1887.17402.[0m
+[0mTraining: epoch=0 step=511/782 loss=0.07511 accuracy=97.85156 runtime_forward_ms=980.99174 runtime_backward_ms=1887.11450.[0m
+[0mTraining: epoch=0 step=519/782 loss=0.10339 accuracy=96.67969 runtime_forward_ms=980.87760 runtime_backward_ms=1887.22293.[0m
+[0mTraining: epoch=0 step=527/782 loss=0.09942 accuracy=97.46094 runtime_forward_ms=980.95320 runtime_backward_ms=1886.51231.[0m
+[0mTraining: epoch=0 step=535/782 loss=0.11791 accuracy=97.46094 runtime_forward_ms=981.08328 runtime_backward_ms=1887.88275.[0m
+[0mTraining: epoch=0 step=543/782 loss=0.07898 accuracy=97.85156 runtime_forward_ms=980.93758 runtime_backward_ms=1886.95972.[0m
+[0mTraining: epoch=0 step=551/782 loss=0.10440 accuracy=96.09375 runtime_forward_ms=980.91716 runtime_backward_ms=1887.12474.[0m
+[0mTraining: epoch=0 step=559/782 loss=0.10650 accuracy=96.87500 runtime_forward_ms=980.85031 runtime_backward_ms=1887.15987.[0m
+[0mTraining: epoch=0 step=567/782 loss=0.11721 accuracy=96.67969 runtime_forward_ms=980.95678 runtime_backward_ms=1886.68845.[0m
+[0mTraining: epoch=0 step=575/782 loss=0.08950 accuracy=98.04688 runtime_forward_ms=980.93184 runtime_backward_ms=1886.77945.[0m
+[0mTraining: epoch=0 step=583/782 loss=0.13426 accuracy=95.89844 runtime_forward_ms=980.98557 runtime_backward_ms=1886.64148.[0m
+[0mTraining: epoch=0 step=591/782 loss=0.10519 accuracy=96.87500 runtime_forward_ms=980.96965 runtime_backward_ms=1886.49202.[0m
+[0mTraining: epoch=0 step=599/782 loss=0.09357 accuracy=97.46094 runtime_forward_ms=980.83744 runtime_backward_ms=1886.69934.[0m
+[0mTraining: epoch=0 step=607/782 loss=0.06216 accuracy=98.04688 runtime_forward_ms=980.94775 runtime_backward_ms=1887.03712.[0m
+[0mTraining: epoch=0 step=615/782 loss=0.10366 accuracy=96.67969 runtime_forward_ms=980.90512 runtime_backward_ms=1886.83743.[0m
+[0mTraining: epoch=0 step=623/782 loss=0.11136 accuracy=97.07031 runtime_forward_ms=981.03837 runtime_backward_ms=1887.01760.[0m
+[0mTraining: epoch=0 step=631/782 loss=0.13338 accuracy=95.70312 runtime_forward_ms=980.95056 runtime_backward_ms=1886.95978.[0m
+[0mTraining: epoch=0 step=639/782 loss=0.10663 accuracy=97.07031 runtime_forward_ms=980.84151 runtime_backward_ms=1886.95158.[0m
+[0mTraining: epoch=0 step=647/782 loss=0.09158 accuracy=97.65625 runtime_forward_ms=981.00985 runtime_backward_ms=1886.97509.[0m
+[0mTraining: epoch=0 step=655/782 loss=0.09034 accuracy=97.07031 runtime_forward_ms=981.00282 runtime_backward_ms=1887.06437.[0m
+[0mTraining: epoch=0 step=663/782 loss=0.06675 accuracy=98.04688 runtime_forward_ms=984.41309 runtime_backward_ms=1887.13142.[0m
+[0mTraining: epoch=0 step=671/782 loss=0.08099 accuracy=98.04688 runtime_forward_ms=981.12922 runtime_backward_ms=1887.50978.[0m
+[0mTraining: epoch=0 step=679/782 loss=0.06833 accuracy=98.43750 runtime_forward_ms=980.95808 runtime_backward_ms=1887.29431.[0m
+[0mTraining: epoch=0 step=687/782 loss=0.08013 accuracy=97.07031 runtime_forward_ms=981.03961 runtime_backward_ms=1887.78888.[0m
+[0mTraining: epoch=0 step=695/782 loss=0.10152 accuracy=97.46094 runtime_forward_ms=981.19715 runtime_backward_ms=1888.85236.[0m
+[0mTraining: epoch=0 step=703/782 loss=0.10816 accuracy=97.85156 runtime_forward_ms=980.94022 runtime_backward_ms=1886.81800.[0m
+[0mTraining: epoch=0 step=711/782 loss=0.11545 accuracy=96.28906 runtime_forward_ms=981.41853 runtime_backward_ms=1887.07025.[0m
+[0mTraining: epoch=0 step=719/782 loss=0.09553 accuracy=97.07031 runtime_forward_ms=981.08008 runtime_backward_ms=1887.71410.[0m
+[0mTraining: epoch=0 step=727/782 loss=0.08095 accuracy=97.65625 runtime_forward_ms=980.96232 runtime_backward_ms=1886.66279.[0m
+[0mTraining: epoch=0 step=735/782 loss=0.09360 accuracy=97.65625 runtime_forward_ms=980.97217 runtime_backward_ms=1887.21120.[0m
+[0mTraining: epoch=0 step=743/782 loss=0.09076 accuracy=97.46094 runtime_forward_ms=980.95021 runtime_backward_ms=1886.49853.[0m
+[0mTraining: epoch=0 step=751/782 loss=0.09497 accuracy=96.87500 runtime_forward_ms=981.00336 runtime_backward_ms=1886.69979.[0m
+[0mTraining: epoch=0 step=759/782 loss=0.06833 accuracy=98.24219 runtime_forward_ms=981.11997 runtime_backward_ms=1886.76518.[0m
+[0mTraining: epoch=0 step=767/782 loss=0.09198 accuracy=97.07031 runtime_forward_ms=981.04828 runtime_backward_ms=1886.75298.[0m
+[0mTraining: epoch=0 step=775/782 loss=0.08057 accuracy=97.65625 runtime_forward_ms=980.99895 runtime_backward_ms=1886.67208.[0m
+[0mValidation: epoch=0 training_step=781 loss=1.23009 accuracy=70.22000 runtime_forward_ms=985.49404.[0m
+[0m--- End of Epoch: epoch=0 duration_training=2271.2405010797083 duration_validation=157.63428158313036 training_step=781 training_loss=0.08057 training_accuracy=97.65625 validation_loss=1.23009 validation_accuracy=70.22000.[0m
+[0mProvided parameters: main(function_name=Conv2dRFFTPhasorFunction, total_num_epochs=1,freeze_features_epochs=0, batch_size=64)[0m
+[0mModel orginal architecture is AlexNet(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(11, 11), stride=(4, 4), padding=(2, 2))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(64, 192, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (4): ReLU(inplace=True)
+    (5): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU(inplace=True)
+    (8): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (9): ReLU(inplace=True)
+    (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(6, 6))
+  (classifier): Sequential(
+    (0): Dropout(p=0.5, inplace=False)
+    (1): Linear(in_features=9216, out_features=4096, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.5, inplace=False)
+    (4): Linear(in_features=4096, out_features=4096, bias=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)[0m
+[0mModel modified architecture is Sequential(
+  (0): Dropout(p=0.5, inplace=False)
+  (1): Linear(in_features=9216, out_features=4096, bias=True)
+  (2): ReLU(inplace=True)
+  (3): Dropout(p=0.5, inplace=False)
+  (4): Linear(in_features=4096, out_features=4096, bias=True)
+  (5): ReLU(inplace=True)
+  (6): Linear(in_features=4096, out_features=100, bias=True)
+)[0m
+[0mFeatures not frozen on epoch 0[0m
+[0mTraining: epoch=0 step=7/782 loss=0.35603 accuracy=90.42969 runtime_forward_ms=729.14817 runtime_backward_ms=1394.42286.[0m
+[0mTraining: epoch=0 step=15/782 loss=0.35448 accuracy=90.62500 runtime_forward_ms=721.64150 runtime_backward_ms=1385.86685.[0m
+[0mTraining: epoch=0 step=23/782 loss=0.36159 accuracy=90.42969 runtime_forward_ms=723.14833 runtime_backward_ms=1388.00723.[0m
+[0mTraining: epoch=0 step=31/782 loss=0.31990 accuracy=90.42969 runtime_forward_ms=721.81235 runtime_backward_ms=1389.61819.[0m
+[0mTraining: epoch=0 step=39/782 loss=0.25740 accuracy=93.94531 runtime_forward_ms=721.63647 runtime_backward_ms=1388.12010.[0m
+[0mTraining: epoch=0 step=47/782 loss=0.25733 accuracy=91.99219 runtime_forward_ms=721.75671 runtime_backward_ms=1386.32316.[0m
+[0mTraining: epoch=0 step=55/782 loss=0.26119 accuracy=92.38281 runtime_forward_ms=721.69643 runtime_backward_ms=1391.13288.[0m
+[0mTraining: epoch=0 step=63/782 loss=0.22902 accuracy=92.38281 runtime_forward_ms=721.82118 runtime_backward_ms=1394.13923.[0m
+[0mTraining: epoch=0 step=71/782 loss=0.22210 accuracy=94.53125 runtime_forward_ms=721.87264 runtime_backward_ms=1389.62512.[0m
+[0mTraining: epoch=0 step=79/782 loss=0.20085 accuracy=95.11719 runtime_forward_ms=721.33793 runtime_backward_ms=1386.86026.[0m
+[0mTraining: epoch=0 step=87/782 loss=0.19504 accuracy=93.75000 runtime_forward_ms=720.77244 runtime_backward_ms=1379.90584.[0m
+[0mTraining: epoch=0 step=95/782 loss=0.16892 accuracy=95.11719 runtime_forward_ms=720.84132 runtime_backward_ms=1381.38477.[0m
+[0mTraining: epoch=0 step=103/782 loss=0.20481 accuracy=92.96875 runtime_forward_ms=722.68532 runtime_backward_ms=1379.60641.[0m
+[0mTraining: epoch=0 step=111/782 loss=0.19740 accuracy=94.33594 runtime_forward_ms=720.87039 runtime_backward_ms=1379.50564.[0m
+[0mTraining: epoch=0 step=119/782 loss=0.20458 accuracy=94.14062 runtime_forward_ms=720.74688 runtime_backward_ms=1379.80058.[0m
+[0mTraining: epoch=0 step=127/782 loss=0.18469 accuracy=93.35938 runtime_forward_ms=720.82859 runtime_backward_ms=1379.83404.[0m
+[0mTraining: epoch=0 step=135/782 loss=0.17248 accuracy=95.11719 runtime_forward_ms=720.82493 runtime_backward_ms=1379.44197.[0m
+[0mTraining: epoch=0 step=143/782 loss=0.18073 accuracy=94.92188 runtime_forward_ms=720.91101 runtime_backward_ms=1379.76495.[0m
+[0mTraining: epoch=0 step=151/782 loss=0.18849 accuracy=94.53125 runtime_forward_ms=720.84343 runtime_backward_ms=1381.73461.[0m
+[0mTraining: epoch=0 step=159/782 loss=0.17884 accuracy=94.33594 runtime_forward_ms=720.63197 runtime_backward_ms=1379.32141.[0m
+[0mTraining: epoch=0 step=167/782 loss=0.17829 accuracy=93.94531 runtime_forward_ms=720.82420 runtime_backward_ms=1379.92151.[0m
+[0mTraining: epoch=0 step=175/782 loss=0.15940 accuracy=94.72656 runtime_forward_ms=720.73888 runtime_backward_ms=1379.97938.[0m
+[0mTraining: epoch=0 step=183/782 loss=0.16757 accuracy=95.11719 runtime_forward_ms=720.85309 runtime_backward_ms=1379.36071.[0m
+[0mTraining: epoch=0 step=191/782 loss=0.13908 accuracy=95.50781 runtime_forward_ms=720.77001 runtime_backward_ms=1379.56243.[0m
+[0mTraining: epoch=0 step=199/782 loss=0.15195 accuracy=95.11719 runtime_forward_ms=721.35756 runtime_backward_ms=1391.64183.[0m
+[0mTraining: epoch=0 step=207/782 loss=0.15183 accuracy=95.11719 runtime_forward_ms=721.79471 runtime_backward_ms=1392.17330.[0m
+[0mTraining: epoch=0 step=215/782 loss=0.16004 accuracy=94.53125 runtime_forward_ms=721.94024 runtime_backward_ms=1389.03479.[0m
+[0mTraining: epoch=0 step=223/782 loss=0.17954 accuracy=94.14062 runtime_forward_ms=721.57130 runtime_backward_ms=1392.74945.[0m
+[0mTraining: epoch=0 step=231/782 loss=0.13007 accuracy=96.09375 runtime_forward_ms=721.92967 runtime_backward_ms=1388.60032.[0m
+[0mTraining: epoch=0 step=239/782 loss=0.14915 accuracy=95.31250 runtime_forward_ms=721.90738 runtime_backward_ms=1390.44970.[0m
+[0mTraining: epoch=0 step=247/782 loss=0.16686 accuracy=95.50781 runtime_forward_ms=721.70303 runtime_backward_ms=1391.95142.[0m
+[0mTraining: epoch=0 step=255/782 loss=0.12961 accuracy=97.26562 runtime_forward_ms=721.76645 runtime_backward_ms=1392.05242.[0m
+[0mTraining: epoch=0 step=263/782 loss=0.15239 accuracy=95.50781 runtime_forward_ms=721.83158 runtime_backward_ms=1388.24884.[0m
+[0mTraining: epoch=0 step=271/782 loss=0.15050 accuracy=95.11719 runtime_forward_ms=721.72112 runtime_backward_ms=1388.61501.[0m
+[0mTraining: epoch=0 step=279/782 loss=0.14834 accuracy=96.28906 runtime_forward_ms=721.00459 runtime_backward_ms=1388.14540.[0m
+[0mTraining: epoch=0 step=287/782 loss=0.16296 accuracy=94.72656 runtime_forward_ms=720.83421 runtime_backward_ms=1379.53441.[0m
+[0mTraining: epoch=0 step=295/782 loss=0.13189 accuracy=96.28906 runtime_forward_ms=721.30172 runtime_backward_ms=1383.59242.[0m
+[0mTraining: epoch=0 step=303/782 loss=0.16309 accuracy=95.50781 runtime_forward_ms=720.79054 runtime_backward_ms=1379.59799.[0m
+[0mTraining: epoch=0 step=311/782 loss=0.12523 accuracy=96.09375 runtime_forward_ms=720.96973 runtime_backward_ms=1381.77142.[0m
+[0mTraining: epoch=0 step=319/782 loss=0.11773 accuracy=96.87500 runtime_forward_ms=720.67670 runtime_backward_ms=1379.26764.[0m
+[0mTraining: epoch=0 step=327/782 loss=0.13279 accuracy=95.89844 runtime_forward_ms=720.95997 runtime_backward_ms=1379.70558.[0m
+[0mTraining: epoch=0 step=335/782 loss=0.16580 accuracy=94.33594 runtime_forward_ms=721.23803 runtime_backward_ms=1380.52440.[0m
+[0mTraining: epoch=0 step=343/782 loss=0.12712 accuracy=97.46094 runtime_forward_ms=721.41809 runtime_backward_ms=1379.34072.[0m
+[0mTraining: epoch=0 step=351/782 loss=0.10924 accuracy=96.87500 runtime_forward_ms=720.73817 runtime_backward_ms=1379.33314.[0m
+[0mTraining: epoch=0 step=359/782 loss=0.11608 accuracy=96.48438 runtime_forward_ms=720.90817 runtime_backward_ms=1379.44326.[0m
+[0mTraining: epoch=0 step=367/782 loss=0.13591 accuracy=95.50781 runtime_forward_ms=720.85828 runtime_backward_ms=1379.28767.[0m
+[0mTraining: epoch=0 step=375/782 loss=0.12365 accuracy=95.70312 runtime_forward_ms=720.73204 runtime_backward_ms=1379.36659.[0m
+[0mTraining: epoch=0 step=383/782 loss=0.14421 accuracy=96.67969 runtime_forward_ms=720.70719 runtime_backward_ms=1379.24534.[0m
+[0mTraining: epoch=0 step=391/782 loss=0.18413 accuracy=94.14062 runtime_forward_ms=720.83572 runtime_backward_ms=1380.26307.[0m
+[0mTraining: epoch=0 step=399/782 loss=0.13650 accuracy=95.70312 runtime_forward_ms=720.88883 runtime_backward_ms=1379.74135.[0m
+[0mTraining: epoch=0 step=407/782 loss=0.14141 accuracy=95.89844 runtime_forward_ms=720.67901 runtime_backward_ms=1379.53094.[0m
+[0mTraining: epoch=0 step=415/782 loss=0.12036 accuracy=96.09375 runtime_forward_ms=720.80451 runtime_backward_ms=1379.86744.[0m
+[0mTraining: epoch=0 step=423/782 loss=0.14666 accuracy=95.89844 runtime_forward_ms=720.77335 runtime_backward_ms=1379.20237.[0m
+[0mTraining: epoch=0 step=431/782 loss=0.12559 accuracy=96.09375 runtime_forward_ms=721.07706 runtime_backward_ms=1379.58614.[0m
+[0mTraining: epoch=0 step=439/782 loss=0.12452 accuracy=96.48438 runtime_forward_ms=722.56918 runtime_backward_ms=1379.98203.[0m
+[0mTraining: epoch=0 step=447/782 loss=0.10953 accuracy=97.07031 runtime_forward_ms=721.88401 runtime_backward_ms=1389.67053.[0m
+[0mTraining: epoch=0 step=455/782 loss=0.09397 accuracy=96.67969 runtime_forward_ms=721.44549 runtime_backward_ms=1394.67295.[0m
+[0mTraining: epoch=0 step=463/782 loss=0.10310 accuracy=97.07031 runtime_forward_ms=721.93029 runtime_backward_ms=1387.78713.[0m
+[0mTraining: epoch=0 step=471/782 loss=0.13199 accuracy=95.89844 runtime_forward_ms=721.35045 runtime_backward_ms=1388.24857.[0m
+[0mTraining: epoch=0 step=479/782 loss=0.10957 accuracy=96.67969 runtime_forward_ms=721.48436 runtime_backward_ms=1388.30268.[0m
+[0mTraining: epoch=0 step=487/782 loss=0.10574 accuracy=96.87500 runtime_forward_ms=720.82683 runtime_backward_ms=1381.78570.[0m
+[0mTraining: epoch=0 step=495/782 loss=0.08898 accuracy=98.04688 runtime_forward_ms=722.07176 runtime_backward_ms=1389.69312.[0m
+[0mTraining: epoch=0 step=503/782 loss=0.09094 accuracy=98.24219 runtime_forward_ms=720.93965 runtime_backward_ms=1380.15896.[0m
+[0mTraining: epoch=0 step=511/782 loss=0.07528 accuracy=98.04688 runtime_forward_ms=723.30385 runtime_backward_ms=1385.85775.[0m
+[0mTraining: epoch=0 step=519/782 loss=0.10370 accuracy=96.48438 runtime_forward_ms=720.91185 runtime_backward_ms=1381.34575.[0m
+[0mTraining: epoch=0 step=527/782 loss=0.09972 accuracy=97.46094 runtime_forward_ms=721.06196 runtime_backward_ms=1381.55270.[0m
+[0mTraining: epoch=0 step=535/782 loss=0.11785 accuracy=97.46094 runtime_forward_ms=721.25786 runtime_backward_ms=1387.52322.[0m
+[0mTraining: epoch=0 step=543/782 loss=0.07887 accuracy=97.85156 runtime_forward_ms=720.71481 runtime_backward_ms=1379.23157.[0m
+[0mTraining: epoch=0 step=551/782 loss=0.10464 accuracy=96.09375 runtime_forward_ms=720.93691 runtime_backward_ms=1379.47041.[0m
+[0mTraining: epoch=0 step=559/782 loss=0.10602 accuracy=96.87500 runtime_forward_ms=721.76637 runtime_backward_ms=1389.59766.[0m
+[0mTraining: epoch=0 step=567/782 loss=0.11692 accuracy=96.67969 runtime_forward_ms=721.39691 runtime_backward_ms=1382.16837.[0m
+[0mTraining: epoch=0 step=575/782 loss=0.08952 accuracy=97.85156 runtime_forward_ms=721.29762 runtime_backward_ms=1381.87093.[0m
+[0mTraining: epoch=0 step=583/782 loss=0.13433 accuracy=95.89844 runtime_forward_ms=720.73777 runtime_backward_ms=1379.91346.[0m
+[0mTraining: epoch=0 step=591/782 loss=0.10474 accuracy=96.87500 runtime_forward_ms=720.72779 runtime_backward_ms=1379.50947.[0m
+[0mTraining: epoch=0 step=599/782 loss=0.09353 accuracy=97.65625 runtime_forward_ms=720.98862 runtime_backward_ms=1379.69275.[0m
+[0mTraining: epoch=0 step=607/782 loss=0.06225 accuracy=98.04688 runtime_forward_ms=721.02242 runtime_backward_ms=1380.75127.[0m
+[0mTraining: epoch=0 step=615/782 loss=0.10352 accuracy=96.67969 runtime_forward_ms=720.75128 runtime_backward_ms=1379.63385.[0m
+[0mTraining: epoch=0 step=623/782 loss=0.11138 accuracy=97.07031 runtime_forward_ms=720.90465 runtime_backward_ms=1379.64216.[0m
+[0mTraining: epoch=0 step=631/782 loss=0.13352 accuracy=95.70312 runtime_forward_ms=720.80625 runtime_backward_ms=1379.32800.[0m
+[0mTraining: epoch=0 step=639/782 loss=0.10617 accuracy=97.07031 runtime_forward_ms=720.72268 runtime_backward_ms=1379.52543.[0m
+[0mTraining: epoch=0 step=647/782 loss=0.09175 accuracy=97.65625 runtime_forward_ms=721.18750 runtime_backward_ms=1382.70786.[0m
+[0mTraining: epoch=0 step=655/782 loss=0.09041 accuracy=97.07031 runtime_forward_ms=723.53749 runtime_backward_ms=1385.55554.[0m
+[0mTraining: epoch=0 step=663/782 loss=0.06663 accuracy=98.04688 runtime_forward_ms=722.77746 runtime_backward_ms=1385.12348.[0m
+[0mTraining: epoch=0 step=671/782 loss=0.08075 accuracy=98.04688 runtime_forward_ms=721.51756 runtime_backward_ms=1382.42129.[0m
+[0mTraining: epoch=0 step=679/782 loss=0.06801 accuracy=98.43750 runtime_forward_ms=720.80518 runtime_backward_ms=1379.65246.[0m
+[0mTraining: epoch=0 step=687/782 loss=0.08041 accuracy=97.07031 runtime_forward_ms=720.92775 runtime_backward_ms=1379.45799.[0m
+[0mTraining: epoch=0 step=695/782 loss=0.10161 accuracy=97.65625 runtime_forward_ms=720.66372 runtime_backward_ms=1379.51826.[0m
+[0mTraining: epoch=0 step=703/782 loss=0.10801 accuracy=97.65625 runtime_forward_ms=721.71627 runtime_backward_ms=1383.93046.[0m
+[0mTraining: epoch=0 step=711/782 loss=0.11578 accuracy=96.09375 runtime_forward_ms=721.44615 runtime_backward_ms=1387.90760.[0m
+[0mTraining: epoch=0 step=719/782 loss=0.09550 accuracy=97.07031 runtime_forward_ms=721.23113 runtime_backward_ms=1385.99991.[0m
+[0mTraining: epoch=0 step=727/782 loss=0.08073 accuracy=97.65625 runtime_forward_ms=722.11777 runtime_backward_ms=1387.08487.[0m
+[0mTraining: epoch=0 step=735/782 loss=0.09408 accuracy=97.46094 runtime_forward_ms=721.45718 runtime_backward_ms=1383.36982.[0m
+[0mTraining: epoch=0 step=743/782 loss=0.09105 accuracy=97.46094 runtime_forward_ms=721.45898 runtime_backward_ms=1387.59988.[0m
+[0mTraining: epoch=0 step=751/782 loss=0.09485 accuracy=96.87500 runtime_forward_ms=721.12928 runtime_backward_ms=1382.56677.[0m
+[0mTraining: epoch=0 step=759/782 loss=0.06791 accuracy=98.24219 runtime_forward_ms=720.90459 runtime_backward_ms=1381.00906.[0m
+[0mTraining: epoch=0 step=767/782 loss=0.09212 accuracy=97.07031 runtime_forward_ms=721.15159 runtime_backward_ms=1383.75463.[0m
+[0mTraining: epoch=0 step=775/782 loss=0.08076 accuracy=97.65625 runtime_forward_ms=721.22228 runtime_backward_ms=1383.70539.[0m
+[0mValidation: epoch=0 training_step=781 loss=1.22947 accuracy=70.28000 runtime_forward_ms=718.58566.[0m
+[0m--- End of Epoch: epoch=0 duration_training=1669.5491860471666 duration_validation=115.14444959908724 training_step=781 training_loss=0.08076 training_accuracy=97.65625 validation_loss=1.22947 validation_accuracy=70.28000.[0m

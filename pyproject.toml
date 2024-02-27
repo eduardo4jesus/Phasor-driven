@@ -1,0 +1,22 @@
+# Reference: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "phd_spectral"
+version = "2023.12.19.alpha"
+authors = [{ name = "Eduardo Reis", email = "edreis@lakeheadu.ca" }]
+description = "Phd Research on CNN based on Spectral Domain Transform"
+dependencies = [
+    "colorama>=0.4.6",
+    "ipykernel>=6.29.0",
+    "matplotlib>=3.8.2",
+    "numpy>=1.26.3",
+    "pandas>=2.2.0",
+    "pyarrow>=15.0.0",
+    "torch>=1.12.1",
+    "torchaudio>=0.12.1",
+    "torchvision>=0.13.1"
+]
+requires-python = ">=3.10"

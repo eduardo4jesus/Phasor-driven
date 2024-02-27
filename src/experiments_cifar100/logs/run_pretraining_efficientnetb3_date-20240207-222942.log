@@ -1,0 +1,2232 @@
+[0mProvided parameters: main(total_num_epochs=4,freeze_features_epochs=2, batch_size=64)[0m
+[0mModel orginal architecture is EfficientNet(
+  (features): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(3, 40, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): SiLU(inplace=True)
+    )
+    (1): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(40, 40, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=40, bias=False)
+            (1): BatchNorm2d(40, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(40, 10, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(10, 40, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(40, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.0, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(24, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=24, bias=False)
+            (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(24, 6, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(6, 24, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (2): Conv2dNormActivation(
+            (0): Conv2d(24, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(24, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.007692307692307693, mode=row)
+      )
+    )
+    (2): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(24, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(144, 144, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=144, bias=False)
+            (1): BatchNorm2d(144, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(144, 6, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(6, 144, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(144, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.015384615384615385, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.02307692307692308, mode=row)
+      )
+      (2): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(192, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=192, bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(192, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.03076923076923077, mode=row)
+      )
+    )
+    (3): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(32, 192, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(192, 192, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=192, bias=False)
+            (1): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(192, 8, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(8, 192, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(192, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.038461538461538464, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(288, 288, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=288, bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(288, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.04615384615384616, mode=row)
+      )
+      (2): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(288, 288, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=288, bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(288, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.05384615384615385, mode=row)
+      )
+    )
+    (4): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(288, 288, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=288, bias=False)
+            (1): BatchNorm2d(288, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(288, 12, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(12, 288, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(288, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.06153846153846154, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.06923076923076923, mode=row)
+      )
+      (2): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.07692307692307693, mode=row)
+      )
+      (3): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.08461538461538462, mode=row)
+      )
+      (4): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(576, 576, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=576, bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.09230769230769233, mode=row)
+      )
+    )
+    (5): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(576, 576, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=576, bias=False)
+            (1): BatchNorm2d(576, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(576, 24, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(24, 576, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(576, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.1, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.1076923076923077, mode=row)
+      )
+      (2): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.11538461538461539, mode=row)
+      )
+      (3): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.12307692307692308, mode=row)
+      )
+      (4): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(816, 816, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=816, bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(816, 136, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(136, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.13076923076923078, mode=row)
+      )
+    )
+    (6): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(136, 816, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(816, 816, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=816, bias=False)
+            (1): BatchNorm2d(816, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(816, 34, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(34, 816, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(816, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.13846153846153847, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.14615384615384616, mode=row)
+      )
+      (2): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.15384615384615385, mode=row)
+      )
+      (3): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.16153846153846155, mode=row)
+      )
+      (4): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.16923076923076924, mode=row)
+      )
+      (5): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 232, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(232, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.17692307692307693, mode=row)
+      )
+    )
+    (7): Sequential(
+      (0): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(232, 1392, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(1392, 1392, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=1392, bias=False)
+            (1): BatchNorm2d(1392, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(1392, 58, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(58, 1392, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(1392, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.18461538461538465, mode=row)
+      )
+      (1): MBConv(
+        (block): Sequential(
+          (0): Conv2dNormActivation(
+            (0): Conv2d(384, 2304, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(2304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (1): Conv2dNormActivation(
+            (0): Conv2d(2304, 2304, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=2304, bias=False)
+            (1): BatchNorm2d(2304, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): SiLU(inplace=True)
+          )
+          (2): SqueezeExcitation(
+            (avgpool): AdaptiveAvgPool2d(output_size=1)
+            (fc1): Conv2d(2304, 96, kernel_size=(1, 1), stride=(1, 1))
+            (fc2): Conv2d(96, 2304, kernel_size=(1, 1), stride=(1, 1))
+            (activation): SiLU(inplace=True)
+            (scale_activation): Sigmoid()
+          )
+          (3): Conv2dNormActivation(
+            (0): Conv2d(2304, 384, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (stochastic_depth): StochasticDepth(p=0.19230769230769232, mode=row)
+      )
+    )
+    (8): Conv2dNormActivation(
+      (0): Conv2d(384, 1536, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(1536, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): SiLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=1)
+  (classifier): Sequential(
+    (0): Dropout(p=0.3, inplace=True)
+    (1): Linear(in_features=1536, out_features=1000, bias=True)
+  )
+)[0m
+[0mModel classifier architecture is Sequential(
+  (0): Dropout(p=0.3, inplace=True)
+  (1): Linear(in_features=1536, out_features=100, bias=True)
+)[0m
+[0mFeatures frozen on epoch 0[0m
+[0m(0) parameter.requires_grad = False[0m
+[0m(1) parameter.requires_grad = False[0m
+[0m(2) parameter.requires_grad = False[0m
+[0m(3) parameter.requires_grad = False[0m
+[0m(4) parameter.requires_grad = False[0m
+[0m(5) parameter.requires_grad = False[0m
+[0m(6) parameter.requires_grad = False[0m
+[0m(7) parameter.requires_grad = False[0m
+[0m(8) parameter.requires_grad = False[0m
+[0m(9) parameter.requires_grad = False[0m
+[0m(10) parameter.requires_grad = False[0m
+[0m(11) parameter.requires_grad = False[0m
+[0m(12) parameter.requires_grad = False[0m
+[0m(13) parameter.requires_grad = False[0m
+[0m(14) parameter.requires_grad = False[0m
+[0m(15) parameter.requires_grad = False[0m
+[0m(16) parameter.requires_grad = False[0m
+[0m(17) parameter.requires_grad = False[0m
+[0m(18) parameter.requires_grad = False[0m
+[0m(19) parameter.requires_grad = False[0m
+[0m(20) parameter.requires_grad = False[0m
+[0m(21) parameter.requires_grad = False[0m
+[0m(22) parameter.requires_grad = False[0m
+[0m(23) parameter.requires_grad = False[0m
+[0m(24) parameter.requires_grad = False[0m
+[0m(25) parameter.requires_grad = False[0m
+[0m(26) parameter.requires_grad = False[0m
+[0m(27) parameter.requires_grad = False[0m
+[0m(28) parameter.requires_grad = False[0m
+[0m(29) parameter.requires_grad = False[0m
+[0m(30) parameter.requires_grad = False[0m
+[0m(31) parameter.requires_grad = False[0m
+[0m(32) parameter.requires_grad = False[0m
+[0m(33) parameter.requires_grad = False[0m
+[0m(34) parameter.requires_grad = False[0m
+[0m(35) parameter.requires_grad = False[0m
+[0m(36) parameter.requires_grad = False[0m
+[0m(37) parameter.requires_grad = False[0m
+[0m(38) parameter.requires_grad = False[0m
+[0m(39) parameter.requires_grad = False[0m
+[0m(40) parameter.requires_grad = False[0m
+[0m(41) parameter.requires_grad = False[0m
+[0m(42) parameter.requires_grad = False[0m
+[0m(43) parameter.requires_grad = False[0m
+[0m(44) parameter.requires_grad = False[0m
+[0m(45) parameter.requires_grad = False[0m
+[0m(46) parameter.requires_grad = False[0m
+[0m(47) parameter.requires_grad = False[0m
+[0m(48) parameter.requires_grad = False[0m
+[0m(49) parameter.requires_grad = False[0m
+[0m(50) parameter.requires_grad = False[0m
+[0m(51) parameter.requires_grad = False[0m
+[0m(52) parameter.requires_grad = False[0m
+[0m(53) parameter.requires_grad = False[0m
+[0m(54) parameter.requires_grad = False[0m
+[0m(55) parameter.requires_grad = False[0m
+[0m(56) parameter.requires_grad = False[0m
+[0m(57) parameter.requires_grad = False[0m
+[0m(58) parameter.requires_grad = False[0m
+[0m(59) parameter.requires_grad = False[0m
+[0m(60) parameter.requires_grad = False[0m
+[0m(61) parameter.requires_grad = False[0m
+[0m(62) parameter.requires_grad = False[0m
+[0m(63) parameter.requires_grad = False[0m
+[0m(64) parameter.requires_grad = False[0m
+[0m(65) parameter.requires_grad = False[0m
+[0m(66) parameter.requires_grad = False[0m
+[0m(67) parameter.requires_grad = False[0m
+[0m(68) parameter.requires_grad = False[0m
+[0m(69) parameter.requires_grad = False[0m
+[0m(70) parameter.requires_grad = False[0m
+[0m(71) parameter.requires_grad = False[0m
+[0m(72) parameter.requires_grad = False[0m
+[0m(73) parameter.requires_grad = False[0m
+[0m(74) parameter.requires_grad = False[0m
+[0m(75) parameter.requires_grad = False[0m
+[0m(76) parameter.requires_grad = False[0m
+[0m(77) parameter.requires_grad = False[0m
+[0m(78) parameter.requires_grad = False[0m
+[0m(79) parameter.requires_grad = False[0m
+[0m(80) parameter.requires_grad = False[0m
+[0m(81) parameter.requires_grad = False[0m
+[0m(82) parameter.requires_grad = False[0m
+[0m(83) parameter.requires_grad = False[0m
+[0m(84) parameter.requires_grad = False[0m
+[0m(85) parameter.requires_grad = False[0m
+[0m(86) parameter.requires_grad = False[0m
+[0m(87) parameter.requires_grad = False[0m
+[0m(88) parameter.requires_grad = False[0m
+[0m(89) parameter.requires_grad = False[0m
+[0m(90) parameter.requires_grad = False[0m
+[0m(91) parameter.requires_grad = False[0m
+[0m(92) parameter.requires_grad = False[0m
+[0m(93) parameter.requires_grad = False[0m
+[0m(94) parameter.requires_grad = False[0m
+[0m(95) parameter.requires_grad = False[0m
+[0m(96) parameter.requires_grad = False[0m
+[0m(97) parameter.requires_grad = False[0m
+[0m(98) parameter.requires_grad = False[0m
+[0m(99) parameter.requires_grad = False[0m
+[0m(100) parameter.requires_grad = False[0m
+[0m(101) parameter.requires_grad = False[0m
+[0m(102) parameter.requires_grad = False[0m
+[0m(103) parameter.requires_grad = False[0m
+[0m(104) parameter.requires_grad = False[0m
+[0m(105) parameter.requires_grad = False[0m
+[0m(106) parameter.requires_grad = False[0m
+[0m(107) parameter.requires_grad = False[0m
+[0m(108) parameter.requires_grad = False[0m
+[0m(109) parameter.requires_grad = False[0m
+[0m(110) parameter.requires_grad = False[0m
+[0m(111) parameter.requires_grad = False[0m
+[0m(112) parameter.requires_grad = False[0m
+[0m(113) parameter.requires_grad = False[0m
+[0m(114) parameter.requires_grad = False[0m
+[0m(115) parameter.requires_grad = False[0m
+[0m(116) parameter.requires_grad = False[0m
+[0m(117) parameter.requires_grad = False[0m
+[0m(118) parameter.requires_grad = False[0m
+[0m(119) parameter.requires_grad = False[0m
+[0m(120) parameter.requires_grad = False[0m
+[0m(121) parameter.requires_grad = False[0m
+[0m(122) parameter.requires_grad = False[0m
+[0m(123) parameter.requires_grad = False[0m
+[0m(124) parameter.requires_grad = False[0m
+[0m(125) parameter.requires_grad = False[0m
+[0m(126) parameter.requires_grad = False[0m
+[0m(127) parameter.requires_grad = False[0m
+[0m(128) parameter.requires_grad = False[0m
+[0m(129) parameter.requires_grad = False[0m
+[0m(130) parameter.requires_grad = False[0m
+[0m(131) parameter.requires_grad = False[0m
+[0m(132) parameter.requires_grad = False[0m
+[0m(133) parameter.requires_grad = False[0m
+[0m(134) parameter.requires_grad = False[0m
+[0m(135) parameter.requires_grad = False[0m
+[0m(136) parameter.requires_grad = False[0m
+[0m(137) parameter.requires_grad = False[0m
+[0m(138) parameter.requires_grad = False[0m
+[0m(139) parameter.requires_grad = False[0m
+[0m(140) parameter.requires_grad = False[0m
+[0m(141) parameter.requires_grad = False[0m
+[0m(142) parameter.requires_grad = False[0m
+[0m(143) parameter.requires_grad = False[0m
+[0m(144) parameter.requires_grad = False[0m
+[0m(145) parameter.requires_grad = False[0m
+[0m(146) parameter.requires_grad = False[0m
+[0m(147) parameter.requires_grad = False[0m
+[0m(148) parameter.requires_grad = False[0m
+[0m(149) parameter.requires_grad = False[0m
+[0m(150) parameter.requires_grad = False[0m
+[0m(151) parameter.requires_grad = False[0m
+[0m(152) parameter.requires_grad = False[0m
+[0m(153) parameter.requires_grad = False[0m
+[0m(154) parameter.requires_grad = False[0m
+[0m(155) parameter.requires_grad = False[0m
+[0m(156) parameter.requires_grad = False[0m
+[0m(157) parameter.requires_grad = False[0m
+[0m(158) parameter.requires_grad = False[0m
+[0m(159) parameter.requires_grad = False[0m
+[0m(160) parameter.requires_grad = False[0m
+[0m(161) parameter.requires_grad = False[0m
+[0m(162) parameter.requires_grad = False[0m
+[0m(163) parameter.requires_grad = False[0m
+[0m(164) parameter.requires_grad = False[0m
+[0m(165) parameter.requires_grad = False[0m
+[0m(166) parameter.requires_grad = False[0m
+[0m(167) parameter.requires_grad = False[0m
+[0m(168) parameter.requires_grad = False[0m
+[0m(169) parameter.requires_grad = False[0m
+[0m(170) parameter.requires_grad = False[0m
+[0m(171) parameter.requires_grad = False[0m
+[0m(172) parameter.requires_grad = False[0m
+[0m(173) parameter.requires_grad = False[0m
+[0m(174) parameter.requires_grad = False[0m
+[0m(175) parameter.requires_grad = False[0m
+[0m(176) parameter.requires_grad = False[0m
+[0m(177) parameter.requires_grad = False[0m
+[0m(178) parameter.requires_grad = False[0m
+[0m(179) parameter.requires_grad = False[0m
+[0m(180) parameter.requires_grad = False[0m
+[0m(181) parameter.requires_grad = False[0m
+[0m(182) parameter.requires_grad = False[0m
+[0m(183) parameter.requires_grad = False[0m
+[0m(184) parameter.requires_grad = False[0m
+[0m(185) parameter.requires_grad = False[0m
+[0m(186) parameter.requires_grad = False[0m
+[0m(187) parameter.requires_grad = False[0m
+[0m(188) parameter.requires_grad = False[0m
+[0m(189) parameter.requires_grad = False[0m
+[0m(190) parameter.requires_grad = False[0m
+[0m(191) parameter.requires_grad = False[0m
+[0m(192) parameter.requires_grad = False[0m
+[0m(193) parameter.requires_grad = False[0m
+[0m(194) parameter.requires_grad = False[0m
+[0m(195) parameter.requires_grad = False[0m
+[0m(196) parameter.requires_grad = False[0m
+[0m(197) parameter.requires_grad = False[0m
+[0m(198) parameter.requires_grad = False[0m
+[0m(199) parameter.requires_grad = False[0m
+[0m(200) parameter.requires_grad = False[0m
+[0m(201) parameter.requires_grad = False[0m
+[0m(202) parameter.requires_grad = False[0m
+[0m(203) parameter.requires_grad = False[0m
+[0m(204) parameter.requires_grad = False[0m
+[0m(205) parameter.requires_grad = False[0m
+[0m(206) parameter.requires_grad = False[0m
+[0m(207) parameter.requires_grad = False[0m
+[0m(208) parameter.requires_grad = False[0m
+[0m(209) parameter.requires_grad = False[0m
+[0m(210) parameter.requires_grad = False[0m
+[0m(211) parameter.requires_grad = False[0m
+[0m(212) parameter.requires_grad = False[0m
+[0m(213) parameter.requires_grad = False[0m
+[0m(214) parameter.requires_grad = False[0m
+[0m(215) parameter.requires_grad = False[0m
+[0m(216) parameter.requires_grad = False[0m
+[0m(217) parameter.requires_grad = False[0m
+[0m(218) parameter.requires_grad = False[0m
+[0m(219) parameter.requires_grad = False[0m
+[0m(220) parameter.requires_grad = False[0m
+[0m(221) parameter.requires_grad = False[0m
+[0m(222) parameter.requires_grad = False[0m
+[0m(223) parameter.requires_grad = False[0m
+[0m(224) parameter.requires_grad = False[0m
+[0m(225) parameter.requires_grad = False[0m
+[0m(226) parameter.requires_grad = False[0m
+[0m(227) parameter.requires_grad = False[0m
+[0m(228) parameter.requires_grad = False[0m
+[0m(229) parameter.requires_grad = False[0m
+[0m(230) parameter.requires_grad = False[0m
+[0m(231) parameter.requires_grad = False[0m
+[0m(232) parameter.requires_grad = False[0m
+[0m(233) parameter.requires_grad = False[0m
+[0m(234) parameter.requires_grad = False[0m
+[0m(235) parameter.requires_grad = False[0m
+[0m(236) parameter.requires_grad = False[0m
+[0m(237) parameter.requires_grad = False[0m
+[0m(238) parameter.requires_grad = False[0m
+[0m(239) parameter.requires_grad = False[0m
+[0m(240) parameter.requires_grad = False[0m
+[0m(241) parameter.requires_grad = False[0m
+[0m(242) parameter.requires_grad = False[0m
+[0m(243) parameter.requires_grad = False[0m
+[0m(244) parameter.requires_grad = False[0m
+[0m(245) parameter.requires_grad = False[0m
+[0m(246) parameter.requires_grad = False[0m
+[0m(247) parameter.requires_grad = False[0m
+[0m(248) parameter.requires_grad = False[0m
+[0m(249) parameter.requires_grad = False[0m
+[0m(250) parameter.requires_grad = False[0m
+[0m(251) parameter.requires_grad = False[0m
+[0m(252) parameter.requires_grad = False[0m
+[0m(253) parameter.requires_grad = False[0m
+[0m(254) parameter.requires_grad = False[0m
+[0m(255) parameter.requires_grad = False[0m
+[0m(256) parameter.requires_grad = False[0m
+[0m(257) parameter.requires_grad = False[0m
+[0m(258) parameter.requires_grad = False[0m
+[0m(259) parameter.requires_grad = False[0m
+[0m(260) parameter.requires_grad = False[0m
+[0m(261) parameter.requires_grad = False[0m
+[0m(262) parameter.requires_grad = False[0m
+[0m(263) parameter.requires_grad = False[0m
+[0m(264) parameter.requires_grad = False[0m
+[0m(265) parameter.requires_grad = False[0m
+[0m(266) parameter.requires_grad = False[0m
+[0m(267) parameter.requires_grad = False[0m
+[0m(268) parameter.requires_grad = False[0m
+[0m(269) parameter.requires_grad = False[0m
+[0m(270) parameter.requires_grad = False[0m
+[0m(271) parameter.requires_grad = False[0m
+[0m(272) parameter.requires_grad = False[0m
+[0m(273) parameter.requires_grad = False[0m
+[0m(274) parameter.requires_grad = False[0m
+[0m(275) parameter.requires_grad = False[0m
+[0m(276) parameter.requires_grad = False[0m
+[0m(277) parameter.requires_grad = False[0m
+[0m(278) parameter.requires_grad = False[0m
+[0m(279) parameter.requires_grad = False[0m
+[0m(280) parameter.requires_grad = False[0m
+[0m(281) parameter.requires_grad = False[0m
+[0m(282) parameter.requires_grad = False[0m
+[0m(283) parameter.requires_grad = False[0m
+[0m(284) parameter.requires_grad = False[0m
+[0m(285) parameter.requires_grad = False[0m
+[0m(286) parameter.requires_grad = False[0m
+[0m(287) parameter.requires_grad = False[0m
+[0m(288) parameter.requires_grad = False[0m
+[0m(289) parameter.requires_grad = False[0m
+[0m(290) parameter.requires_grad = False[0m
+[0m(291) parameter.requires_grad = False[0m
+[0m(292) parameter.requires_grad = False[0m
+[0m(293) parameter.requires_grad = False[0m
+[0m(294) parameter.requires_grad = False[0m
+[0m(295) parameter.requires_grad = False[0m
+[0m(296) parameter.requires_grad = False[0m
+[0m(297) parameter.requires_grad = False[0m
+[0m(298) parameter.requires_grad = False[0m
+[0m(299) parameter.requires_grad = False[0m
+[0m(300) parameter.requires_grad = False[0m
+[0m(301) parameter.requires_grad = False[0m
+[0m(302) parameter.requires_grad = False[0m
+[0m(303) parameter.requires_grad = False[0m
+[0m(304) parameter.requires_grad = False[0m
+[0m(305) parameter.requires_grad = False[0m
+[0m(306) parameter.requires_grad = False[0m
+[0m(307) parameter.requires_grad = False[0m
+[0m(308) parameter.requires_grad = False[0m
+[0m(309) parameter.requires_grad = False[0m
+[0m(310) parameter.requires_grad = False[0m
+[0m(311) parameter.requires_grad = False[0m
+[0m(312) parameter.requires_grad = False[0m
+[0m(313) parameter.requires_grad = False[0m
+[0m(314) parameter.requires_grad = False[0m
+[0m(315) parameter.requires_grad = False[0m
+[0m(316) parameter.requires_grad = False[0m
+[0m(317) parameter.requires_grad = False[0m
+[0m(318) parameter.requires_grad = False[0m
+[0m(319) parameter.requires_grad = False[0m
+[0m(320) parameter.requires_grad = False[0m
+[0m(321) parameter.requires_grad = False[0m
+[0m(322) parameter.requires_grad = False[0m
+[0m(323) parameter.requires_grad = False[0m
+[0m(324) parameter.requires_grad = False[0m
+[0m(325) parameter.requires_grad = False[0m
+[0m(326) parameter.requires_grad = False[0m
+[0m(327) parameter.requires_grad = False[0m
+[0m(328) parameter.requires_grad = False[0m
+[0m(329) parameter.requires_grad = False[0m
+[0m(330) parameter.requires_grad = False[0m
+[0m(331) parameter.requires_grad = False[0m
+[0m(332) parameter.requires_grad = False[0m
+[0m(333) parameter.requires_grad = False[0m
+[0m(334) parameter.requires_grad = False[0m
+[0m(335) parameter.requires_grad = False[0m
+[0m(336) parameter.requires_grad = False[0m
+[0m(337) parameter.requires_grad = False[0m
+[0m(338) parameter.requires_grad = True[0m
+[0m(339) parameter.requires_grad = True[0m
+[0mTraining: epoch=0 step=19/782 loss=4.60008 accuracy=1.17188 runtime_forward_ms=398.13616 runtime_backward_ms=6.49051.[0m
+[0mTraining: epoch=0 step=39/782 loss=4.56744 accuracy=2.26562 runtime_forward_ms=312.32294 runtime_backward_ms=3.94140.[0m
+[0mTraining: epoch=0 step=59/782 loss=4.53486 accuracy=3.35938 runtime_forward_ms=310.35870 runtime_backward_ms=12.34812.[0m
+[0mTraining: epoch=0 step=79/782 loss=4.50783 accuracy=3.51562 runtime_forward_ms=311.49173 runtime_backward_ms=15.76004.[0m
+[0mTraining: epoch=0 step=99/782 loss=4.46097 accuracy=5.70312 runtime_forward_ms=310.91335 runtime_backward_ms=5.40194.[0m
+[0mTraining: epoch=0 step=119/782 loss=4.44244 accuracy=8.20312 runtime_forward_ms=310.17919 runtime_backward_ms=5.25198.[0m
+[0mTraining: epoch=0 step=139/782 loss=4.42493 accuracy=8.82812 runtime_forward_ms=310.28574 runtime_backward_ms=6.75822.[0m
+[0mTraining: epoch=0 step=159/782 loss=4.39476 accuracy=9.45312 runtime_forward_ms=310.26830 runtime_backward_ms=2.43669.[0m
+[0mTraining: epoch=0 step=179/782 loss=4.35852 accuracy=11.87500 runtime_forward_ms=310.20329 runtime_backward_ms=2.29030.[0m
+[0mTraining: epoch=0 step=199/782 loss=4.33618 accuracy=14.68750 runtime_forward_ms=311.19838 runtime_backward_ms=10.34153.[0m
+[0mTraining: epoch=0 step=219/782 loss=4.31071 accuracy=17.73438 runtime_forward_ms=311.68871 runtime_backward_ms=9.54028.[0m
+[0mTraining: epoch=0 step=239/782 loss=4.28088 accuracy=18.59375 runtime_forward_ms=313.86797 runtime_backward_ms=10.87279.[0m
+[0mTraining: epoch=0 step=259/782 loss=4.22579 accuracy=24.06250 runtime_forward_ms=313.15246 runtime_backward_ms=5.99199.[0m
+[0mTraining: epoch=0 step=279/782 loss=4.23352 accuracy=21.87500 runtime_forward_ms=311.16627 runtime_backward_ms=5.37326.[0m
+[0mTraining: epoch=0 step=299/782 loss=4.19229 accuracy=24.76562 runtime_forward_ms=310.22197 runtime_backward_ms=9.73412.[0m
+[0mTraining: epoch=0 step=319/782 loss=4.16946 accuracy=25.54688 runtime_forward_ms=310.26776 runtime_backward_ms=5.79122.[0m
+[0mTraining: epoch=0 step=339/782 loss=4.15881 accuracy=25.62500 runtime_forward_ms=310.25426 runtime_backward_ms=4.04847.[0m
+[0mTraining: epoch=0 step=359/782 loss=4.11726 accuracy=29.37500 runtime_forward_ms=312.54395 runtime_backward_ms=5.41209.[0m
+[0mTraining: epoch=0 step=379/782 loss=4.10285 accuracy=27.18750 runtime_forward_ms=312.99882 runtime_backward_ms=9.95633.[0m
+[0mTraining: epoch=0 step=399/782 loss=4.08165 accuracy=29.53125 runtime_forward_ms=312.25125 runtime_backward_ms=13.92338.[0m
+[0mTraining: epoch=0 step=419/782 loss=4.04481 accuracy=31.01562 runtime_forward_ms=314.97039 runtime_backward_ms=8.08101.[0m
+[0mTraining: epoch=0 step=439/782 loss=4.01121 accuracy=33.67188 runtime_forward_ms=311.99229 runtime_backward_ms=20.25693.[0m
+[0mTraining: epoch=0 step=459/782 loss=4.00301 accuracy=34.21875 runtime_forward_ms=310.61762 runtime_backward_ms=13.81265.[0m
+[0mTraining: epoch=0 step=479/782 loss=3.97103 accuracy=34.68750 runtime_forward_ms=310.48431 runtime_backward_ms=14.15517.[0m
+[0mTraining: epoch=0 step=499/782 loss=3.94425 accuracy=34.37500 runtime_forward_ms=312.05019 runtime_backward_ms=12.03963.[0m
+[0mTraining: epoch=0 step=519/782 loss=3.94260 accuracy=34.76562 runtime_forward_ms=314.31615 runtime_backward_ms=14.87051.[0m
+[0mTraining: epoch=0 step=539/782 loss=3.94271 accuracy=32.65625 runtime_forward_ms=311.37217 runtime_backward_ms=14.63294.[0m
+[0mTraining: epoch=0 step=559/782 loss=3.88117 accuracy=38.12500 runtime_forward_ms=310.48877 runtime_backward_ms=5.60300.[0m
+[0mTraining: epoch=0 step=579/782 loss=3.85749 accuracy=37.26562 runtime_forward_ms=316.18031 runtime_backward_ms=8.31391.[0m
+[0mTraining: epoch=0 step=599/782 loss=3.84098 accuracy=40.23438 runtime_forward_ms=311.17453 runtime_backward_ms=18.45875.[0m
+[0mTraining: epoch=0 step=619/782 loss=3.81099 accuracy=38.28125 runtime_forward_ms=317.74115 runtime_backward_ms=9.27063.[0m
+[0mTraining: epoch=0 step=639/782 loss=3.77693 accuracy=42.10938 runtime_forward_ms=314.11790 runtime_backward_ms=8.56143.[0m
+[0mTraining: epoch=0 step=659/782 loss=3.75657 accuracy=41.25000 runtime_forward_ms=313.71957 runtime_backward_ms=10.73021.[0m
+[0mTraining: epoch=0 step=679/782 loss=3.74598 accuracy=40.15625 runtime_forward_ms=310.24568 runtime_backward_ms=9.70701.[0m
+[0mTraining: epoch=0 step=699/782 loss=3.72127 accuracy=40.93750 runtime_forward_ms=310.18127 runtime_backward_ms=3.45547.[0m
+[0mTraining: epoch=0 step=719/782 loss=3.73382 accuracy=40.39062 runtime_forward_ms=317.91674 runtime_backward_ms=9.30438.[0m
+[0mTraining: epoch=0 step=739/782 loss=3.71476 accuracy=40.15625 runtime_forward_ms=316.15038 runtime_backward_ms=11.57552.[0m
+[0mTraining: epoch=0 step=759/782 loss=3.65941 accuracy=43.43750 runtime_forward_ms=313.62828 runtime_backward_ms=6.68410.[0m
+[0mTraining: epoch=0 step=779/782 loss=3.62567 accuracy=43.20312 runtime_forward_ms=310.92802 runtime_backward_ms=8.27484.[0m
+[0mValidation: epoch=0 training_step=781 loss=3.58808 accuracy=48.15000 runtime_forward_ms=273.52313.[0m
+[0m--- End of Epoch: epoch=0 training_step=781 training_loss=3.62567 training_accuracy=43.20312 validation_loss=3.58808 validation_accuracy=48.15000.[0m
+[0mFeatures frozen on epoch 1[0m
+[0m(0) parameter.requires_grad = False[0m
+[0m(1) parameter.requires_grad = False[0m
+[0m(2) parameter.requires_grad = False[0m
+[0m(3) parameter.requires_grad = False[0m
+[0m(4) parameter.requires_grad = False[0m
+[0m(5) parameter.requires_grad = False[0m
+[0m(6) parameter.requires_grad = False[0m
+[0m(7) parameter.requires_grad = False[0m
+[0m(8) parameter.requires_grad = False[0m
+[0m(9) parameter.requires_grad = False[0m
+[0m(10) parameter.requires_grad = False[0m
+[0m(11) parameter.requires_grad = False[0m
+[0m(12) parameter.requires_grad = False[0m
+[0m(13) parameter.requires_grad = False[0m
+[0m(14) parameter.requires_grad = False[0m
+[0m(15) parameter.requires_grad = False[0m
+[0m(16) parameter.requires_grad = False[0m
+[0m(17) parameter.requires_grad = False[0m
+[0m(18) parameter.requires_grad = False[0m
+[0m(19) parameter.requires_grad = False[0m
+[0m(20) parameter.requires_grad = False[0m
+[0m(21) parameter.requires_grad = False[0m
+[0m(22) parameter.requires_grad = False[0m
+[0m(23) parameter.requires_grad = False[0m
+[0m(24) parameter.requires_grad = False[0m
+[0m(25) parameter.requires_grad = False[0m
+[0m(26) parameter.requires_grad = False[0m
+[0m(27) parameter.requires_grad = False[0m
+[0m(28) parameter.requires_grad = False[0m
+[0m(29) parameter.requires_grad = False[0m
+[0m(30) parameter.requires_grad = False[0m
+[0m(31) parameter.requires_grad = False[0m
+[0m(32) parameter.requires_grad = False[0m
+[0m(33) parameter.requires_grad = False[0m
+[0m(34) parameter.requires_grad = False[0m
+[0m(35) parameter.requires_grad = False[0m
+[0m(36) parameter.requires_grad = False[0m
+[0m(37) parameter.requires_grad = False[0m
+[0m(38) parameter.requires_grad = False[0m
+[0m(39) parameter.requires_grad = False[0m
+[0m(40) parameter.requires_grad = False[0m
+[0m(41) parameter.requires_grad = False[0m
+[0m(42) parameter.requires_grad = False[0m
+[0m(43) parameter.requires_grad = False[0m
+[0m(44) parameter.requires_grad = False[0m
+[0m(45) parameter.requires_grad = False[0m
+[0m(46) parameter.requires_grad = False[0m
+[0m(47) parameter.requires_grad = False[0m
+[0m(48) parameter.requires_grad = False[0m
+[0m(49) parameter.requires_grad = False[0m
+[0m(50) parameter.requires_grad = False[0m
+[0m(51) parameter.requires_grad = False[0m
+[0m(52) parameter.requires_grad = False[0m
+[0m(53) parameter.requires_grad = False[0m
+[0m(54) parameter.requires_grad = False[0m
+[0m(55) parameter.requires_grad = False[0m
+[0m(56) parameter.requires_grad = False[0m
+[0m(57) parameter.requires_grad = False[0m
+[0m(58) parameter.requires_grad = False[0m
+[0m(59) parameter.requires_grad = False[0m
+[0m(60) parameter.requires_grad = False[0m
+[0m(61) parameter.requires_grad = False[0m
+[0m(62) parameter.requires_grad = False[0m
+[0m(63) parameter.requires_grad = False[0m
+[0m(64) parameter.requires_grad = False[0m
+[0m(65) parameter.requires_grad = False[0m
+[0m(66) parameter.requires_grad = False[0m
+[0m(67) parameter.requires_grad = False[0m
+[0m(68) parameter.requires_grad = False[0m
+[0m(69) parameter.requires_grad = False[0m
+[0m(70) parameter.requires_grad = False[0m
+[0m(71) parameter.requires_grad = False[0m
+[0m(72) parameter.requires_grad = False[0m
+[0m(73) parameter.requires_grad = False[0m
+[0m(74) parameter.requires_grad = False[0m
+[0m(75) parameter.requires_grad = False[0m
+[0m(76) parameter.requires_grad = False[0m
+[0m(77) parameter.requires_grad = False[0m
+[0m(78) parameter.requires_grad = False[0m
+[0m(79) parameter.requires_grad = False[0m
+[0m(80) parameter.requires_grad = False[0m
+[0m(81) parameter.requires_grad = False[0m
+[0m(82) parameter.requires_grad = False[0m
+[0m(83) parameter.requires_grad = False[0m
+[0m(84) parameter.requires_grad = False[0m
+[0m(85) parameter.requires_grad = False[0m
+[0m(86) parameter.requires_grad = False[0m
+[0m(87) parameter.requires_grad = False[0m
+[0m(88) parameter.requires_grad = False[0m
+[0m(89) parameter.requires_grad = False[0m
+[0m(90) parameter.requires_grad = False[0m
+[0m(91) parameter.requires_grad = False[0m
+[0m(92) parameter.requires_grad = False[0m
+[0m(93) parameter.requires_grad = False[0m
+[0m(94) parameter.requires_grad = False[0m
+[0m(95) parameter.requires_grad = False[0m
+[0m(96) parameter.requires_grad = False[0m
+[0m(97) parameter.requires_grad = False[0m
+[0m(98) parameter.requires_grad = False[0m
+[0m(99) parameter.requires_grad = False[0m
+[0m(100) parameter.requires_grad = False[0m
+[0m(101) parameter.requires_grad = False[0m
+[0m(102) parameter.requires_grad = False[0m
+[0m(103) parameter.requires_grad = False[0m
+[0m(104) parameter.requires_grad = False[0m
+[0m(105) parameter.requires_grad = False[0m
+[0m(106) parameter.requires_grad = False[0m
+[0m(107) parameter.requires_grad = False[0m
+[0m(108) parameter.requires_grad = False[0m
+[0m(109) parameter.requires_grad = False[0m
+[0m(110) parameter.requires_grad = False[0m
+[0m(111) parameter.requires_grad = False[0m
+[0m(112) parameter.requires_grad = False[0m
+[0m(113) parameter.requires_grad = False[0m
+[0m(114) parameter.requires_grad = False[0m
+[0m(115) parameter.requires_grad = False[0m
+[0m(116) parameter.requires_grad = False[0m
+[0m(117) parameter.requires_grad = False[0m
+[0m(118) parameter.requires_grad = False[0m
+[0m(119) parameter.requires_grad = False[0m
+[0m(120) parameter.requires_grad = False[0m
+[0m(121) parameter.requires_grad = False[0m
+[0m(122) parameter.requires_grad = False[0m
+[0m(123) parameter.requires_grad = False[0m
+[0m(124) parameter.requires_grad = False[0m
+[0m(125) parameter.requires_grad = False[0m
+[0m(126) parameter.requires_grad = False[0m
+[0m(127) parameter.requires_grad = False[0m
+[0m(128) parameter.requires_grad = False[0m
+[0m(129) parameter.requires_grad = False[0m
+[0m(130) parameter.requires_grad = False[0m
+[0m(131) parameter.requires_grad = False[0m
+[0m(132) parameter.requires_grad = False[0m
+[0m(133) parameter.requires_grad = False[0m
+[0m(134) parameter.requires_grad = False[0m
+[0m(135) parameter.requires_grad = False[0m
+[0m(136) parameter.requires_grad = False[0m
+[0m(137) parameter.requires_grad = False[0m
+[0m(138) parameter.requires_grad = False[0m
+[0m(139) parameter.requires_grad = False[0m
+[0m(140) parameter.requires_grad = False[0m
+[0m(141) parameter.requires_grad = False[0m
+[0m(142) parameter.requires_grad = False[0m
+[0m(143) parameter.requires_grad = False[0m
+[0m(144) parameter.requires_grad = False[0m
+[0m(145) parameter.requires_grad = False[0m
+[0m(146) parameter.requires_grad = False[0m
+[0m(147) parameter.requires_grad = False[0m
+[0m(148) parameter.requires_grad = False[0m
+[0m(149) parameter.requires_grad = False[0m
+[0m(150) parameter.requires_grad = False[0m
+[0m(151) parameter.requires_grad = False[0m
+[0m(152) parameter.requires_grad = False[0m
+[0m(153) parameter.requires_grad = False[0m
+[0m(154) parameter.requires_grad = False[0m
+[0m(155) parameter.requires_grad = False[0m
+[0m(156) parameter.requires_grad = False[0m
+[0m(157) parameter.requires_grad = False[0m
+[0m(158) parameter.requires_grad = False[0m
+[0m(159) parameter.requires_grad = False[0m
+[0m(160) parameter.requires_grad = False[0m
+[0m(161) parameter.requires_grad = False[0m
+[0m(162) parameter.requires_grad = False[0m
+[0m(163) parameter.requires_grad = False[0m
+[0m(164) parameter.requires_grad = False[0m
+[0m(165) parameter.requires_grad = False[0m
+[0m(166) parameter.requires_grad = False[0m
+[0m(167) parameter.requires_grad = False[0m
+[0m(168) parameter.requires_grad = False[0m
+[0m(169) parameter.requires_grad = False[0m
+[0m(170) parameter.requires_grad = False[0m
+[0m(171) parameter.requires_grad = False[0m
+[0m(172) parameter.requires_grad = False[0m
+[0m(173) parameter.requires_grad = False[0m
+[0m(174) parameter.requires_grad = False[0m
+[0m(175) parameter.requires_grad = False[0m
+[0m(176) parameter.requires_grad = False[0m
+[0m(177) parameter.requires_grad = False[0m
+[0m(178) parameter.requires_grad = False[0m
+[0m(179) parameter.requires_grad = False[0m
+[0m(180) parameter.requires_grad = False[0m
+[0m(181) parameter.requires_grad = False[0m
+[0m(182) parameter.requires_grad = False[0m
+[0m(183) parameter.requires_grad = False[0m
+[0m(184) parameter.requires_grad = False[0m
+[0m(185) parameter.requires_grad = False[0m
+[0m(186) parameter.requires_grad = False[0m
+[0m(187) parameter.requires_grad = False[0m
+[0m(188) parameter.requires_grad = False[0m
+[0m(189) parameter.requires_grad = False[0m
+[0m(190) parameter.requires_grad = False[0m
+[0m(191) parameter.requires_grad = False[0m
+[0m(192) parameter.requires_grad = False[0m
+[0m(193) parameter.requires_grad = False[0m
+[0m(194) parameter.requires_grad = False[0m
+[0m(195) parameter.requires_grad = False[0m
+[0m(196) parameter.requires_grad = False[0m
+[0m(197) parameter.requires_grad = False[0m
+[0m(198) parameter.requires_grad = False[0m
+[0m(199) parameter.requires_grad = False[0m
+[0m(200) parameter.requires_grad = False[0m
+[0m(201) parameter.requires_grad = False[0m
+[0m(202) parameter.requires_grad = False[0m
+[0m(203) parameter.requires_grad = False[0m
+[0m(204) parameter.requires_grad = False[0m
+[0m(205) parameter.requires_grad = False[0m
+[0m(206) parameter.requires_grad = False[0m
+[0m(207) parameter.requires_grad = False[0m
+[0m(208) parameter.requires_grad = False[0m
+[0m(209) parameter.requires_grad = False[0m
+[0m(210) parameter.requires_grad = False[0m
+[0m(211) parameter.requires_grad = False[0m
+[0m(212) parameter.requires_grad = False[0m
+[0m(213) parameter.requires_grad = False[0m
+[0m(214) parameter.requires_grad = False[0m
+[0m(215) parameter.requires_grad = False[0m
+[0m(216) parameter.requires_grad = False[0m
+[0m(217) parameter.requires_grad = False[0m
+[0m(218) parameter.requires_grad = False[0m
+[0m(219) parameter.requires_grad = False[0m
+[0m(220) parameter.requires_grad = False[0m
+[0m(221) parameter.requires_grad = False[0m
+[0m(222) parameter.requires_grad = False[0m
+[0m(223) parameter.requires_grad = False[0m
+[0m(224) parameter.requires_grad = False[0m
+[0m(225) parameter.requires_grad = False[0m
+[0m(226) parameter.requires_grad = False[0m
+[0m(227) parameter.requires_grad = False[0m
+[0m(228) parameter.requires_grad = False[0m
+[0m(229) parameter.requires_grad = False[0m
+[0m(230) parameter.requires_grad = False[0m
+[0m(231) parameter.requires_grad = False[0m
+[0m(232) parameter.requires_grad = False[0m
+[0m(233) parameter.requires_grad = False[0m
+[0m(234) parameter.requires_grad = False[0m
+[0m(235) parameter.requires_grad = False[0m
+[0m(236) parameter.requires_grad = False[0m
+[0m(237) parameter.requires_grad = False[0m
+[0m(238) parameter.requires_grad = False[0m
+[0m(239) parameter.requires_grad = False[0m
+[0m(240) parameter.requires_grad = False[0m
+[0m(241) parameter.requires_grad = False[0m
+[0m(242) parameter.requires_grad = False[0m
+[0m(243) parameter.requires_grad = False[0m
+[0m(244) parameter.requires_grad = False[0m
+[0m(245) parameter.requires_grad = False[0m
+[0m(246) parameter.requires_grad = False[0m
+[0m(247) parameter.requires_grad = False[0m
+[0m(248) parameter.requires_grad = False[0m
+[0m(249) parameter.requires_grad = False[0m
+[0m(250) parameter.requires_grad = False[0m
+[0m(251) parameter.requires_grad = False[0m
+[0m(252) parameter.requires_grad = False[0m
+[0m(253) parameter.requires_grad = False[0m
+[0m(254) parameter.requires_grad = False[0m
+[0m(255) parameter.requires_grad = False[0m
+[0m(256) parameter.requires_grad = False[0m
+[0m(257) parameter.requires_grad = False[0m
+[0m(258) parameter.requires_grad = False[0m
+[0m(259) parameter.requires_grad = False[0m
+[0m(260) parameter.requires_grad = False[0m
+[0m(261) parameter.requires_grad = False[0m
+[0m(262) parameter.requires_grad = False[0m
+[0m(263) parameter.requires_grad = False[0m
+[0m(264) parameter.requires_grad = False[0m
+[0m(265) parameter.requires_grad = False[0m
+[0m(266) parameter.requires_grad = False[0m
+[0m(267) parameter.requires_grad = False[0m
+[0m(268) parameter.requires_grad = False[0m
+[0m(269) parameter.requires_grad = False[0m
+[0m(270) parameter.requires_grad = False[0m
+[0m(271) parameter.requires_grad = False[0m
+[0m(272) parameter.requires_grad = False[0m
+[0m(273) parameter.requires_grad = False[0m
+[0m(274) parameter.requires_grad = False[0m
+[0m(275) parameter.requires_grad = False[0m
+[0m(276) parameter.requires_grad = False[0m
+[0m(277) parameter.requires_grad = False[0m
+[0m(278) parameter.requires_grad = False[0m
+[0m(279) parameter.requires_grad = False[0m
+[0m(280) parameter.requires_grad = False[0m
+[0m(281) parameter.requires_grad = False[0m
+[0m(282) parameter.requires_grad = False[0m
+[0m(283) parameter.requires_grad = False[0m
+[0m(284) parameter.requires_grad = False[0m
+[0m(285) parameter.requires_grad = False[0m
+[0m(286) parameter.requires_grad = False[0m
+[0m(287) parameter.requires_grad = False[0m
+[0m(288) parameter.requires_grad = False[0m
+[0m(289) parameter.requires_grad = False[0m
+[0m(290) parameter.requires_grad = False[0m
+[0m(291) parameter.requires_grad = False[0m
+[0m(292) parameter.requires_grad = False[0m
+[0m(293) parameter.requires_grad = False[0m
+[0m(294) parameter.requires_grad = False[0m
+[0m(295) parameter.requires_grad = False[0m
+[0m(296) parameter.requires_grad = False[0m
+[0m(297) parameter.requires_grad = False[0m
+[0m(298) parameter.requires_grad = False[0m
+[0m(299) parameter.requires_grad = False[0m
+[0m(300) parameter.requires_grad = False[0m
+[0m(301) parameter.requires_grad = False[0m
+[0m(302) parameter.requires_grad = False[0m
+[0m(303) parameter.requires_grad = False[0m
+[0m(304) parameter.requires_grad = False[0m
+[0m(305) parameter.requires_grad = False[0m
+[0m(306) parameter.requires_grad = False[0m
+[0m(307) parameter.requires_grad = False[0m
+[0m(308) parameter.requires_grad = False[0m
+[0m(309) parameter.requires_grad = False[0m
+[0m(310) parameter.requires_grad = False[0m
+[0m(311) parameter.requires_grad = False[0m
+[0m(312) parameter.requires_grad = False[0m
+[0m(313) parameter.requires_grad = False[0m
+[0m(314) parameter.requires_grad = False[0m
+[0m(315) parameter.requires_grad = False[0m
+[0m(316) parameter.requires_grad = False[0m
+[0m(317) parameter.requires_grad = False[0m
+[0m(318) parameter.requires_grad = False[0m
+[0m(319) parameter.requires_grad = False[0m
+[0m(320) parameter.requires_grad = False[0m
+[0m(321) parameter.requires_grad = False[0m
+[0m(322) parameter.requires_grad = False[0m
+[0m(323) parameter.requires_grad = False[0m
+[0m(324) parameter.requires_grad = False[0m
+[0m(325) parameter.requires_grad = False[0m
+[0m(326) parameter.requires_grad = False[0m
+[0m(327) parameter.requires_grad = False[0m
+[0m(328) parameter.requires_grad = False[0m
+[0m(329) parameter.requires_grad = False[0m
+[0m(330) parameter.requires_grad = False[0m
+[0m(331) parameter.requires_grad = False[0m
+[0m(332) parameter.requires_grad = False[0m
+[0m(333) parameter.requires_grad = False[0m
+[0m(334) parameter.requires_grad = False[0m
+[0m(335) parameter.requires_grad = False[0m
+[0m(336) parameter.requires_grad = False[0m
+[0m(337) parameter.requires_grad = False[0m
+[0m(338) parameter.requires_grad = True[0m
+[0m(339) parameter.requires_grad = True[0m
+[0mTraining: epoch=1 step=19/782 loss=3.62494 accuracy=42.65625 runtime_forward_ms=314.65312 runtime_backward_ms=12.08055.[0m
+[0mTraining: epoch=1 step=39/782 loss=3.60358 accuracy=43.51562 runtime_forward_ms=310.38623 runtime_backward_ms=7.09804.[0m
+[0mTraining: epoch=1 step=59/782 loss=3.55644 accuracy=42.65625 runtime_forward_ms=311.06916 runtime_backward_ms=7.76941.[0m
+[0mTraining: epoch=1 step=79/782 loss=3.57845 accuracy=43.59375 runtime_forward_ms=314.96620 runtime_backward_ms=7.41594.[0m
+[0mTraining: epoch=1 step=99/782 loss=3.49398 accuracy=45.31250 runtime_forward_ms=313.93064 runtime_backward_ms=7.39490.[0m
+[0mTraining: epoch=1 step=119/782 loss=3.52539 accuracy=44.21875 runtime_forward_ms=310.92263 runtime_backward_ms=5.54225.[0m
+[0mTraining: epoch=1 step=139/782 loss=3.50331 accuracy=44.60938 runtime_forward_ms=310.31758 runtime_backward_ms=3.70900.[0m
+[0mTraining: epoch=1 step=159/782 loss=3.48529 accuracy=44.21875 runtime_forward_ms=312.07644 runtime_backward_ms=3.85964.[0m
+[0mTraining: epoch=1 step=179/782 loss=3.43569 accuracy=46.56250 runtime_forward_ms=311.74392 runtime_backward_ms=13.00246.[0m
+[0mTraining: epoch=1 step=199/782 loss=3.43532 accuracy=46.40625 runtime_forward_ms=310.68156 runtime_backward_ms=13.00187.[0m
+[0mTraining: epoch=1 step=219/782 loss=3.46372 accuracy=41.79688 runtime_forward_ms=316.54294 runtime_backward_ms=14.94346.[0m
+[0mTraining: epoch=1 step=239/782 loss=3.38478 accuracy=45.46875 runtime_forward_ms=310.32355 runtime_backward_ms=13.42451.[0m
+[0mTraining: epoch=1 step=259/782 loss=3.36667 accuracy=47.65625 runtime_forward_ms=314.37062 runtime_backward_ms=6.59610.[0m
+[0mTraining: epoch=1 step=279/782 loss=3.39216 accuracy=44.53125 runtime_forward_ms=310.66379 runtime_backward_ms=8.83027.[0m
+[0mTraining: epoch=1 step=299/782 loss=3.33483 accuracy=46.17188 runtime_forward_ms=311.27064 runtime_backward_ms=6.84224.[0m
+[0mTraining: epoch=1 step=319/782 loss=3.32054 accuracy=46.32812 runtime_forward_ms=312.05126 runtime_backward_ms=11.23530.[0m
+[0mTraining: epoch=1 step=339/782 loss=3.30129 accuracy=45.78125 runtime_forward_ms=311.35834 runtime_backward_ms=19.86893.[0m
+[0mTraining: epoch=1 step=359/782 loss=3.30589 accuracy=47.26562 runtime_forward_ms=310.45873 runtime_backward_ms=5.48643.[0m
+[0mTraining: epoch=1 step=379/782 loss=3.27241 accuracy=48.20312 runtime_forward_ms=319.92909 runtime_backward_ms=11.19679.[0m
+[0mTraining: epoch=1 step=399/782 loss=3.26038 accuracy=47.81250 runtime_forward_ms=314.23770 runtime_backward_ms=5.72639.[0m
+[0mTraining: epoch=1 step=419/782 loss=3.23982 accuracy=47.34375 runtime_forward_ms=310.39407 runtime_backward_ms=8.47767.[0m
+[0mTraining: epoch=1 step=439/782 loss=3.22581 accuracy=47.65625 runtime_forward_ms=312.85738 runtime_backward_ms=4.80290.[0m
+[0mTraining: epoch=1 step=459/782 loss=3.21442 accuracy=45.93750 runtime_forward_ms=310.48085 runtime_backward_ms=8.43344.[0m
+[0mTraining: epoch=1 step=479/782 loss=3.24978 accuracy=46.17188 runtime_forward_ms=310.47175 runtime_backward_ms=5.13016.[0m
+[0mTraining: epoch=1 step=499/782 loss=3.17584 accuracy=47.34375 runtime_forward_ms=312.83608 runtime_backward_ms=9.83391.[0m
+[0mTraining: epoch=1 step=519/782 loss=3.15196 accuracy=49.45312 runtime_forward_ms=312.47755 runtime_backward_ms=11.26752.[0m
+[0mTraining: epoch=1 step=539/782 loss=3.16424 accuracy=46.87500 runtime_forward_ms=313.23637 runtime_backward_ms=15.73333.[0m
+[0mTraining: epoch=1 step=559/782 loss=3.15010 accuracy=50.00000 runtime_forward_ms=312.09226 runtime_backward_ms=16.35380.[0m
+[0mTraining: epoch=1 step=579/782 loss=3.12972 accuracy=49.45312 runtime_forward_ms=310.20012 runtime_backward_ms=4.48156.[0m
+[0mTraining: epoch=1 step=599/782 loss=3.10608 accuracy=48.43750 runtime_forward_ms=310.32259 runtime_backward_ms=4.39389.[0m
+[0mTraining: epoch=1 step=619/782 loss=3.11632 accuracy=47.81250 runtime_forward_ms=310.46121 runtime_backward_ms=10.76615.[0m
+[0mTraining: epoch=1 step=639/782 loss=3.04745 accuracy=47.96875 runtime_forward_ms=310.45252 runtime_backward_ms=8.98682.[0m
+[0mTraining: epoch=1 step=659/782 loss=3.08199 accuracy=48.59375 runtime_forward_ms=315.50293 runtime_backward_ms=7.45025.[0m
+[0mTraining: epoch=1 step=679/782 loss=3.02849 accuracy=48.67188 runtime_forward_ms=311.84390 runtime_backward_ms=7.64619.[0m
+[0mTraining: epoch=1 step=699/782 loss=3.01639 accuracy=47.34375 runtime_forward_ms=311.44880 runtime_backward_ms=9.16584.[0m
+[0mTraining: epoch=1 step=719/782 loss=3.07068 accuracy=46.09375 runtime_forward_ms=311.05975 runtime_backward_ms=7.02620.[0m
+[0mTraining: epoch=1 step=739/782 loss=3.00313 accuracy=48.67188 runtime_forward_ms=312.15032 runtime_backward_ms=12.90163.[0m
+[0mTraining: epoch=1 step=759/782 loss=2.94279 accuracy=50.70312 runtime_forward_ms=312.50559 runtime_backward_ms=11.69189.[0m
+[0mTraining: epoch=1 step=779/782 loss=3.00443 accuracy=45.07812 runtime_forward_ms=312.97542 runtime_backward_ms=8.18540.[0m
+[0mValidation: epoch=1 training_step=1562 loss=2.92224 accuracy=52.41000 runtime_forward_ms=273.56479.[0m
+[0m--- End of Epoch: epoch=1 training_step=1562 training_loss=3.00443 training_accuracy=45.07812 validation_loss=2.92224 validation_accuracy=52.41000.[0m
+[0mFeatures not frozen on epoch 2[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0m(58) parameter.requires_grad = True[0m
+[0m(59) parameter.requires_grad = True[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0m(62) parameter.requires_grad = True[0m
+[0m(63) parameter.requires_grad = True[0m
+[0m(64) parameter.requires_grad = True[0m
+[0m(65) parameter.requires_grad = True[0m
+[0m(66) parameter.requires_grad = True[0m
+[0m(67) parameter.requires_grad = True[0m
+[0m(68) parameter.requires_grad = True[0m
+[0m(69) parameter.requires_grad = True[0m
+[0m(70) parameter.requires_grad = True[0m
+[0m(71) parameter.requires_grad = True[0m
+[0m(72) parameter.requires_grad = True[0m
+[0m(73) parameter.requires_grad = True[0m
+[0m(74) parameter.requires_grad = True[0m
+[0m(75) parameter.requires_grad = True[0m
+[0m(76) parameter.requires_grad = True[0m
+[0m(77) parameter.requires_grad = True[0m
+[0m(78) parameter.requires_grad = True[0m
+[0m(79) parameter.requires_grad = True[0m
+[0m(80) parameter.requires_grad = True[0m
+[0m(81) parameter.requires_grad = True[0m
+[0m(82) parameter.requires_grad = True[0m
+[0m(83) parameter.requires_grad = True[0m
+[0m(84) parameter.requires_grad = True[0m
+[0m(85) parameter.requires_grad = True[0m
+[0m(86) parameter.requires_grad = True[0m
+[0m(87) parameter.requires_grad = True[0m
+[0m(88) parameter.requires_grad = True[0m
+[0m(89) parameter.requires_grad = True[0m
+[0m(90) parameter.requires_grad = True[0m
+[0m(91) parameter.requires_grad = True[0m
+[0m(92) parameter.requires_grad = True[0m
+[0m(93) parameter.requires_grad = True[0m
+[0m(94) parameter.requires_grad = True[0m
+[0m(95) parameter.requires_grad = True[0m
+[0m(96) parameter.requires_grad = True[0m
+[0m(97) parameter.requires_grad = True[0m
+[0m(98) parameter.requires_grad = True[0m
+[0m(99) parameter.requires_grad = True[0m
+[0m(100) parameter.requires_grad = True[0m
+[0m(101) parameter.requires_grad = True[0m
+[0m(102) parameter.requires_grad = True[0m
+[0m(103) parameter.requires_grad = True[0m
+[0m(104) parameter.requires_grad = True[0m
+[0m(105) parameter.requires_grad = True[0m
+[0m(106) parameter.requires_grad = True[0m
+[0m(107) parameter.requires_grad = True[0m
+[0m(108) parameter.requires_grad = True[0m
+[0m(109) parameter.requires_grad = True[0m
+[0m(110) parameter.requires_grad = True[0m
+[0m(111) parameter.requires_grad = True[0m
+[0m(112) parameter.requires_grad = True[0m
+[0m(113) parameter.requires_grad = True[0m
+[0m(114) parameter.requires_grad = True[0m
+[0m(115) parameter.requires_grad = True[0m
+[0m(116) parameter.requires_grad = True[0m
+[0m(117) parameter.requires_grad = True[0m
+[0m(118) parameter.requires_grad = True[0m
+[0m(119) parameter.requires_grad = True[0m
+[0m(120) parameter.requires_grad = True[0m
+[0m(121) parameter.requires_grad = True[0m
+[0m(122) parameter.requires_grad = True[0m
+[0m(123) parameter.requires_grad = True[0m
+[0m(124) parameter.requires_grad = True[0m
+[0m(125) parameter.requires_grad = True[0m
+[0m(126) parameter.requires_grad = True[0m
+[0m(127) parameter.requires_grad = True[0m
+[0m(128) parameter.requires_grad = True[0m
+[0m(129) parameter.requires_grad = True[0m
+[0m(130) parameter.requires_grad = True[0m
+[0m(131) parameter.requires_grad = True[0m
+[0m(132) parameter.requires_grad = True[0m
+[0m(133) parameter.requires_grad = True[0m
+[0m(134) parameter.requires_grad = True[0m
+[0m(135) parameter.requires_grad = True[0m
+[0m(136) parameter.requires_grad = True[0m
+[0m(137) parameter.requires_grad = True[0m
+[0m(138) parameter.requires_grad = True[0m
+[0m(139) parameter.requires_grad = True[0m
+[0m(140) parameter.requires_grad = True[0m
+[0m(141) parameter.requires_grad = True[0m
+[0m(142) parameter.requires_grad = True[0m
+[0m(143) parameter.requires_grad = True[0m
+[0m(144) parameter.requires_grad = True[0m
+[0m(145) parameter.requires_grad = True[0m
+[0m(146) parameter.requires_grad = True[0m
+[0m(147) parameter.requires_grad = True[0m
+[0m(148) parameter.requires_grad = True[0m
+[0m(149) parameter.requires_grad = True[0m
+[0m(150) parameter.requires_grad = True[0m
+[0m(151) parameter.requires_grad = True[0m
+[0m(152) parameter.requires_grad = True[0m
+[0m(153) parameter.requires_grad = True[0m
+[0m(154) parameter.requires_grad = True[0m
+[0m(155) parameter.requires_grad = True[0m
+[0m(156) parameter.requires_grad = True[0m
+[0m(157) parameter.requires_grad = True[0m
+[0m(158) parameter.requires_grad = True[0m
+[0m(159) parameter.requires_grad = True[0m
+[0m(160) parameter.requires_grad = True[0m
+[0m(161) parameter.requires_grad = True[0m
+[0m(162) parameter.requires_grad = True[0m
+[0m(163) parameter.requires_grad = True[0m
+[0m(164) parameter.requires_grad = True[0m
+[0m(165) parameter.requires_grad = True[0m
+[0m(166) parameter.requires_grad = True[0m
+[0m(167) parameter.requires_grad = True[0m
+[0m(168) parameter.requires_grad = True[0m
+[0m(169) parameter.requires_grad = True[0m
+[0m(170) parameter.requires_grad = True[0m
+[0m(171) parameter.requires_grad = True[0m
+[0m(172) parameter.requires_grad = True[0m
+[0m(173) parameter.requires_grad = True[0m
+[0m(174) parameter.requires_grad = True[0m
+[0m(175) parameter.requires_grad = True[0m
+[0m(176) parameter.requires_grad = True[0m
+[0m(177) parameter.requires_grad = True[0m
+[0m(178) parameter.requires_grad = True[0m
+[0m(179) parameter.requires_grad = True[0m
+[0m(180) parameter.requires_grad = True[0m
+[0m(181) parameter.requires_grad = True[0m
+[0m(182) parameter.requires_grad = True[0m
+[0m(183) parameter.requires_grad = True[0m
+[0m(184) parameter.requires_grad = True[0m
+[0m(185) parameter.requires_grad = True[0m
+[0m(186) parameter.requires_grad = True[0m
+[0m(187) parameter.requires_grad = True[0m
+[0m(188) parameter.requires_grad = True[0m
+[0m(189) parameter.requires_grad = True[0m
+[0m(190) parameter.requires_grad = True[0m
+[0m(191) parameter.requires_grad = True[0m
+[0m(192) parameter.requires_grad = True[0m
+[0m(193) parameter.requires_grad = True[0m
+[0m(194) parameter.requires_grad = True[0m
+[0m(195) parameter.requires_grad = True[0m
+[0m(196) parameter.requires_grad = True[0m
+[0m(197) parameter.requires_grad = True[0m
+[0m(198) parameter.requires_grad = True[0m
+[0m(199) parameter.requires_grad = True[0m
+[0m(200) parameter.requires_grad = True[0m
+[0m(201) parameter.requires_grad = True[0m
+[0m(202) parameter.requires_grad = True[0m
+[0m(203) parameter.requires_grad = True[0m
+[0m(204) parameter.requires_grad = True[0m
+[0m(205) parameter.requires_grad = True[0m
+[0m(206) parameter.requires_grad = True[0m
+[0m(207) parameter.requires_grad = True[0m
+[0m(208) parameter.requires_grad = True[0m
+[0m(209) parameter.requires_grad = True[0m
+[0m(210) parameter.requires_grad = True[0m
+[0m(211) parameter.requires_grad = True[0m
+[0m(212) parameter.requires_grad = True[0m
+[0m(213) parameter.requires_grad = True[0m
+[0m(214) parameter.requires_grad = True[0m
+[0m(215) parameter.requires_grad = True[0m
+[0m(216) parameter.requires_grad = True[0m
+[0m(217) parameter.requires_grad = True[0m
+[0m(218) parameter.requires_grad = True[0m
+[0m(219) parameter.requires_grad = True[0m
+[0m(220) parameter.requires_grad = True[0m
+[0m(221) parameter.requires_grad = True[0m
+[0m(222) parameter.requires_grad = True[0m
+[0m(223) parameter.requires_grad = True[0m
+[0m(224) parameter.requires_grad = True[0m
+[0m(225) parameter.requires_grad = True[0m
+[0m(226) parameter.requires_grad = True[0m
+[0m(227) parameter.requires_grad = True[0m
+[0m(228) parameter.requires_grad = True[0m
+[0m(229) parameter.requires_grad = True[0m
+[0m(230) parameter.requires_grad = True[0m
+[0m(231) parameter.requires_grad = True[0m
+[0m(232) parameter.requires_grad = True[0m
+[0m(233) parameter.requires_grad = True[0m
+[0m(234) parameter.requires_grad = True[0m
+[0m(235) parameter.requires_grad = True[0m
+[0m(236) parameter.requires_grad = True[0m
+[0m(237) parameter.requires_grad = True[0m
+[0m(238) parameter.requires_grad = True[0m
+[0m(239) parameter.requires_grad = True[0m
+[0m(240) parameter.requires_grad = True[0m
+[0m(241) parameter.requires_grad = True[0m
+[0m(242) parameter.requires_grad = True[0m
+[0m(243) parameter.requires_grad = True[0m
+[0m(244) parameter.requires_grad = True[0m
+[0m(245) parameter.requires_grad = True[0m
+[0m(246) parameter.requires_grad = True[0m
+[0m(247) parameter.requires_grad = True[0m
+[0m(248) parameter.requires_grad = True[0m
+[0m(249) parameter.requires_grad = True[0m
+[0m(250) parameter.requires_grad = True[0m
+[0m(251) parameter.requires_grad = True[0m
+[0m(252) parameter.requires_grad = True[0m
+[0m(253) parameter.requires_grad = True[0m
+[0m(254) parameter.requires_grad = True[0m
+[0m(255) parameter.requires_grad = True[0m
+[0m(256) parameter.requires_grad = True[0m
+[0m(257) parameter.requires_grad = True[0m
+[0m(258) parameter.requires_grad = True[0m
+[0m(259) parameter.requires_grad = True[0m
+[0m(260) parameter.requires_grad = True[0m
+[0m(261) parameter.requires_grad = True[0m
+[0m(262) parameter.requires_grad = True[0m
+[0m(263) parameter.requires_grad = True[0m
+[0m(264) parameter.requires_grad = True[0m
+[0m(265) parameter.requires_grad = True[0m
+[0m(266) parameter.requires_grad = True[0m
+[0m(267) parameter.requires_grad = True[0m
+[0m(268) parameter.requires_grad = True[0m
+[0m(269) parameter.requires_grad = True[0m
+[0m(270) parameter.requires_grad = True[0m
+[0m(271) parameter.requires_grad = True[0m
+[0m(272) parameter.requires_grad = True[0m
+[0m(273) parameter.requires_grad = True[0m
+[0m(274) parameter.requires_grad = True[0m
+[0m(275) parameter.requires_grad = True[0m
+[0m(276) parameter.requires_grad = True[0m
+[0m(277) parameter.requires_grad = True[0m
+[0m(278) parameter.requires_grad = True[0m
+[0m(279) parameter.requires_grad = True[0m
+[0m(280) parameter.requires_grad = True[0m
+[0m(281) parameter.requires_grad = True[0m
+[0m(282) parameter.requires_grad = True[0m
+[0m(283) parameter.requires_grad = True[0m
+[0m(284) parameter.requires_grad = True[0m
+[0m(285) parameter.requires_grad = True[0m
+[0m(286) parameter.requires_grad = True[0m
+[0m(287) parameter.requires_grad = True[0m
+[0m(288) parameter.requires_grad = True[0m
+[0m(289) parameter.requires_grad = True[0m
+[0m(290) parameter.requires_grad = True[0m
+[0m(291) parameter.requires_grad = True[0m
+[0m(292) parameter.requires_grad = True[0m
+[0m(293) parameter.requires_grad = True[0m
+[0m(294) parameter.requires_grad = True[0m
+[0m(295) parameter.requires_grad = True[0m
+[0m(296) parameter.requires_grad = True[0m
+[0m(297) parameter.requires_grad = True[0m
+[0m(298) parameter.requires_grad = True[0m
+[0m(299) parameter.requires_grad = True[0m
+[0m(300) parameter.requires_grad = True[0m
+[0m(301) parameter.requires_grad = True[0m
+[0m(302) parameter.requires_grad = True[0m
+[0m(303) parameter.requires_grad = True[0m
+[0m(304) parameter.requires_grad = True[0m
+[0m(305) parameter.requires_grad = True[0m
+[0m(306) parameter.requires_grad = True[0m
+[0m(307) parameter.requires_grad = True[0m
+[0m(308) parameter.requires_grad = True[0m
+[0m(309) parameter.requires_grad = True[0m
+[0m(310) parameter.requires_grad = True[0m
+[0m(311) parameter.requires_grad = True[0m
+[0m(312) parameter.requires_grad = True[0m
+[0m(313) parameter.requires_grad = True[0m
+[0m(314) parameter.requires_grad = True[0m
+[0m(315) parameter.requires_grad = True[0m
+[0m(316) parameter.requires_grad = True[0m
+[0m(317) parameter.requires_grad = True[0m
+[0m(318) parameter.requires_grad = True[0m
+[0m(319) parameter.requires_grad = True[0m
+[0m(320) parameter.requires_grad = True[0m
+[0m(321) parameter.requires_grad = True[0m
+[0m(322) parameter.requires_grad = True[0m
+[0m(323) parameter.requires_grad = True[0m
+[0m(324) parameter.requires_grad = True[0m
+[0m(325) parameter.requires_grad = True[0m
+[0m(326) parameter.requires_grad = True[0m
+[0m(327) parameter.requires_grad = True[0m
+[0m(328) parameter.requires_grad = True[0m
+[0m(329) parameter.requires_grad = True[0m
+[0m(330) parameter.requires_grad = True[0m
+[0m(331) parameter.requires_grad = True[0m
+[0m(332) parameter.requires_grad = True[0m
+[0m(333) parameter.requires_grad = True[0m
+[0m(334) parameter.requires_grad = True[0m
+[0m(335) parameter.requires_grad = True[0m
+[0m(336) parameter.requires_grad = True[0m
+[0m(337) parameter.requires_grad = True[0m
+[0m(338) parameter.requires_grad = True[0m
+[0m(339) parameter.requires_grad = True[0m
+[0mTraining: epoch=2 step=19/782 loss=2.57955 accuracy=54.84375 runtime_forward_ms=354.51003 runtime_backward_ms=853.08099.[0m
+[0mTraining: epoch=2 step=39/782 loss=1.98757 accuracy=58.98438 runtime_forward_ms=354.36576 runtime_backward_ms=740.99811.[0m
+[0mTraining: epoch=2 step=59/782 loss=1.67841 accuracy=62.10938 runtime_forward_ms=355.28421 runtime_backward_ms=741.86638.[0m
+[0mTraining: epoch=2 step=79/782 loss=1.43213 accuracy=64.84375 runtime_forward_ms=354.34532 runtime_backward_ms=739.13809.[0m
+[0mTraining: epoch=2 step=99/782 loss=1.33603 accuracy=65.15625 runtime_forward_ms=354.63803 runtime_backward_ms=738.78308.[0m
+[0mTraining: epoch=2 step=119/782 loss=1.21007 accuracy=69.14062 runtime_forward_ms=354.41947 runtime_backward_ms=738.93451.[0m
+[0mTraining: epoch=2 step=139/782 loss=1.15235 accuracy=69.92188 runtime_forward_ms=354.90746 runtime_backward_ms=739.19615.[0m
+[0mTraining: epoch=2 step=159/782 loss=1.19746 accuracy=67.89062 runtime_forward_ms=354.36729 runtime_backward_ms=739.54311.[0m
+[0mTraining: epoch=2 step=179/782 loss=1.12464 accuracy=69.45312 runtime_forward_ms=354.42544 runtime_backward_ms=739.38971.[0m
+[0mTraining: epoch=2 step=199/782 loss=1.01441 accuracy=72.73438 runtime_forward_ms=354.80045 runtime_backward_ms=737.96434.[0m
+[0mTraining: epoch=2 step=219/782 loss=0.97667 accuracy=74.60938 runtime_forward_ms=354.49308 runtime_backward_ms=737.10335.[0m
+[0mTraining: epoch=2 step=239/782 loss=0.96640 accuracy=73.12500 runtime_forward_ms=354.80220 runtime_backward_ms=737.77034.[0m
+[0mTraining: epoch=2 step=259/782 loss=0.94076 accuracy=73.75000 runtime_forward_ms=354.89011 runtime_backward_ms=738.88077.[0m
+[0mTraining: epoch=2 step=279/782 loss=0.93222 accuracy=72.89062 runtime_forward_ms=354.34148 runtime_backward_ms=740.18024.[0m
+[0mTraining: epoch=2 step=299/782 loss=0.87532 accuracy=73.82812 runtime_forward_ms=354.66981 runtime_backward_ms=739.97554.[0m
+[0mTraining: epoch=2 step=319/782 loss=0.94351 accuracy=73.59375 runtime_forward_ms=354.37589 runtime_backward_ms=740.67912.[0m
+[0mTraining: epoch=2 step=339/782 loss=0.82989 accuracy=75.39062 runtime_forward_ms=354.70593 runtime_backward_ms=738.32864.[0m
+[0mTraining: epoch=2 step=359/782 loss=0.87215 accuracy=75.31250 runtime_forward_ms=354.51258 runtime_backward_ms=741.06761.[0m
+[0mTraining: epoch=2 step=379/782 loss=0.83978 accuracy=75.78125 runtime_forward_ms=355.53310 runtime_backward_ms=736.98740.[0m
+[0mTraining: epoch=2 step=399/782 loss=0.76171 accuracy=78.04688 runtime_forward_ms=354.36288 runtime_backward_ms=737.39324.[0m
+[0mTraining: epoch=2 step=419/782 loss=0.77772 accuracy=78.12500 runtime_forward_ms=354.25188 runtime_backward_ms=736.10885.[0m
+[0mTraining: epoch=2 step=439/782 loss=0.77076 accuracy=77.42188 runtime_forward_ms=354.29309 runtime_backward_ms=736.28696.[0m
+[0mTraining: epoch=2 step=459/782 loss=0.74936 accuracy=77.10938 runtime_forward_ms=354.22775 runtime_backward_ms=736.52572.[0m
+[0mTraining: epoch=2 step=479/782 loss=0.69545 accuracy=79.29688 runtime_forward_ms=354.17688 runtime_backward_ms=736.39089.[0m
+[0mTraining: epoch=2 step=499/782 loss=0.73196 accuracy=78.59375 runtime_forward_ms=354.25961 runtime_backward_ms=736.53010.[0m
+[0mTraining: epoch=2 step=519/782 loss=0.77960 accuracy=74.92188 runtime_forward_ms=354.25503 runtime_backward_ms=736.34032.[0m
+[0mTraining: epoch=2 step=539/782 loss=0.72284 accuracy=78.82812 runtime_forward_ms=354.39323 runtime_backward_ms=736.77094.[0m
+[0mTraining: epoch=2 step=559/782 loss=0.69518 accuracy=79.14062 runtime_forward_ms=354.17567 runtime_backward_ms=737.54044.[0m
+[0mTraining: epoch=2 step=579/782 loss=0.73496 accuracy=79.14062 runtime_forward_ms=354.92932 runtime_backward_ms=736.64559.[0m
+[0mTraining: epoch=2 step=599/782 loss=0.65673 accuracy=80.78125 runtime_forward_ms=354.33197 runtime_backward_ms=736.28473.[0m
+[0mTraining: epoch=2 step=619/782 loss=0.70180 accuracy=78.90625 runtime_forward_ms=354.29769 runtime_backward_ms=736.52532.[0m
+[0mTraining: epoch=2 step=639/782 loss=0.70907 accuracy=78.82812 runtime_forward_ms=354.26045 runtime_backward_ms=736.99384.[0m
+[0mTraining: epoch=2 step=659/782 loss=0.66428 accuracy=80.85938 runtime_forward_ms=355.14440 runtime_backward_ms=737.15240.[0m
+[0mTraining: epoch=2 step=679/782 loss=0.64857 accuracy=80.70312 runtime_forward_ms=354.62843 runtime_backward_ms=741.24079.[0m
+[0mTraining: epoch=2 step=699/782 loss=0.63898 accuracy=81.09375 runtime_forward_ms=354.50114 runtime_backward_ms=737.71493.[0m
+[0mTraining: epoch=2 step=719/782 loss=0.69237 accuracy=79.92188 runtime_forward_ms=354.39928 runtime_backward_ms=737.06952.[0m
+[0mTraining: epoch=2 step=739/782 loss=0.64315 accuracy=80.00000 runtime_forward_ms=354.48823 runtime_backward_ms=736.75196.[0m
+[0mTraining: epoch=2 step=759/782 loss=0.68568 accuracy=79.68750 runtime_forward_ms=354.50241 runtime_backward_ms=737.42723.[0m
+[0mTraining: epoch=2 step=779/782 loss=0.64797 accuracy=80.31250 runtime_forward_ms=354.43349 runtime_backward_ms=737.03130.[0m
+[0mValidation: epoch=2 training_step=2343 loss=0.52628 accuracy=83.64000 runtime_forward_ms=276.28860.[0m
+[0m--- End of Epoch: epoch=2 training_step=2343 training_loss=0.64797 training_accuracy=80.31250 validation_loss=0.52628 validation_accuracy=83.64000.[0m
+[0mFeatures not frozen on epoch 3[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0m(58) parameter.requires_grad = True[0m
+[0m(59) parameter.requires_grad = True[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0m(62) parameter.requires_grad = True[0m
+[0m(63) parameter.requires_grad = True[0m
+[0m(64) parameter.requires_grad = True[0m
+[0m(65) parameter.requires_grad = True[0m
+[0m(66) parameter.requires_grad = True[0m
+[0m(67) parameter.requires_grad = True[0m
+[0m(68) parameter.requires_grad = True[0m
+[0m(69) parameter.requires_grad = True[0m
+[0m(70) parameter.requires_grad = True[0m
+[0m(71) parameter.requires_grad = True[0m
+[0m(72) parameter.requires_grad = True[0m
+[0m(73) parameter.requires_grad = True[0m
+[0m(74) parameter.requires_grad = True[0m
+[0m(75) parameter.requires_grad = True[0m
+[0m(76) parameter.requires_grad = True[0m
+[0m(77) parameter.requires_grad = True[0m
+[0m(78) parameter.requires_grad = True[0m
+[0m(79) parameter.requires_grad = True[0m
+[0m(80) parameter.requires_grad = True[0m
+[0m(81) parameter.requires_grad = True[0m
+[0m(82) parameter.requires_grad = True[0m
+[0m(83) parameter.requires_grad = True[0m
+[0m(84) parameter.requires_grad = True[0m
+[0m(85) parameter.requires_grad = True[0m
+[0m(86) parameter.requires_grad = True[0m
+[0m(87) parameter.requires_grad = True[0m
+[0m(88) parameter.requires_grad = True[0m
+[0m(89) parameter.requires_grad = True[0m
+[0m(90) parameter.requires_grad = True[0m
+[0m(91) parameter.requires_grad = True[0m
+[0m(92) parameter.requires_grad = True[0m
+[0m(93) parameter.requires_grad = True[0m
+[0m(94) parameter.requires_grad = True[0m
+[0m(95) parameter.requires_grad = True[0m
+[0m(96) parameter.requires_grad = True[0m
+[0m(97) parameter.requires_grad = True[0m
+[0m(98) parameter.requires_grad = True[0m
+[0m(99) parameter.requires_grad = True[0m
+[0m(100) parameter.requires_grad = True[0m
+[0m(101) parameter.requires_grad = True[0m
+[0m(102) parameter.requires_grad = True[0m
+[0m(103) parameter.requires_grad = True[0m
+[0m(104) parameter.requires_grad = True[0m
+[0m(105) parameter.requires_grad = True[0m
+[0m(106) parameter.requires_grad = True[0m
+[0m(107) parameter.requires_grad = True[0m
+[0m(108) parameter.requires_grad = True[0m
+[0m(109) parameter.requires_grad = True[0m
+[0m(110) parameter.requires_grad = True[0m
+[0m(111) parameter.requires_grad = True[0m
+[0m(112) parameter.requires_grad = True[0m
+[0m(113) parameter.requires_grad = True[0m
+[0m(114) parameter.requires_grad = True[0m
+[0m(115) parameter.requires_grad = True[0m
+[0m(116) parameter.requires_grad = True[0m
+[0m(117) parameter.requires_grad = True[0m
+[0m(118) parameter.requires_grad = True[0m
+[0m(119) parameter.requires_grad = True[0m
+[0m(120) parameter.requires_grad = True[0m
+[0m(121) parameter.requires_grad = True[0m
+[0m(122) parameter.requires_grad = True[0m
+[0m(123) parameter.requires_grad = True[0m
+[0m(124) parameter.requires_grad = True[0m
+[0m(125) parameter.requires_grad = True[0m
+[0m(126) parameter.requires_grad = True[0m
+[0m(127) parameter.requires_grad = True[0m
+[0m(128) parameter.requires_grad = True[0m
+[0m(129) parameter.requires_grad = True[0m
+[0m(130) parameter.requires_grad = True[0m
+[0m(131) parameter.requires_grad = True[0m
+[0m(132) parameter.requires_grad = True[0m
+[0m(133) parameter.requires_grad = True[0m
+[0m(134) parameter.requires_grad = True[0m
+[0m(135) parameter.requires_grad = True[0m
+[0m(136) parameter.requires_grad = True[0m
+[0m(137) parameter.requires_grad = True[0m
+[0m(138) parameter.requires_grad = True[0m
+[0m(139) parameter.requires_grad = True[0m
+[0m(140) parameter.requires_grad = True[0m
+[0m(141) parameter.requires_grad = True[0m
+[0m(142) parameter.requires_grad = True[0m
+[0m(143) parameter.requires_grad = True[0m
+[0m(144) parameter.requires_grad = True[0m
+[0m(145) parameter.requires_grad = True[0m
+[0m(146) parameter.requires_grad = True[0m
+[0m(147) parameter.requires_grad = True[0m
+[0m(148) parameter.requires_grad = True[0m
+[0m(149) parameter.requires_grad = True[0m
+[0m(150) parameter.requires_grad = True[0m
+[0m(151) parameter.requires_grad = True[0m
+[0m(152) parameter.requires_grad = True[0m
+[0m(153) parameter.requires_grad = True[0m
+[0m(154) parameter.requires_grad = True[0m
+[0m(155) parameter.requires_grad = True[0m
+[0m(156) parameter.requires_grad = True[0m
+[0m(157) parameter.requires_grad = True[0m
+[0m(158) parameter.requires_grad = True[0m
+[0m(159) parameter.requires_grad = True[0m
+[0m(160) parameter.requires_grad = True[0m
+[0m(161) parameter.requires_grad = True[0m
+[0m(162) parameter.requires_grad = True[0m
+[0m(163) parameter.requires_grad = True[0m
+[0m(164) parameter.requires_grad = True[0m
+[0m(165) parameter.requires_grad = True[0m
+[0m(166) parameter.requires_grad = True[0m
+[0m(167) parameter.requires_grad = True[0m
+[0m(168) parameter.requires_grad = True[0m
+[0m(169) parameter.requires_grad = True[0m
+[0m(170) parameter.requires_grad = True[0m
+[0m(171) parameter.requires_grad = True[0m
+[0m(172) parameter.requires_grad = True[0m
+[0m(173) parameter.requires_grad = True[0m
+[0m(174) parameter.requires_grad = True[0m
+[0m(175) parameter.requires_grad = True[0m
+[0m(176) parameter.requires_grad = True[0m
+[0m(177) parameter.requires_grad = True[0m
+[0m(178) parameter.requires_grad = True[0m
+[0m(179) parameter.requires_grad = True[0m
+[0m(180) parameter.requires_grad = True[0m
+[0m(181) parameter.requires_grad = True[0m
+[0m(182) parameter.requires_grad = True[0m
+[0m(183) parameter.requires_grad = True[0m
+[0m(184) parameter.requires_grad = True[0m
+[0m(185) parameter.requires_grad = True[0m
+[0m(186) parameter.requires_grad = True[0m
+[0m(187) parameter.requires_grad = True[0m
+[0m(188) parameter.requires_grad = True[0m
+[0m(189) parameter.requires_grad = True[0m
+[0m(190) parameter.requires_grad = True[0m
+[0m(191) parameter.requires_grad = True[0m
+[0m(192) parameter.requires_grad = True[0m
+[0m(193) parameter.requires_grad = True[0m
+[0m(194) parameter.requires_grad = True[0m
+[0m(195) parameter.requires_grad = True[0m
+[0m(196) parameter.requires_grad = True[0m
+[0m(197) parameter.requires_grad = True[0m
+[0m(198) parameter.requires_grad = True[0m
+[0m(199) parameter.requires_grad = True[0m
+[0m(200) parameter.requires_grad = True[0m
+[0m(201) parameter.requires_grad = True[0m
+[0m(202) parameter.requires_grad = True[0m
+[0m(203) parameter.requires_grad = True[0m
+[0m(204) parameter.requires_grad = True[0m
+[0m(205) parameter.requires_grad = True[0m
+[0m(206) parameter.requires_grad = True[0m
+[0m(207) parameter.requires_grad = True[0m
+[0m(208) parameter.requires_grad = True[0m
+[0m(209) parameter.requires_grad = True[0m
+[0m(210) parameter.requires_grad = True[0m
+[0m(211) parameter.requires_grad = True[0m
+[0m(212) parameter.requires_grad = True[0m
+[0m(213) parameter.requires_grad = True[0m
+[0m(214) parameter.requires_grad = True[0m
+[0m(215) parameter.requires_grad = True[0m
+[0m(216) parameter.requires_grad = True[0m
+[0m(217) parameter.requires_grad = True[0m
+[0m(218) parameter.requires_grad = True[0m
+[0m(219) parameter.requires_grad = True[0m
+[0m(220) parameter.requires_grad = True[0m
+[0m(221) parameter.requires_grad = True[0m
+[0m(222) parameter.requires_grad = True[0m
+[0m(223) parameter.requires_grad = True[0m
+[0m(224) parameter.requires_grad = True[0m
+[0m(225) parameter.requires_grad = True[0m
+[0m(226) parameter.requires_grad = True[0m
+[0m(227) parameter.requires_grad = True[0m
+[0m(228) parameter.requires_grad = True[0m
+[0m(229) parameter.requires_grad = True[0m
+[0m(230) parameter.requires_grad = True[0m
+[0m(231) parameter.requires_grad = True[0m
+[0m(232) parameter.requires_grad = True[0m
+[0m(233) parameter.requires_grad = True[0m
+[0m(234) parameter.requires_grad = True[0m
+[0m(235) parameter.requires_grad = True[0m
+[0m(236) parameter.requires_grad = True[0m
+[0m(237) parameter.requires_grad = True[0m
+[0m(238) parameter.requires_grad = True[0m
+[0m(239) parameter.requires_grad = True[0m
+[0m(240) parameter.requires_grad = True[0m
+[0m(241) parameter.requires_grad = True[0m
+[0m(242) parameter.requires_grad = True[0m
+[0m(243) parameter.requires_grad = True[0m
+[0m(244) parameter.requires_grad = True[0m
+[0m(245) parameter.requires_grad = True[0m
+[0m(246) parameter.requires_grad = True[0m
+[0m(247) parameter.requires_grad = True[0m
+[0m(248) parameter.requires_grad = True[0m
+[0m(249) parameter.requires_grad = True[0m
+[0m(250) parameter.requires_grad = True[0m
+[0m(251) parameter.requires_grad = True[0m
+[0m(252) parameter.requires_grad = True[0m
+[0m(253) parameter.requires_grad = True[0m
+[0m(254) parameter.requires_grad = True[0m
+[0m(255) parameter.requires_grad = True[0m
+[0m(256) parameter.requires_grad = True[0m
+[0m(257) parameter.requires_grad = True[0m
+[0m(258) parameter.requires_grad = True[0m
+[0m(259) parameter.requires_grad = True[0m
+[0m(260) parameter.requires_grad = True[0m
+[0m(261) parameter.requires_grad = True[0m
+[0m(262) parameter.requires_grad = True[0m
+[0m(263) parameter.requires_grad = True[0m
+[0m(264) parameter.requires_grad = True[0m
+[0m(265) parameter.requires_grad = True[0m
+[0m(266) parameter.requires_grad = True[0m
+[0m(267) parameter.requires_grad = True[0m
+[0m(268) parameter.requires_grad = True[0m
+[0m(269) parameter.requires_grad = True[0m
+[0m(270) parameter.requires_grad = True[0m
+[0m(271) parameter.requires_grad = True[0m
+[0m(272) parameter.requires_grad = True[0m
+[0m(273) parameter.requires_grad = True[0m
+[0m(274) parameter.requires_grad = True[0m
+[0m(275) parameter.requires_grad = True[0m
+[0m(276) parameter.requires_grad = True[0m
+[0m(277) parameter.requires_grad = True[0m
+[0m(278) parameter.requires_grad = True[0m
+[0m(279) parameter.requires_grad = True[0m
+[0m(280) parameter.requires_grad = True[0m
+[0m(281) parameter.requires_grad = True[0m
+[0m(282) parameter.requires_grad = True[0m
+[0m(283) parameter.requires_grad = True[0m
+[0m(284) parameter.requires_grad = True[0m
+[0m(285) parameter.requires_grad = True[0m
+[0m(286) parameter.requires_grad = True[0m
+[0m(287) parameter.requires_grad = True[0m
+[0m(288) parameter.requires_grad = True[0m
+[0m(289) parameter.requires_grad = True[0m
+[0m(290) parameter.requires_grad = True[0m
+[0m(291) parameter.requires_grad = True[0m
+[0m(292) parameter.requires_grad = True[0m
+[0m(293) parameter.requires_grad = True[0m
+[0m(294) parameter.requires_grad = True[0m
+[0m(295) parameter.requires_grad = True[0m
+[0m(296) parameter.requires_grad = True[0m
+[0m(297) parameter.requires_grad = True[0m
+[0m(298) parameter.requires_grad = True[0m
+[0m(299) parameter.requires_grad = True[0m
+[0m(300) parameter.requires_grad = True[0m
+[0m(301) parameter.requires_grad = True[0m
+[0m(302) parameter.requires_grad = True[0m
+[0m(303) parameter.requires_grad = True[0m
+[0m(304) parameter.requires_grad = True[0m
+[0m(305) parameter.requires_grad = True[0m
+[0m(306) parameter.requires_grad = True[0m
+[0m(307) parameter.requires_grad = True[0m
+[0m(308) parameter.requires_grad = True[0m
+[0m(309) parameter.requires_grad = True[0m
+[0m(310) parameter.requires_grad = True[0m
+[0m(311) parameter.requires_grad = True[0m
+[0m(312) parameter.requires_grad = True[0m
+[0m(313) parameter.requires_grad = True[0m
+[0m(314) parameter.requires_grad = True[0m
+[0m(315) parameter.requires_grad = True[0m
+[0m(316) parameter.requires_grad = True[0m
+[0m(317) parameter.requires_grad = True[0m
+[0m(318) parameter.requires_grad = True[0m
+[0m(319) parameter.requires_grad = True[0m
+[0m(320) parameter.requires_grad = True[0m
+[0m(321) parameter.requires_grad = True[0m
+[0m(322) parameter.requires_grad = True[0m
+[0m(323) parameter.requires_grad = True[0m
+[0m(324) parameter.requires_grad = True[0m
+[0m(325) parameter.requires_grad = True[0m
+[0m(326) parameter.requires_grad = True[0m
+[0m(327) parameter.requires_grad = True[0m
+[0m(328) parameter.requires_grad = True[0m
+[0m(329) parameter.requires_grad = True[0m
+[0m(330) parameter.requires_grad = True[0m
+[0m(331) parameter.requires_grad = True[0m
+[0m(332) parameter.requires_grad = True[0m
+[0m(333) parameter.requires_grad = True[0m
+[0m(334) parameter.requires_grad = True[0m
+[0m(335) parameter.requires_grad = True[0m
+[0m(336) parameter.requires_grad = True[0m
+[0m(337) parameter.requires_grad = True[0m
+[0m(338) parameter.requires_grad = True[0m
+[0m(339) parameter.requires_grad = True[0m
+[0mTraining: epoch=3 step=19/782 loss=0.50482 accuracy=84.68750 runtime_forward_ms=361.40031 runtime_backward_ms=742.27295.[0m
+[0mTraining: epoch=3 step=39/782 loss=0.49107 accuracy=86.01562 runtime_forward_ms=354.44451 runtime_backward_ms=736.53857.[0m
+[0mTraining: epoch=3 step=59/782 loss=0.50301 accuracy=84.84375 runtime_forward_ms=354.61639 runtime_backward_ms=737.27883.[0m
+[0mTraining: epoch=3 step=79/782 loss=0.49310 accuracy=85.46875 runtime_forward_ms=354.59615 runtime_backward_ms=737.51122.[0m
+[0mTraining: epoch=3 step=99/782 loss=0.45982 accuracy=85.85938 runtime_forward_ms=354.50373 runtime_backward_ms=736.84152.[0m
+[0mTraining: epoch=3 step=119/782 loss=0.44195 accuracy=87.42188 runtime_forward_ms=354.64842 runtime_backward_ms=736.76439.[0m
+[0mTraining: epoch=3 step=139/782 loss=0.48458 accuracy=86.25000 runtime_forward_ms=354.47534 runtime_backward_ms=737.85622.[0m
+[0mTraining: epoch=3 step=159/782 loss=0.47998 accuracy=85.93750 runtime_forward_ms=354.60533 runtime_backward_ms=740.81533.[0m
+[0mTraining: epoch=3 step=179/782 loss=0.49413 accuracy=84.76562 runtime_forward_ms=354.49239 runtime_backward_ms=738.97754.[0m
+[0mTraining: epoch=3 step=199/782 loss=0.42856 accuracy=86.87500 runtime_forward_ms=354.39332 runtime_backward_ms=736.82611.[0m
+[0mTraining: epoch=3 step=219/782 loss=0.44783 accuracy=86.17188 runtime_forward_ms=354.35970 runtime_backward_ms=737.44602.[0m
+[0mTraining: epoch=3 step=239/782 loss=0.49594 accuracy=86.01562 runtime_forward_ms=354.49795 runtime_backward_ms=737.43543.[0m
+[0mTraining: epoch=3 step=259/782 loss=0.46276 accuracy=85.85938 runtime_forward_ms=354.98068 runtime_backward_ms=737.27553.[0m
+[0mTraining: epoch=3 step=279/782 loss=0.45387 accuracy=86.48438 runtime_forward_ms=354.43607 runtime_backward_ms=741.69804.[0m
+[0mTraining: epoch=3 step=299/782 loss=0.43570 accuracy=86.64062 runtime_forward_ms=354.48852 runtime_backward_ms=739.89809.[0m
+[0mTraining: epoch=3 step=319/782 loss=0.48813 accuracy=85.07812 runtime_forward_ms=355.42639 runtime_backward_ms=740.44085.[0m
+[0mTraining: epoch=3 step=339/782 loss=0.50141 accuracy=84.37500 runtime_forward_ms=354.44227 runtime_backward_ms=740.18537.[0m
+[0mTraining: epoch=3 step=359/782 loss=0.47141 accuracy=85.70312 runtime_forward_ms=354.50807 runtime_backward_ms=740.25624.[0m
+[0mTraining: epoch=3 step=379/782 loss=0.51038 accuracy=84.45312 runtime_forward_ms=354.74945 runtime_backward_ms=737.26255.[0m
+[0mTraining: epoch=3 step=399/782 loss=0.45928 accuracy=85.23438 runtime_forward_ms=355.69170 runtime_backward_ms=741.38161.[0m
+[0mTraining: epoch=3 step=419/782 loss=0.49739 accuracy=84.53125 runtime_forward_ms=354.59265 runtime_backward_ms=742.91848.[0m
+[0mTraining: epoch=3 step=439/782 loss=0.47395 accuracy=84.68750 runtime_forward_ms=354.31277 runtime_backward_ms=740.07803.[0m
+[0mTraining: epoch=3 step=459/782 loss=0.43264 accuracy=86.87500 runtime_forward_ms=355.20084 runtime_backward_ms=736.98247.[0m
+[0mTraining: epoch=3 step=479/782 loss=0.48789 accuracy=86.40625 runtime_forward_ms=354.81989 runtime_backward_ms=740.52584.[0m
+[0mTraining: epoch=3 step=499/782 loss=0.39538 accuracy=87.96875 runtime_forward_ms=354.51815 runtime_backward_ms=736.70401.[0m
+[0mTraining: epoch=3 step=519/782 loss=0.45692 accuracy=85.70312 runtime_forward_ms=354.78776 runtime_backward_ms=739.63578.[0m
+[0mTraining: epoch=3 step=539/782 loss=0.45732 accuracy=85.93750 runtime_forward_ms=355.70836 runtime_backward_ms=736.72645.[0m
+[0mTraining: epoch=3 step=559/782 loss=0.38488 accuracy=87.89062 runtime_forward_ms=355.80149 runtime_backward_ms=736.81256.[0m
+[0mTraining: epoch=3 step=579/782 loss=0.45637 accuracy=85.93750 runtime_forward_ms=354.69647 runtime_backward_ms=737.18657.[0m
+[0mTraining: epoch=3 step=599/782 loss=0.44050 accuracy=86.71875 runtime_forward_ms=354.76573 runtime_backward_ms=741.24537.[0m
+[0mTraining: epoch=3 step=619/782 loss=0.44342 accuracy=87.03125 runtime_forward_ms=354.64504 runtime_backward_ms=747.30196.[0m
+[0mTraining: epoch=3 step=639/782 loss=0.43291 accuracy=85.39062 runtime_forward_ms=355.14819 runtime_backward_ms=738.54106.[0m
+[0mTraining: epoch=3 step=659/782 loss=0.44810 accuracy=86.01562 runtime_forward_ms=354.78530 runtime_backward_ms=749.86267.[0m
+[0mTraining: epoch=3 step=679/782 loss=0.47740 accuracy=84.45312 runtime_forward_ms=354.65750 runtime_backward_ms=739.31545.[0m
+[0mTraining: epoch=3 step=699/782 loss=0.43189 accuracy=87.42188 runtime_forward_ms=355.59942 runtime_backward_ms=736.57629.[0m
+[0mTraining: epoch=3 step=719/782 loss=0.43015 accuracy=86.40625 runtime_forward_ms=354.42535 runtime_backward_ms=747.20457.[0m
+[0mTraining: epoch=3 step=739/782 loss=0.51326 accuracy=84.76562 runtime_forward_ms=354.26592 runtime_backward_ms=743.89734.[0m
+[0mTraining: epoch=3 step=759/782 loss=0.46094 accuracy=86.40625 runtime_forward_ms=354.41728 runtime_backward_ms=743.75886.[0m
+[0mTraining: epoch=3 step=779/782 loss=0.37226 accuracy=88.51562 runtime_forward_ms=354.59408 runtime_backward_ms=742.10433.[0m
+[0mValidation: epoch=3 training_step=3124 loss=0.44233 accuracy=86.49000 runtime_forward_ms=276.30120.[0m
+[0m--- End of Epoch: epoch=3 training_step=3124 training_loss=0.37226 training_accuracy=88.51562 validation_loss=0.44233 validation_accuracy=86.49000.[0m

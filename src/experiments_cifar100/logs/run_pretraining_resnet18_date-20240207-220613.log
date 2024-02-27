@@ -1,0 +1,585 @@
+[0mProvided parameters: main(total_num_epochs=4,freeze_features_epochs=2, batch_size=32)[0m
+[0mModel orginal architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=1000, bias=True)
+)[0m
+[0mModel classifier architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=100, bias=True)
+)[0m
+[0mFeatures frozen on epoch 0[0m
+[0m(0) parameter.requires_grad = False[0m
+[0m(1) parameter.requires_grad = False[0m
+[0m(2) parameter.requires_grad = False[0m
+[0m(3) parameter.requires_grad = False[0m
+[0m(4) parameter.requires_grad = False[0m
+[0m(5) parameter.requires_grad = False[0m
+[0m(6) parameter.requires_grad = False[0m
+[0m(7) parameter.requires_grad = False[0m
+[0m(8) parameter.requires_grad = False[0m
+[0m(9) parameter.requires_grad = False[0m
+[0m(10) parameter.requires_grad = False[0m
+[0m(11) parameter.requires_grad = False[0m
+[0m(12) parameter.requires_grad = False[0m
+[0m(13) parameter.requires_grad = False[0m
+[0m(14) parameter.requires_grad = False[0m
+[0m(15) parameter.requires_grad = False[0m
+[0m(16) parameter.requires_grad = False[0m
+[0m(17) parameter.requires_grad = False[0m
+[0m(18) parameter.requires_grad = False[0m
+[0m(19) parameter.requires_grad = False[0m
+[0m(20) parameter.requires_grad = False[0m
+[0m(21) parameter.requires_grad = False[0m
+[0m(22) parameter.requires_grad = False[0m
+[0m(23) parameter.requires_grad = False[0m
+[0m(24) parameter.requires_grad = False[0m
+[0m(25) parameter.requires_grad = False[0m
+[0m(26) parameter.requires_grad = False[0m
+[0m(27) parameter.requires_grad = False[0m
+[0m(28) parameter.requires_grad = False[0m
+[0m(29) parameter.requires_grad = False[0m
+[0m(30) parameter.requires_grad = False[0m
+[0m(31) parameter.requires_grad = False[0m
+[0m(32) parameter.requires_grad = False[0m
+[0m(33) parameter.requires_grad = False[0m
+[0m(34) parameter.requires_grad = False[0m
+[0m(35) parameter.requires_grad = False[0m
+[0m(36) parameter.requires_grad = False[0m
+[0m(37) parameter.requires_grad = False[0m
+[0m(38) parameter.requires_grad = False[0m
+[0m(39) parameter.requires_grad = False[0m
+[0m(40) parameter.requires_grad = False[0m
+[0m(41) parameter.requires_grad = False[0m
+[0m(42) parameter.requires_grad = False[0m
+[0m(43) parameter.requires_grad = False[0m
+[0m(44) parameter.requires_grad = False[0m
+[0m(45) parameter.requires_grad = False[0m
+[0m(46) parameter.requires_grad = False[0m
+[0m(47) parameter.requires_grad = False[0m
+[0m(48) parameter.requires_grad = False[0m
+[0m(49) parameter.requires_grad = False[0m
+[0m(50) parameter.requires_grad = False[0m
+[0m(51) parameter.requires_grad = False[0m
+[0m(52) parameter.requires_grad = False[0m
+[0m(53) parameter.requires_grad = False[0m
+[0m(54) parameter.requires_grad = False[0m
+[0m(55) parameter.requires_grad = False[0m
+[0m(56) parameter.requires_grad = False[0m
+[0m(57) parameter.requires_grad = False[0m
+[0m(58) parameter.requires_grad = False[0m
+[0m(59) parameter.requires_grad = False[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0mTraining: epoch=0 step=39/1563 loss=4.77603 accuracy=1.48438 runtime_forward_ms=28.71895 runtime_backward_ms=0.79392.[0m
+[0mTraining: epoch=0 step=79/1563 loss=4.66522 accuracy=1.71875 runtime_forward_ms=20.04313 runtime_backward_ms=1.12051.[0m
+[0mTraining: epoch=0 step=119/1563 loss=4.54509 accuracy=2.57812 runtime_forward_ms=20.01012 runtime_backward_ms=0.85613.[0m
+[0mTraining: epoch=0 step=159/1563 loss=4.51460 accuracy=3.43750 runtime_forward_ms=19.99528 runtime_backward_ms=0.94729.[0m
+[0mTraining: epoch=0 step=199/1563 loss=4.44172 accuracy=3.90625 runtime_forward_ms=20.00672 runtime_backward_ms=0.85590.[0m
+[0mTraining: epoch=0 step=239/1563 loss=4.37999 accuracy=6.01562 runtime_forward_ms=20.02839 runtime_backward_ms=0.51955.[0m
+[0mTraining: epoch=0 step=279/1563 loss=4.33516 accuracy=6.09375 runtime_forward_ms=20.01409 runtime_backward_ms=1.33096.[0m
+[0mTraining: epoch=0 step=319/1563 loss=4.29142 accuracy=7.89062 runtime_forward_ms=20.01985 runtime_backward_ms=1.44450.[0m
+[0mTraining: epoch=0 step=359/1563 loss=4.26144 accuracy=8.90625 runtime_forward_ms=20.01950 runtime_backward_ms=1.28926.[0m
+[0mTraining: epoch=0 step=399/1563 loss=4.18967 accuracy=9.84375 runtime_forward_ms=20.01216 runtime_backward_ms=1.49077.[0m
+[0mTraining: epoch=0 step=439/1563 loss=4.11527 accuracy=11.95312 runtime_forward_ms=20.00663 runtime_backward_ms=1.29992.[0m
+[0mTraining: epoch=0 step=479/1563 loss=4.09140 accuracy=11.09375 runtime_forward_ms=20.00034 runtime_backward_ms=1.39316.[0m
+[0mTraining: epoch=0 step=519/1563 loss=4.03530 accuracy=15.00000 runtime_forward_ms=20.00366 runtime_backward_ms=1.17217.[0m
+[0mTraining: epoch=0 step=559/1563 loss=4.00741 accuracy=15.07812 runtime_forward_ms=20.01014 runtime_backward_ms=1.38973.[0m
+[0mTraining: epoch=0 step=599/1563 loss=3.98248 accuracy=14.84375 runtime_forward_ms=20.00831 runtime_backward_ms=1.39642.[0m
+[0mTraining: epoch=0 step=639/1563 loss=3.89973 accuracy=17.26562 runtime_forward_ms=20.00378 runtime_backward_ms=1.22904.[0m
+[0mTraining: epoch=0 step=679/1563 loss=3.87370 accuracy=17.96875 runtime_forward_ms=19.99438 runtime_backward_ms=1.50760.[0m
+[0mTraining: epoch=0 step=719/1563 loss=3.83326 accuracy=18.67188 runtime_forward_ms=20.00158 runtime_backward_ms=1.51833.[0m
+[0mTraining: epoch=0 step=759/1563 loss=3.79820 accuracy=20.70312 runtime_forward_ms=19.99732 runtime_backward_ms=1.02671.[0m
+[0mTraining: epoch=0 step=799/1563 loss=3.79255 accuracy=22.18750 runtime_forward_ms=19.99643 runtime_backward_ms=1.42379.[0m
+[0mTraining: epoch=0 step=839/1563 loss=3.71053 accuracy=23.12500 runtime_forward_ms=19.99583 runtime_backward_ms=1.48013.[0m
+[0mTraining: epoch=0 step=879/1563 loss=3.70124 accuracy=22.73438 runtime_forward_ms=20.00642 runtime_backward_ms=1.39503.[0m
+[0mTraining: epoch=0 step=919/1563 loss=3.63338 accuracy=24.45312 runtime_forward_ms=19.99794 runtime_backward_ms=1.51482.[0m
+[0mTraining: epoch=0 step=959/1563 loss=3.61840 accuracy=24.53125 runtime_forward_ms=19.98748 runtime_backward_ms=1.52945.[0m
+[0mTraining: epoch=0 step=999/1563 loss=3.57379 accuracy=25.54688 runtime_forward_ms=20.00598 runtime_backward_ms=1.08295.[0m
+[0mTraining: epoch=0 step=1039/1563 loss=3.53307 accuracy=28.20312 runtime_forward_ms=19.99234 runtime_backward_ms=1.48569.[0m
+[0mTraining: epoch=0 step=1079/1563 loss=3.51120 accuracy=27.81250 runtime_forward_ms=19.99594 runtime_backward_ms=1.49427.[0m
+[0mTraining: epoch=0 step=1119/1563 loss=3.44665 accuracy=29.53125 runtime_forward_ms=20.00820 runtime_backward_ms=1.48293.[0m
+[0mTraining: epoch=0 step=1159/1563 loss=3.40816 accuracy=31.09375 runtime_forward_ms=19.99796 runtime_backward_ms=1.03196.[0m
+[0mTraining: epoch=0 step=1199/1563 loss=3.40153 accuracy=29.29688 runtime_forward_ms=19.99999 runtime_backward_ms=1.62221.[0m
+[0mTraining: epoch=0 step=1239/1563 loss=3.38631 accuracy=29.60938 runtime_forward_ms=20.00416 runtime_backward_ms=1.60716.[0m
+[0mTraining: epoch=0 step=1279/1563 loss=3.33973 accuracy=30.93750 runtime_forward_ms=20.00880 runtime_backward_ms=1.60854.[0m
+[0mTraining: epoch=0 step=1319/1563 loss=3.32580 accuracy=31.40625 runtime_forward_ms=20.00194 runtime_backward_ms=1.58241.[0m
+[0mTraining: epoch=0 step=1359/1563 loss=3.27528 accuracy=32.65625 runtime_forward_ms=20.00444 runtime_backward_ms=1.59321.[0m
+[0mTraining: epoch=0 step=1399/1563 loss=3.27541 accuracy=32.57812 runtime_forward_ms=20.01107 runtime_backward_ms=1.11699.[0m
+[0mTraining: epoch=0 step=1439/1563 loss=3.22807 accuracy=34.68750 runtime_forward_ms=20.02506 runtime_backward_ms=0.51459.[0m
+[0mTraining: epoch=0 step=1479/1563 loss=3.21670 accuracy=33.59375 runtime_forward_ms=20.02347 runtime_backward_ms=0.66977.[0m
+[0mTraining: epoch=0 step=1519/1563 loss=3.19785 accuracy=33.51562 runtime_forward_ms=20.00640 runtime_backward_ms=1.39490.[0m
+[0mTraining: epoch=0 step=1559/1563 loss=3.21639 accuracy=34.21875 runtime_forward_ms=19.99441 runtime_backward_ms=1.26274.[0m
+[0mValidation: epoch=0 training_step=1562 loss=3.07435 accuracy=36.28000 runtime_forward_ms=18.54201.[0m
+[0m--- End of Epoch: epoch=0 training_step=1562 training_loss=3.21639 training_accuracy=34.21875 validation_loss=3.07435 validation_accuracy=36.28000.[0m
+[0mFeatures frozen on epoch 1[0m
+[0m(0) parameter.requires_grad = False[0m
+[0m(1) parameter.requires_grad = False[0m
+[0m(2) parameter.requires_grad = False[0m
+[0m(3) parameter.requires_grad = False[0m
+[0m(4) parameter.requires_grad = False[0m
+[0m(5) parameter.requires_grad = False[0m
+[0m(6) parameter.requires_grad = False[0m
+[0m(7) parameter.requires_grad = False[0m
+[0m(8) parameter.requires_grad = False[0m
+[0m(9) parameter.requires_grad = False[0m
+[0m(10) parameter.requires_grad = False[0m
+[0m(11) parameter.requires_grad = False[0m
+[0m(12) parameter.requires_grad = False[0m
+[0m(13) parameter.requires_grad = False[0m
+[0m(14) parameter.requires_grad = False[0m
+[0m(15) parameter.requires_grad = False[0m
+[0m(16) parameter.requires_grad = False[0m
+[0m(17) parameter.requires_grad = False[0m
+[0m(18) parameter.requires_grad = False[0m
+[0m(19) parameter.requires_grad = False[0m
+[0m(20) parameter.requires_grad = False[0m
+[0m(21) parameter.requires_grad = False[0m
+[0m(22) parameter.requires_grad = False[0m
+[0m(23) parameter.requires_grad = False[0m
+[0m(24) parameter.requires_grad = False[0m
+[0m(25) parameter.requires_grad = False[0m
+[0m(26) parameter.requires_grad = False[0m
+[0m(27) parameter.requires_grad = False[0m
+[0m(28) parameter.requires_grad = False[0m
+[0m(29) parameter.requires_grad = False[0m
+[0m(30) parameter.requires_grad = False[0m
+[0m(31) parameter.requires_grad = False[0m
+[0m(32) parameter.requires_grad = False[0m
+[0m(33) parameter.requires_grad = False[0m
+[0m(34) parameter.requires_grad = False[0m
+[0m(35) parameter.requires_grad = False[0m
+[0m(36) parameter.requires_grad = False[0m
+[0m(37) parameter.requires_grad = False[0m
+[0m(38) parameter.requires_grad = False[0m
+[0m(39) parameter.requires_grad = False[0m
+[0m(40) parameter.requires_grad = False[0m
+[0m(41) parameter.requires_grad = False[0m
+[0m(42) parameter.requires_grad = False[0m
+[0m(43) parameter.requires_grad = False[0m
+[0m(44) parameter.requires_grad = False[0m
+[0m(45) parameter.requires_grad = False[0m
+[0m(46) parameter.requires_grad = False[0m
+[0m(47) parameter.requires_grad = False[0m
+[0m(48) parameter.requires_grad = False[0m
+[0m(49) parameter.requires_grad = False[0m
+[0m(50) parameter.requires_grad = False[0m
+[0m(51) parameter.requires_grad = False[0m
+[0m(52) parameter.requires_grad = False[0m
+[0m(53) parameter.requires_grad = False[0m
+[0m(54) parameter.requires_grad = False[0m
+[0m(55) parameter.requires_grad = False[0m
+[0m(56) parameter.requires_grad = False[0m
+[0m(57) parameter.requires_grad = False[0m
+[0m(58) parameter.requires_grad = False[0m
+[0m(59) parameter.requires_grad = False[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0mTraining: epoch=1 step=39/1563 loss=3.12637 accuracy=35.46875 runtime_forward_ms=20.03052 runtime_backward_ms=1.29484.[0m
+[0mTraining: epoch=1 step=79/1563 loss=3.13206 accuracy=33.98438 runtime_forward_ms=20.02425 runtime_backward_ms=1.42627.[0m
+[0mTraining: epoch=1 step=119/1563 loss=3.09867 accuracy=36.09375 runtime_forward_ms=20.03212 runtime_backward_ms=1.38228.[0m
+[0mTraining: epoch=1 step=159/1563 loss=3.09367 accuracy=36.79688 runtime_forward_ms=20.04193 runtime_backward_ms=1.23774.[0m
+[0mTraining: epoch=1 step=199/1563 loss=3.02849 accuracy=38.12500 runtime_forward_ms=20.03480 runtime_backward_ms=0.48311.[0m
+[0mTraining: epoch=1 step=239/1563 loss=2.97901 accuracy=40.00000 runtime_forward_ms=20.02327 runtime_backward_ms=0.50178.[0m
+[0mTraining: epoch=1 step=279/1563 loss=3.01514 accuracy=37.65625 runtime_forward_ms=20.03573 runtime_backward_ms=0.51441.[0m
+[0mTraining: epoch=1 step=319/1563 loss=2.92198 accuracy=39.53125 runtime_forward_ms=20.02401 runtime_backward_ms=0.54927.[0m
+[0mTraining: epoch=1 step=359/1563 loss=2.98261 accuracy=38.20312 runtime_forward_ms=20.03529 runtime_backward_ms=0.51687.[0m
+[0mTraining: epoch=1 step=399/1563 loss=2.90169 accuracy=40.78125 runtime_forward_ms=20.02288 runtime_backward_ms=0.66766.[0m
+[0mTraining: epoch=1 step=439/1563 loss=2.91623 accuracy=40.31250 runtime_forward_ms=19.99030 runtime_backward_ms=0.63517.[0m
+[0mTraining: epoch=1 step=479/1563 loss=2.87214 accuracy=39.14062 runtime_forward_ms=19.98840 runtime_backward_ms=0.47518.[0m
+[0mTraining: epoch=1 step=519/1563 loss=2.89177 accuracy=39.45312 runtime_forward_ms=19.99680 runtime_backward_ms=0.66927.[0m
+[0mTraining: epoch=1 step=559/1563 loss=2.89440 accuracy=38.43750 runtime_forward_ms=20.04894 runtime_backward_ms=0.78386.[0m
+[0mTraining: epoch=1 step=599/1563 loss=2.82047 accuracy=40.31250 runtime_forward_ms=20.06516 runtime_backward_ms=0.63977.[0m
+[0mTraining: epoch=1 step=639/1563 loss=2.84076 accuracy=37.81250 runtime_forward_ms=20.00927 runtime_backward_ms=0.31910.[0m
+[0mTraining: epoch=1 step=679/1563 loss=2.81736 accuracy=40.62500 runtime_forward_ms=20.00393 runtime_backward_ms=0.81252.[0m
+[0mTraining: epoch=1 step=719/1563 loss=2.82149 accuracy=38.59375 runtime_forward_ms=19.99809 runtime_backward_ms=0.65333.[0m
+[0mTraining: epoch=1 step=759/1563 loss=2.77812 accuracy=42.03125 runtime_forward_ms=19.99216 runtime_backward_ms=0.28589.[0m
+[0mTraining: epoch=1 step=799/1563 loss=2.80175 accuracy=38.51562 runtime_forward_ms=19.99255 runtime_backward_ms=0.30443.[0m
+[0mTraining: epoch=1 step=839/1563 loss=2.77345 accuracy=42.10938 runtime_forward_ms=20.02855 runtime_backward_ms=0.47180.[0m
+[0mTraining: epoch=1 step=879/1563 loss=2.76841 accuracy=38.75000 runtime_forward_ms=20.03333 runtime_backward_ms=0.59017.[0m
+[0mTraining: epoch=1 step=919/1563 loss=2.69358 accuracy=43.59375 runtime_forward_ms=20.03362 runtime_backward_ms=0.62738.[0m
+[0mTraining: epoch=1 step=959/1563 loss=2.69021 accuracy=41.01562 runtime_forward_ms=20.03326 runtime_backward_ms=0.62147.[0m
+[0mTraining: epoch=1 step=999/1563 loss=2.72429 accuracy=39.68750 runtime_forward_ms=20.03048 runtime_backward_ms=0.56808.[0m
+[0mTraining: epoch=1 step=1039/1563 loss=2.64590 accuracy=43.82812 runtime_forward_ms=20.01088 runtime_backward_ms=1.03300.[0m
+[0mTraining: epoch=1 step=1079/1563 loss=2.64928 accuracy=41.79688 runtime_forward_ms=20.01780 runtime_backward_ms=0.47240.[0m
+[0mTraining: epoch=1 step=1119/1563 loss=2.64168 accuracy=43.04688 runtime_forward_ms=20.01627 runtime_backward_ms=0.68461.[0m
+[0mTraining: epoch=1 step=1159/1563 loss=2.60691 accuracy=43.90625 runtime_forward_ms=20.00206 runtime_backward_ms=0.67744.[0m
+[0mTraining: epoch=1 step=1199/1563 loss=2.61619 accuracy=43.28125 runtime_forward_ms=20.00901 runtime_backward_ms=0.58562.[0m
+[0mTraining: epoch=1 step=1239/1563 loss=2.61599 accuracy=42.89062 runtime_forward_ms=20.01337 runtime_backward_ms=0.62377.[0m
+[0mTraining: epoch=1 step=1279/1563 loss=2.58270 accuracy=40.93750 runtime_forward_ms=20.01831 runtime_backward_ms=0.58386.[0m
+[0mTraining: epoch=1 step=1319/1563 loss=2.62738 accuracy=41.17188 runtime_forward_ms=19.99996 runtime_backward_ms=0.61668.[0m
+[0mTraining: epoch=1 step=1359/1563 loss=2.58783 accuracy=42.96875 runtime_forward_ms=20.00534 runtime_backward_ms=0.57481.[0m
+[0mTraining: epoch=1 step=1399/1563 loss=2.56488 accuracy=42.42188 runtime_forward_ms=20.01204 runtime_backward_ms=0.64433.[0m
+[0mTraining: epoch=1 step=1439/1563 loss=2.55191 accuracy=43.98438 runtime_forward_ms=20.01923 runtime_backward_ms=0.62676.[0m
+[0mTraining: epoch=1 step=1479/1563 loss=2.60538 accuracy=42.89062 runtime_forward_ms=20.01441 runtime_backward_ms=0.65546.[0m
+[0mTraining: epoch=1 step=1519/1563 loss=2.52902 accuracy=44.29688 runtime_forward_ms=20.01456 runtime_backward_ms=0.62559.[0m
+[0mTraining: epoch=1 step=1559/1563 loss=2.51454 accuracy=46.17188 runtime_forward_ms=20.03320 runtime_backward_ms=0.66592.[0m
+[0mValidation: epoch=1 training_step=3124 loss=2.45326 accuracy=44.78000 runtime_forward_ms=18.53356.[0m
+[0m--- End of Epoch: epoch=1 training_step=3124 training_loss=2.51454 training_accuracy=46.17188 validation_loss=2.45326 validation_accuracy=44.78000.[0m
+[0mFeatures not frozen on epoch 2[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0m(58) parameter.requires_grad = True[0m
+[0m(59) parameter.requires_grad = True[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0mTraining: epoch=2 step=39/1563 loss=2.20251 accuracy=47.18750 runtime_forward_ms=20.00169 runtime_backward_ms=49.27802.[0m
+[0mTraining: epoch=2 step=79/1563 loss=1.82752 accuracy=54.29688 runtime_forward_ms=19.97139 runtime_backward_ms=43.96853.[0m
+[0mTraining: epoch=2 step=119/1563 loss=1.71527 accuracy=55.85938 runtime_forward_ms=20.05648 runtime_backward_ms=43.96394.[0m
+[0mTraining: epoch=2 step=159/1563 loss=1.58049 accuracy=60.07812 runtime_forward_ms=20.04169 runtime_backward_ms=43.97795.[0m
+[0mTraining: epoch=2 step=199/1563 loss=1.47318 accuracy=60.54688 runtime_forward_ms=20.06476 runtime_backward_ms=43.96937.[0m
+[0mTraining: epoch=2 step=239/1563 loss=1.42850 accuracy=61.25000 runtime_forward_ms=20.05931 runtime_backward_ms=43.96842.[0m
+[0mTraining: epoch=2 step=279/1563 loss=1.39135 accuracy=60.78125 runtime_forward_ms=20.10699 runtime_backward_ms=43.97354.[0m
+[0mTraining: epoch=2 step=319/1563 loss=1.38550 accuracy=63.35938 runtime_forward_ms=20.08681 runtime_backward_ms=43.91210.[0m
+[0mTraining: epoch=2 step=359/1563 loss=1.35239 accuracy=62.89062 runtime_forward_ms=20.09923 runtime_backward_ms=43.73055.[0m
+[0mTraining: epoch=2 step=399/1563 loss=1.32293 accuracy=65.31250 runtime_forward_ms=20.10528 runtime_backward_ms=43.72897.[0m
+[0mTraining: epoch=2 step=439/1563 loss=1.15967 accuracy=67.26562 runtime_forward_ms=20.09991 runtime_backward_ms=43.88962.[0m
+[0mTraining: epoch=2 step=479/1563 loss=1.20095 accuracy=67.89062 runtime_forward_ms=20.10739 runtime_backward_ms=43.91840.[0m
+[0mTraining: epoch=2 step=519/1563 loss=1.24135 accuracy=63.43750 runtime_forward_ms=20.09721 runtime_backward_ms=43.90938.[0m
+[0mTraining: epoch=2 step=559/1563 loss=1.22711 accuracy=67.03125 runtime_forward_ms=20.10355 runtime_backward_ms=43.92144.[0m
+[0mTraining: epoch=2 step=599/1563 loss=1.13000 accuracy=68.43750 runtime_forward_ms=20.10367 runtime_backward_ms=43.93265.[0m
+[0mTraining: epoch=2 step=639/1563 loss=1.22083 accuracy=65.54688 runtime_forward_ms=20.09003 runtime_backward_ms=43.91815.[0m
+[0mTraining: epoch=2 step=679/1563 loss=1.13086 accuracy=68.43750 runtime_forward_ms=20.09224 runtime_backward_ms=43.91358.[0m
+[0mTraining: epoch=2 step=719/1563 loss=1.12526 accuracy=69.53125 runtime_forward_ms=20.10139 runtime_backward_ms=43.93582.[0m
+[0mTraining: epoch=2 step=759/1563 loss=1.16269 accuracy=67.42188 runtime_forward_ms=20.10367 runtime_backward_ms=43.95118.[0m
+[0mTraining: epoch=2 step=799/1563 loss=1.13495 accuracy=68.20312 runtime_forward_ms=20.10438 runtime_backward_ms=43.93905.[0m
+[0mTraining: epoch=2 step=839/1563 loss=1.04321 accuracy=70.62500 runtime_forward_ms=20.10909 runtime_backward_ms=43.92093.[0m
+[0mTraining: epoch=2 step=879/1563 loss=1.03031 accuracy=69.76562 runtime_forward_ms=20.10923 runtime_backward_ms=43.93287.[0m
+[0mTraining: epoch=2 step=919/1563 loss=1.09891 accuracy=68.82812 runtime_forward_ms=20.10372 runtime_backward_ms=43.94507.[0m
+[0mTraining: epoch=2 step=959/1563 loss=0.99631 accuracy=71.87500 runtime_forward_ms=20.10771 runtime_backward_ms=43.93491.[0m
+[0mTraining: epoch=2 step=999/1563 loss=1.06258 accuracy=69.76562 runtime_forward_ms=20.10861 runtime_backward_ms=43.92792.[0m
+[0mTraining: epoch=2 step=1039/1563 loss=1.10238 accuracy=67.96875 runtime_forward_ms=20.11017 runtime_backward_ms=43.91541.[0m
+[0mTraining: epoch=2 step=1079/1563 loss=1.02677 accuracy=71.09375 runtime_forward_ms=20.11262 runtime_backward_ms=43.93949.[0m
+[0mTraining: epoch=2 step=1119/1563 loss=1.05215 accuracy=69.60938 runtime_forward_ms=20.10358 runtime_backward_ms=43.93371.[0m
+[0mTraining: epoch=2 step=1159/1563 loss=1.01895 accuracy=71.71875 runtime_forward_ms=20.10957 runtime_backward_ms=43.92449.[0m
+[0mTraining: epoch=2 step=1199/1563 loss=1.01593 accuracy=70.78125 runtime_forward_ms=20.11548 runtime_backward_ms=43.89507.[0m
+[0mTraining: epoch=2 step=1239/1563 loss=0.99538 accuracy=72.50000 runtime_forward_ms=20.11009 runtime_backward_ms=43.78015.[0m
+[0mTraining: epoch=2 step=1279/1563 loss=0.99572 accuracy=71.40625 runtime_forward_ms=20.12450 runtime_backward_ms=43.79551.[0m
+[0mTraining: epoch=2 step=1319/1563 loss=1.00544 accuracy=69.68750 runtime_forward_ms=20.10791 runtime_backward_ms=43.95457.[0m
+[0mTraining: epoch=2 step=1359/1563 loss=1.00848 accuracy=70.85938 runtime_forward_ms=20.11539 runtime_backward_ms=43.95413.[0m
+[0mTraining: epoch=2 step=1399/1563 loss=0.95091 accuracy=73.20312 runtime_forward_ms=20.11941 runtime_backward_ms=43.94487.[0m
+[0mTraining: epoch=2 step=1439/1563 loss=0.93972 accuracy=72.89062 runtime_forward_ms=20.12214 runtime_backward_ms=43.95994.[0m
+[0mTraining: epoch=2 step=1479/1563 loss=0.94889 accuracy=72.42188 runtime_forward_ms=20.11808 runtime_backward_ms=43.96715.[0m
+[0mTraining: epoch=2 step=1519/1563 loss=0.95557 accuracy=71.48438 runtime_forward_ms=20.10181 runtime_backward_ms=43.96232.[0m
+[0mTraining: epoch=2 step=1559/1563 loss=0.99356 accuracy=72.81250 runtime_forward_ms=20.11510 runtime_backward_ms=43.95243.[0m
+[0mValidation: epoch=2 training_step=4686 loss=0.86383 accuracy=74.65000 runtime_forward_ms=18.56727.[0m
+[0m--- End of Epoch: epoch=2 training_step=4686 training_loss=0.99356 training_accuracy=72.81250 validation_loss=0.86383 validation_accuracy=74.65000.[0m
+[0mFeatures not frozen on epoch 3[0m
+[0m(0) parameter.requires_grad = True[0m
+[0m(1) parameter.requires_grad = True[0m
+[0m(2) parameter.requires_grad = True[0m
+[0m(3) parameter.requires_grad = True[0m
+[0m(4) parameter.requires_grad = True[0m
+[0m(5) parameter.requires_grad = True[0m
+[0m(6) parameter.requires_grad = True[0m
+[0m(7) parameter.requires_grad = True[0m
+[0m(8) parameter.requires_grad = True[0m
+[0m(9) parameter.requires_grad = True[0m
+[0m(10) parameter.requires_grad = True[0m
+[0m(11) parameter.requires_grad = True[0m
+[0m(12) parameter.requires_grad = True[0m
+[0m(13) parameter.requires_grad = True[0m
+[0m(14) parameter.requires_grad = True[0m
+[0m(15) parameter.requires_grad = True[0m
+[0m(16) parameter.requires_grad = True[0m
+[0m(17) parameter.requires_grad = True[0m
+[0m(18) parameter.requires_grad = True[0m
+[0m(19) parameter.requires_grad = True[0m
+[0m(20) parameter.requires_grad = True[0m
+[0m(21) parameter.requires_grad = True[0m
+[0m(22) parameter.requires_grad = True[0m
+[0m(23) parameter.requires_grad = True[0m
+[0m(24) parameter.requires_grad = True[0m
+[0m(25) parameter.requires_grad = True[0m
+[0m(26) parameter.requires_grad = True[0m
+[0m(27) parameter.requires_grad = True[0m
+[0m(28) parameter.requires_grad = True[0m
+[0m(29) parameter.requires_grad = True[0m
+[0m(30) parameter.requires_grad = True[0m
+[0m(31) parameter.requires_grad = True[0m
+[0m(32) parameter.requires_grad = True[0m
+[0m(33) parameter.requires_grad = True[0m
+[0m(34) parameter.requires_grad = True[0m
+[0m(35) parameter.requires_grad = True[0m
+[0m(36) parameter.requires_grad = True[0m
+[0m(37) parameter.requires_grad = True[0m
+[0m(38) parameter.requires_grad = True[0m
+[0m(39) parameter.requires_grad = True[0m
+[0m(40) parameter.requires_grad = True[0m
+[0m(41) parameter.requires_grad = True[0m
+[0m(42) parameter.requires_grad = True[0m
+[0m(43) parameter.requires_grad = True[0m
+[0m(44) parameter.requires_grad = True[0m
+[0m(45) parameter.requires_grad = True[0m
+[0m(46) parameter.requires_grad = True[0m
+[0m(47) parameter.requires_grad = True[0m
+[0m(48) parameter.requires_grad = True[0m
+[0m(49) parameter.requires_grad = True[0m
+[0m(50) parameter.requires_grad = True[0m
+[0m(51) parameter.requires_grad = True[0m
+[0m(52) parameter.requires_grad = True[0m
+[0m(53) parameter.requires_grad = True[0m
+[0m(54) parameter.requires_grad = True[0m
+[0m(55) parameter.requires_grad = True[0m
+[0m(56) parameter.requires_grad = True[0m
+[0m(57) parameter.requires_grad = True[0m
+[0m(58) parameter.requires_grad = True[0m
+[0m(59) parameter.requires_grad = True[0m
+[0m(60) parameter.requires_grad = True[0m
+[0m(61) parameter.requires_grad = True[0m
+[0mTraining: epoch=3 step=39/1563 loss=0.63184 accuracy=82.73438 runtime_forward_ms=20.10720 runtime_backward_ms=44.13938.[0m
+[0mTraining: epoch=3 step=79/1563 loss=0.60344 accuracy=83.82812 runtime_forward_ms=20.01934 runtime_backward_ms=43.96450.[0m
+[0mTraining: epoch=3 step=119/1563 loss=0.62959 accuracy=82.81250 runtime_forward_ms=20.04503 runtime_backward_ms=43.99388.[0m
+[0mTraining: epoch=3 step=159/1563 loss=0.65881 accuracy=81.17188 runtime_forward_ms=20.06272 runtime_backward_ms=43.97685.[0m
+[0mTraining: epoch=3 step=199/1563 loss=0.65514 accuracy=83.90625 runtime_forward_ms=20.10805 runtime_backward_ms=43.95154.[0m
+[0mTraining: epoch=3 step=239/1563 loss=0.60540 accuracy=82.81250 runtime_forward_ms=20.08737 runtime_backward_ms=43.97664.[0m
+[0mTraining: epoch=3 step=279/1563 loss=0.60587 accuracy=83.82812 runtime_forward_ms=20.11633 runtime_backward_ms=43.98166.[0m
+[0mTraining: epoch=3 step=319/1563 loss=0.63136 accuracy=81.56250 runtime_forward_ms=20.12432 runtime_backward_ms=43.95832.[0m
+[0mTraining: epoch=3 step=359/1563 loss=0.61380 accuracy=82.03125 runtime_forward_ms=20.15645 runtime_backward_ms=43.96433.[0m
+[0mTraining: epoch=3 step=399/1563 loss=0.57045 accuracy=84.29688 runtime_forward_ms=20.12847 runtime_backward_ms=43.76665.[0m
+[0mTraining: epoch=3 step=439/1563 loss=0.54889 accuracy=85.46875 runtime_forward_ms=20.15413 runtime_backward_ms=43.87658.[0m
+[0mTraining: epoch=3 step=479/1563 loss=0.63228 accuracy=82.34375 runtime_forward_ms=20.13565 runtime_backward_ms=43.97531.[0m
+[0mTraining: epoch=3 step=519/1563 loss=0.66482 accuracy=81.17188 runtime_forward_ms=20.15740 runtime_backward_ms=43.97612.[0m
+[0mTraining: epoch=3 step=559/1563 loss=0.64073 accuracy=82.03125 runtime_forward_ms=20.14725 runtime_backward_ms=43.98259.[0m
+[0mTraining: epoch=3 step=599/1563 loss=0.61732 accuracy=83.20312 runtime_forward_ms=20.14982 runtime_backward_ms=43.98077.[0m
+[0mTraining: epoch=3 step=639/1563 loss=0.66259 accuracy=80.85938 runtime_forward_ms=20.13137 runtime_backward_ms=43.97550.[0m
+[0mTraining: epoch=3 step=679/1563 loss=0.61841 accuracy=82.34375 runtime_forward_ms=20.14201 runtime_backward_ms=43.95628.[0m
+[0mTraining: epoch=3 step=719/1563 loss=0.62115 accuracy=82.73438 runtime_forward_ms=20.13887 runtime_backward_ms=43.99792.[0m
+[0mTraining: epoch=3 step=759/1563 loss=0.60884 accuracy=83.04688 runtime_forward_ms=20.15672 runtime_backward_ms=43.99539.[0m
+[0mTraining: epoch=3 step=799/1563 loss=0.64344 accuracy=79.92188 runtime_forward_ms=20.13198 runtime_backward_ms=43.99100.[0m
+[0mTraining: epoch=3 step=839/1563 loss=0.64975 accuracy=81.01562 runtime_forward_ms=20.15322 runtime_backward_ms=43.98586.[0m
+[0mTraining: epoch=3 step=879/1563 loss=0.58070 accuracy=84.37500 runtime_forward_ms=20.13444 runtime_backward_ms=43.97914.[0m
+[0mTraining: epoch=3 step=919/1563 loss=0.66318 accuracy=81.71875 runtime_forward_ms=20.09730 runtime_backward_ms=43.98578.[0m
+[0mTraining: epoch=3 step=959/1563 loss=0.63277 accuracy=80.70312 runtime_forward_ms=20.13815 runtime_backward_ms=43.97812.[0m
+[0mTraining: epoch=3 step=999/1563 loss=0.62979 accuracy=82.65625 runtime_forward_ms=20.08236 runtime_backward_ms=43.97227.[0m
+[0mTraining: epoch=3 step=1039/1563 loss=0.62826 accuracy=80.54688 runtime_forward_ms=20.14567 runtime_backward_ms=43.98612.[0m
+[0mTraining: epoch=3 step=1079/1563 loss=0.64094 accuracy=81.17188 runtime_forward_ms=20.08932 runtime_backward_ms=43.97037.[0m
+[0mTraining: epoch=3 step=1119/1563 loss=0.65915 accuracy=80.78125 runtime_forward_ms=20.14874 runtime_backward_ms=43.98163.[0m
+[0mTraining: epoch=3 step=1159/1563 loss=0.65819 accuracy=80.31250 runtime_forward_ms=20.09105 runtime_backward_ms=43.96586.[0m
+[0mTraining: epoch=3 step=1199/1563 loss=0.66125 accuracy=80.85938 runtime_forward_ms=20.15493 runtime_backward_ms=43.92894.[0m
+[0mTraining: epoch=3 step=1239/1563 loss=0.68272 accuracy=80.00000 runtime_forward_ms=20.08649 runtime_backward_ms=43.77379.[0m
+[0mTraining: epoch=3 step=1279/1563 loss=0.68405 accuracy=79.21875 runtime_forward_ms=20.14154 runtime_backward_ms=43.93702.[0m
+[0mTraining: epoch=3 step=1319/1563 loss=0.65473 accuracy=80.54688 runtime_forward_ms=20.09835 runtime_backward_ms=43.99031.[0m
+[0mTraining: epoch=3 step=1359/1563 loss=0.62311 accuracy=82.81250 runtime_forward_ms=20.14933 runtime_backward_ms=43.97787.[0m
+[0mTraining: epoch=3 step=1399/1563 loss=0.63633 accuracy=81.87500 runtime_forward_ms=20.09211 runtime_backward_ms=43.98697.[0m
+[0mTraining: epoch=3 step=1439/1563 loss=0.62447 accuracy=81.95312 runtime_forward_ms=20.13367 runtime_backward_ms=43.98147.[0m
+[0mTraining: epoch=3 step=1479/1563 loss=0.63740 accuracy=80.70312 runtime_forward_ms=20.09577 runtime_backward_ms=43.99186.[0m
+[0mTraining: epoch=3 step=1519/1563 loss=0.65895 accuracy=81.64062 runtime_forward_ms=20.13838 runtime_backward_ms=43.96067.[0m
+[0mTraining: epoch=3 step=1559/1563 loss=0.66954 accuracy=80.46875 runtime_forward_ms=20.09190 runtime_backward_ms=43.92413.[0m
+[0mValidation: epoch=3 training_step=6248 loss=0.78385 accuracy=76.27000 runtime_forward_ms=18.56392.[0m
+[0m--- End of Epoch: epoch=3 training_step=6248 training_loss=0.66954 training_accuracy=80.46875 validation_loss=0.78385 validation_accuracy=76.27000.[0m

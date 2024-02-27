@@ -1,0 +1,10 @@
+# build==1.0.3
+colorama>=0.4.6
+ipykernel>=6.29.0
+matplotlib>=3.8.2
+numpy>=1.26.3
+pandas>=2.2.0
+pyarrow>=15.0.0
+torch>=1.12.1
+torchaudio>=0.12.1
+torchvision>=0.13.1

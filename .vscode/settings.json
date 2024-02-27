@@ -1,0 +1,26 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnType": true,
+  "editor.minimap.enabled": false,
+  "editor.minimap.showSlider": "always",
+  "editor.rulers": [79, 88],
+
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "material-icon-theme",
+
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+
+  /** Python Settings Start */
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "flake8.args": ["--max-line-length=88"],
+  "black-formatter.args": ["--line-length", "88"],
+  "isort.args": ["--profile", "black"]
+  /** Python Settings End */
+}

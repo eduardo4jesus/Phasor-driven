@@ -1,0 +1,1024 @@
+################ Profiling started at 20240125-063434 ################.
+Provided parameters: profile(function=Conv2dRFFTFunction timestamp=20240125-063434 batch_size=64 profile_name=ResNet18_CIFAR10_Conv2dRFFTFunction num_classes=10 skip_first=0 wait=4 warmup=4 active=4 repeat=1)
+Original model architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=1000, bias=True)
+)
+Adopted model architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=10, bias=True)
+)
+(0) parameter.requires_grad = True
+(1) parameter.requires_grad = True
+(2) parameter.requires_grad = True
+(3) parameter.requires_grad = True
+(4) parameter.requires_grad = True
+(5) parameter.requires_grad = True
+(6) parameter.requires_grad = True
+(7) parameter.requires_grad = True
+(8) parameter.requires_grad = True
+(9) parameter.requires_grad = True
+(10) parameter.requires_grad = True
+(11) parameter.requires_grad = True
+(12) parameter.requires_grad = True
+(13) parameter.requires_grad = True
+(14) parameter.requires_grad = True
+(15) parameter.requires_grad = True
+(16) parameter.requires_grad = True
+(17) parameter.requires_grad = True
+(18) parameter.requires_grad = True
+(19) parameter.requires_grad = True
+(20) parameter.requires_grad = True
+(21) parameter.requires_grad = True
+(22) parameter.requires_grad = True
+(23) parameter.requires_grad = True
+(24) parameter.requires_grad = True
+(25) parameter.requires_grad = True
+(26) parameter.requires_grad = True
+(27) parameter.requires_grad = True
+(28) parameter.requires_grad = True
+(29) parameter.requires_grad = True
+(30) parameter.requires_grad = True
+(31) parameter.requires_grad = True
+(32) parameter.requires_grad = True
+(33) parameter.requires_grad = True
+(34) parameter.requires_grad = True
+(35) parameter.requires_grad = True
+(36) parameter.requires_grad = True
+(37) parameter.requires_grad = True
+(38) parameter.requires_grad = True
+(39) parameter.requires_grad = True
+(40) parameter.requires_grad = True
+(41) parameter.requires_grad = True
+(42) parameter.requires_grad = True
+(43) parameter.requires_grad = True
+(44) parameter.requires_grad = True
+(45) parameter.requires_grad = True
+(46) parameter.requires_grad = True
+(47) parameter.requires_grad = True
+(48) parameter.requires_grad = True
+(49) parameter.requires_grad = True
+(50) parameter.requires_grad = True
+(51) parameter.requires_grad = True
+(52) parameter.requires_grad = True
+(53) parameter.requires_grad = True
+(54) parameter.requires_grad = True
+(55) parameter.requires_grad = True
+(56) parameter.requires_grad = True
+(57) parameter.requires_grad = True
+(58) parameter.requires_grad = True
+(59) parameter.requires_grad = True
+(60) parameter.requires_grad = True
+(61) parameter.requires_grad = True
+Profiling Model ResNet18_CIFAR10_Conv2dRFFTFunction.
+################################################################################
+Running Conv2dRFFTFunction step=0/12 (0.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=1/12 (8.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=2/12 (16.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=3/12 (25.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=4/12 (33.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=5/12 (41.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=6/12 (50.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=7/12 (58.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=8/12 (66.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=9/12 (75.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=10/12 (83.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTFunction step=11/12 (91.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Profile trace saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments/.profiles/ResNet18_CIFAR10_Conv2dRFFTFunction_date-20240125-063434.json.
+Profile saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments/.profiles/ResNet18_CIFAR10_Conv2dRFFTFunction_date-20240125-063434.pt.
+Provided parameters: profile(function=Conv2dRFFTPhasorFunction timestamp=20240125-063434 batch_size=64 profile_name=ResNet18_CIFAR10_Conv2dRFFTPhasorFunction num_classes=10 skip_first=0 wait=4 warmup=4 active=4 repeat=1)
+Original model architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=1000, bias=True)
+)
+Adopted model architecture is ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=512, out_features=10, bias=True)
+)
+(0) parameter.requires_grad = True
+(1) parameter.requires_grad = True
+(2) parameter.requires_grad = True
+(3) parameter.requires_grad = True
+(4) parameter.requires_grad = True
+(5) parameter.requires_grad = True
+(6) parameter.requires_grad = True
+(7) parameter.requires_grad = True
+(8) parameter.requires_grad = True
+(9) parameter.requires_grad = True
+(10) parameter.requires_grad = True
+(11) parameter.requires_grad = True
+(12) parameter.requires_grad = True
+(13) parameter.requires_grad = True
+(14) parameter.requires_grad = True
+(15) parameter.requires_grad = True
+(16) parameter.requires_grad = True
+(17) parameter.requires_grad = True
+(18) parameter.requires_grad = True
+(19) parameter.requires_grad = True
+(20) parameter.requires_grad = True
+(21) parameter.requires_grad = True
+(22) parameter.requires_grad = True
+(23) parameter.requires_grad = True
+(24) parameter.requires_grad = True
+(25) parameter.requires_grad = True
+(26) parameter.requires_grad = True
+(27) parameter.requires_grad = True
+(28) parameter.requires_grad = True
+(29) parameter.requires_grad = True
+(30) parameter.requires_grad = True
+(31) parameter.requires_grad = True
+(32) parameter.requires_grad = True
+(33) parameter.requires_grad = True
+(34) parameter.requires_grad = True
+(35) parameter.requires_grad = True
+(36) parameter.requires_grad = True
+(37) parameter.requires_grad = True
+(38) parameter.requires_grad = True
+(39) parameter.requires_grad = True
+(40) parameter.requires_grad = True
+(41) parameter.requires_grad = True
+(42) parameter.requires_grad = True
+(43) parameter.requires_grad = True
+(44) parameter.requires_grad = True
+(45) parameter.requires_grad = True
+(46) parameter.requires_grad = True
+(47) parameter.requires_grad = True
+(48) parameter.requires_grad = True
+(49) parameter.requires_grad = True
+(50) parameter.requires_grad = True
+(51) parameter.requires_grad = True
+(52) parameter.requires_grad = True
+(53) parameter.requires_grad = True
+(54) parameter.requires_grad = True
+(55) parameter.requires_grad = True
+(56) parameter.requires_grad = True
+(57) parameter.requires_grad = True
+(58) parameter.requires_grad = True
+(59) parameter.requires_grad = True
+(60) parameter.requires_grad = True
+(61) parameter.requires_grad = True
+Profiling Model ResNet18_CIFAR10_Conv2dRFFTPhasorFunction.
+################################################################################
+Running Conv2dRFFTPhasorFunction step=0/12 (0.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=1/12 (8.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=2/12 (16.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=3/12 (25.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=4/12 (33.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=5/12 (41.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=6/12 (50.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=7/12 (58.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=8/12 (66.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=9/12 (75.00%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=10/12 (83.33%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Running Conv2dRFFTPhasorFunction step=11/12 (91.67%)
+################################################################################
+Applying built-in conv2d(input_shape=torch.Size([64, 3, 224, 224]) weights_shape=torch.Size([64, 3, 7, 7]) bias_shape=None stride=(2, 2) padding=(3, 3) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([64, 64, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 64, 56, 56]) weights_shape=torch.Size([128, 64, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([128, 128, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 128, 28, 28]) weights_shape=torch.Size([256, 128, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([256, 256, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 3, 3]) bias_shape=None stride=(2, 2) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying built-in conv2d(input_shape=torch.Size([64, 256, 14, 14]) weights_shape=torch.Size([512, 256, 1, 1]) bias_shape=None stride=(2, 2) padding=(0, 0) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+Applying Conv2dRFFTPhasorFunction(input_shape=torch.Size([64, 512, 7, 7]) weights_shape=torch.Size([512, 512, 3, 3]) bias_shape=None stride=(1, 1) padding=(1, 1) dilation=(1, 1) groups=1)
+################################################################################
+Profile trace saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments/.profiles/ResNet18_CIFAR10_Conv2dRFFTPhasorFunction_date-20240125-063434.json.
+Profile saved to /home/edreis/Code/eduardo4jesus/Phd-Research/paper2/src/experiments/.profiles/ResNet18_CIFAR10_Conv2dRFFTPhasorFunction_date-20240125-063434.pt.
+################ Profiling ended at 20240125-063911 ################.
